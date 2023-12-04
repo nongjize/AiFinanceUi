@@ -65,8 +65,9 @@
       },
       handleClick(row) {
         console.log(row);
-      },
-      components: {
+      },     
+    },
+    components: {
         Search,
       },
       methods: {
@@ -105,7 +106,6 @@
       },
   
       },
-    },
   };
   </script>
   

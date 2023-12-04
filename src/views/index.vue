@@ -3,7 +3,7 @@
     <!-- 导航栏 -->
     <div class="header">
       <el-menu
-        :default-active="$route.path"
+        :default-active="this.$route.path"
         :router="true"
         class="el-menu-demo"
         mode="horizontal"

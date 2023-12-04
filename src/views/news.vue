@@ -11,7 +11,7 @@
           background-color="#010c1a"
           text-color="#ffffff"
           active-text-color="#23a2b9"
-          style="border: 0; font-weight: bolder"
+          style="border: none; font-weight: bolder"
         >
           <div class="personbtn">
             <img src="../assets/index/img/person.png" />
@@ -66,7 +66,8 @@
       handleClick(row) {
         console.log(row);
       },
-      components: {
+    },
+    components: {
         Search,
       },
       methods: {
@@ -105,7 +106,6 @@
       },
   
       },
-    },
   };
   </script>
   

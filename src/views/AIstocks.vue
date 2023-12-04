@@ -1,3 +1,4 @@
+<!-- 股票页 -->
 <template>
   <div class="bg">
     <!-- 导航栏 -->
@@ -32,7 +33,7 @@
           >
             <template #suffix>
               <el-icon style="color: #a0928d">
-                <Search />
+                <Search/>
               </el-icon>
             </template>
           </el-input>
@@ -46,7 +47,7 @@
 
 <script>
 import axios from "axios";
-import { Search } from "@element-plus/icons-vue";
+import { Search} from "@element-plus/icons-vue";
 export default {
   name: "aistocks",
   data() {
@@ -65,9 +66,10 @@ export default {
     },
     handleClick(row) {
       console.log(row);
-    },
-    components: {
-      Search,
+    },    
+  },
+  components: {
+     Search
     },
     methods: {
       GetRouterInfo(url) {
@@ -105,7 +107,6 @@ export default {
     },
 
     },
-  },
 };
 </script>
 
