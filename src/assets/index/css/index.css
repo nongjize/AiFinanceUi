@@ -1,54 +1,62 @@
-.bg{
-    position: absolute;
-  width: 100%;
+.bg {
+  position: absolute;
+  width: 1920px;
   height: auto;
   margin: 0;
   background-color: #010c1a;
   overflow: hidden;
   padding: 0;
 }
-.header{
-    width: 1200px;
-    height: auto;    
-    margin-left: 160px;
-    /* border: 1px solid white; */
+
+.header {
+  width: 1200px;
+  height: auto;
+  margin-left: 160px;
+  /* border: 1px solid white; */
 }
-.personbtn{
+
+.personbtn {
   width: 125px;
   height: 60px;
   margin-right: 40px;
 }
-.personbtn img{
+
+.personbtn img {
   width: 60px;
   float: left;
   margin-left: 1px;
 }
-.personbtn p{
+
+.personbtn p {
   color: #ffffff;
   float: right;
-  margin-top:17px ;
+  margin-top: 17px;
 }
-.search{
+
+.search {
   width: 250px;
   height: 40px;
   margin-top: 10px;
   float: right;
-  margin-left: 50px;  
+  margin-left: 50px;
 }
-.contain{
+
+.contain {
   width: 100%;
   height: auto;
   z-index: 1001;
-  
+
 }
-.elmain{
+
+.elmain {
   background-image: url('../img/bac.png');
   width: 800px;
   height: 600px;
   background-size: contain;
   background-repeat: no-repeat;
 }
-.Systitle{
+
+.Systitle {
   font-size: 50px;
   font-weight: bolder;
   color: #ffffff;
@@ -56,11 +64,13 @@
   text-align: left;
   margin-left: 220px;
 }
-.Systitle p{
+
+.Systitle p {
   font-size: 12px;
   align-items: left;
 }
-.set-other-btn{
+
+.set-other-btn {
   background-image: url('../img/cte.png');
   width: 140px;
   height: 40px;
@@ -71,16 +81,17 @@
   margin-top: 40px;
   border: 0;
 }
-.markindex{
+
+.markindex {
   position: relative;
   height: 320px;
   width: 1200px;
   margin-left: 160px;
   margin-top: 0px;
   z-index: 2001;
-  border: 1px solid #ffffff;
 }
-.market{
+
+.market {
   position: relative;
   height: 70px;
   width: 1060px;
@@ -90,7 +101,7 @@
   padding-bottom: 0px;
 }
 
-.global{
+.global {
   /*行情指数*/
   position: relative;
   color: white;
@@ -99,17 +110,18 @@
   width: 170px;
   height: 70px;
   float: left;
-  
+
 }
-.index{
+
+.index {
   /*Market index*/
   position: relative;
   color: #ffffff;
-  font-size: 24px;  
+  font-size: 24px;
   width: auto;
   height: 70px;
   margin-right: 740px;
-  float: right; 
+  float: right;
   border: 4px solid;
   border-left: none;
   border-top: none;
@@ -118,11 +130,11 @@
   border-image-source: linear-gradient(270deg, #25bbbf 0%, #1f6eae 100%);
   border-image-slice: 1;
   text-align: center;
-  padding-top: 20px; 
-  
+  padding-top: 20px;
+
 }
 
-.globalindex{
+.globalindex {
   position: absolute;
   height: 170px;
   width: 1060px;
@@ -131,45 +143,54 @@
   margin-left: 70px;
   background-color: #0f2f66;
 }
-.globalindex th{
-  width: 265px;  
+
+.globalindex th {
+  width: 265px;
   height: 170px;
   border: 1px solid #949faa;
 }
-.globalindex table{
+
+.globalindex table {
   height: 170px;
   z-index: 201;
 }
-.globalindex table tr th{
+
+.globalindex table tr th {
   text-align: center;
 
 }
-.globalindex h3{
+
+.globalindex h3 {
   color: #ffffff;
   font-size: 25px;
   font-weight: bolder;
 }
-.globalindex p{
+
+.globalindex p {
   font-weight: bolder;
 }
 
-.value1{
+.value1 {
   font-size: 35px;
   color: #ffffff;
 }
-.value2{
+
+.value2 {
   position: relative;
-  background-image: linear-gradient(270deg, #25bbbf 0%, #1f6eae 100%);
+  background-image: linear-gradient(45deg, #25bbbf 0%, #1f6eae 100%);
   background-clip: text;
--webkit-background-clip: text; /*背景被裁减为文字的前景色*/
--webkit-text-fill-color: transparent; /*文字填充为透明，优先级比color高。*/
-  color:#25b6be;
+  -webkit-background-clip: text;
+  /*背景被裁减为文字的前景色*/
+  -webkit-text-fill-color: transparent;
+  /*文字填充为透明，优先级比color高。*/
+  color: #25b6be;
   font-size: 25px;
   /* float: left; */
   text-align: center;
 
 }
-.edleft{
+
+.edleft {
   position: absolute;
   z-index: 3001;
   background-color: #ffffff;
@@ -181,7 +202,8 @@
   border: none;
   border-radius: 5px;
 }
-.edright{
+
+.edright {
   position: absolute;
   z-index: 3001;
   background-color: #ffffff;
@@ -192,4 +214,500 @@
   left: 1150px;
   border-radius: 5px;
   border: none;
+}
+
+/*智能推荐和投资组合*/
+.Testcombin {
+  width: 1200px;
+  height: 360px;
+  /* border: 1px solid white; */
+  margin-top: 40px;
+  margin-left: 160px;
+}
+
+.recommend {
+  height: 360px;
+  width: 450px;
+  border: 1px solid #949faa;
+  background-color: #113775;
+  float: left;
+
+  .testimonial_form {
+    .tab {
+      padding: 10px;
+      width: 450px;
+
+      .optional {
+        background-color: #0bfaff;
+        border: none;
+        transform: skew(-10deg);
+        color: #0f2c61;
+        font-weight: bolder;
+        height: 20px;
+      }
+    }
+
+    .tab thead {
+      background: linear-gradient(270deg, #25bbbf 0%, #1f6eae 100%);
+      width: 430px;
+      color: #ffffff;
+      font-size: 15px;
+    }
+
+    .tab tbody {
+      /* position: absolute; */
+      background-color: transparent;
+      width: 430px;
+      color: white;
+      border: 2px solid #18598e;
+      margin-left: 10px;
+      margin-top: 10px;
+
+      .tab_body1 {
+        background-color: #10316a;
+        width: auto;
+        height: 30px;
+        width: 430px;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: white;
+        font-weight: bolder;
+      }
+
+      .tab_body2 {
+        background-color: #165481;
+        height: 30px;
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+        color: white;
+        font-weight: bolder;
+      }
+
+
+    }
+
+  }
+}
+
+.combination {
+  height: 360px;
+  width: 700px;
+  margin-left: 30px;
+  border: 1px solid #949faa;
+  background-color: #113775;
+  float: right;
+
+  /*智能组合*/
+  .comhead {
+    width: 550px;
+    height: 50px;
+  }
+
+  .comtitle {
+    color: white;
+    font-size: 30px;
+    font-weight: bolder;
+    width: auto;
+    float: left;
+    border-bottom: 1px solid #25bbbf;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+  .combtn button {
+    float: right;
+    width: 200px;
+    height: 30px;
+    border: none;
+    background-image: url('../img/cte.png');
+    margin-top: 29px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bolder;
+    margin-right: -120px;
+  }
+
+  .combody {
+    margin-top: 20px;
+    width: 650px;
+    height: auto;
+    margin-left: 20px;
+
+    .com_btn {
+      background-color: transparent;
+      border: none;
+      margin-right: 30px;
+      color: white;
+      font-weight: bolder;
+      margin-top: 5px;
+    }
+
+  }
+
+  .tab {
+    position: relative;
+    width: 650px;
+    height: auto;
+    margin-top: 10px;
+    background-color: transparent;
+
+    .tab_body1 {
+      background-color: #10316a;
+      margin-left: 5px;
+      padding-left: 3px;
+      width: 630px;
+      height: 30px;
+      margin-left: 10px;
+      margin-right: 10px;
+      color: #ff0000;
+      font-weight: bolder;
+    }
+
+    .tab_body2 {
+      background-color: #165481;
+      margin-left: 5px;
+      padding-left: 3px;
+      width: 630px;
+      height: 30px;
+      margin-left: 10px;
+      margin-right: 10px;
+      color: #ff0000;
+      font-weight: bolder;
+
+    }
+  }
+
+  .tab table {
+    width: 650px;
+    color: white;
+  }
+
+  .tab_hed {
+    color: #ffffff;
+    font-size: 15px;
+  }
+
+  .tab thead {
+    position: relative;
+    background: linear-gradient(270deg, #25bbbf 0%, #1f6eae 100%);
+    margin-bottom: 10px;
+    width: 650px;
+    height: 30px;
+    font-size: 20px;
+  }
+
+  .tab tbody {
+    position: relative;
+    border: 2px solid #18598e;
+    width: 630px;
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+
+
+}
+
+.rectitle {
+  margin-top: 20px;
+}
+
+.rectitle img {
+  width: 300px;
+  z-index: 10;
+}
+
+.rectitle h3 {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bolder;
+  letter-spacing: 4px;
+  z-index: 20;
+  /* margin-top: px; */
+  box-shadow: #010c1a;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*AI对话 财经快讯*/
+.dialogue {
+  margin-top: 40px;
+  margin-left: 160px;
+  margin-bottom: 40px;
+  height: 500px;
+  width: 1200px;
+
+  /*AI对话*/
+  .chat-content {
+    width: 700px;
+    height: 500px;
+    float: left;
+
+    /* border: 1px solid white;     */
+    .chat_header {
+      background: linear-gradient(45deg, #1f6eae 0%, #25bbbf 100%);
+      width: 700px;
+      height: 80px;
+      padding: 0;
+    }
+
+    .chat_header text {
+      color: #ffffff;
+      font-weight: bolder;
+      float: left;
+      margin-left: 30px;
+      margin-top: 20px;
+    }
+
+    .chat_body {
+      background-color: white;
+      width: 520px;
+      height: 420px;
+      float: left;
+
+      /*对话列表*/
+      .chatcontent {
+        width: 100%;
+        height: 250px;
+        padding: 20px;
+
+        /* ai内容 */
+        .word {
+          display: flex;
+          margin-bottom: 30px;
+
+          .el-icon {
+            width: 40px;
+            height: 40px;
+            color: #0f2c61;
+          }
+
+          .info {
+            margin-left: 10px;
+            text-align: left;
+            width: 200px;
+            height: auto;
+
+            .time {
+              font-size: 10px;
+              color: #8e8e8e;
+              margin: 0;
+              height: 20px;
+              line-height: 20px;
+              margin-top: -5px;
+            }
+
+            .info-content {
+              padding: 5px;
+              font-size: 14px;
+              position: relative;
+              color: #8e8e8e;
+              margin-top: 2px;
+              background-color: #e8e8e8;
+            }
+
+            /*三角形*/
+            .info-content::before {
+              position: absolute;
+              left: -8px;
+              top: 8px;
+              content: '';
+              border-right: 10px solid #e8e8e8;
+              border-top: 8px solid transparent;
+              border-bottom: 8px solid transparent;
+            }
+          }
+        }
+
+        /* 用户提问 */
+        .word-my {
+          display: flex;
+          justify-content: flex-end;
+          margin-bottom: 20px;
+          margin-top: 80px;
+
+          .el-icon {
+            width: 40px;
+            height: 40px;
+            color: #25bbbf;
+          }
+
+          .info {
+            margin-left: 10px;
+            text-align: right;
+            width: 200px;
+            height: auto;
+
+            .time {
+              font-size: 12px;
+              color: rgba(51, 51, 51, 0.8);
+              margin: 0;
+              height: 20px;
+              line-height: 20px;
+              margin-top: -5px;
+              margin-right: 10px;
+            }
+
+            .info-content {
+              max-width: 400px;
+              padding: 10px;
+              font-size: 14px;
+              float: right;
+              margin-right: 10px;
+              position: relative;
+              margin-top: 8px;
+              background: #25bbbf;
+              text-align: left;
+            }
+
+            .info-content::after {
+              position: absolute;
+              right: -8px;
+              top: 8px;
+              content: '';
+              border-left: 10px solid #25bbbf;
+              border-top: 8px solid transparent;
+              border-bottom: 8px solid transparent;
+            }
+          }
+        }
+      }
+
+      .chat_bottom {
+        width: 519px;
+        height: auto;
+        margin-top: 5px;
+        border-top: 2px solid #ededed;
+
+        .chat_input {
+          width: 500px;
+          height: auto;
+          outline: none;
+          text-align: left;
+          border: none;
+        }
+
+        .send_btn {
+          background-color: #ff0000;
+          border: none;
+          border-radius: 5px;
+          font-size: 16px;
+          font-weight: bolder;
+          color: white;
+          float: right;
+          margin-top: 100px;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .chat_right {
+      float: right;
+      width: 180px;
+      height: 420px;
+      margin-top: 0px;
+      background-color: #e8e8e8;
+      margin-left: 0px;
+
+      .title {
+        color: #414141;
+        font-size: 20px;
+        font-weight: bolder;
+        text-align: left;
+        margin-top: 10px;
+        margin-left: 5px;
+      }
+
+      .list {
+        font-size: 12px;
+        color: #6e6e6e;
+        text-align: left;
+        word-break: normal;
+        margin-left: 5px;
+      }
+    }
+  }
+
+  .news_content {
+    width: 480px;
+    height: 500px;
+    border: 1px solid white;
+    float: right;
+
+    .news_header {
+      background: linear-gradient(25deg, #25bbbf 0%, #1f6eae 100%);
+      width: 480px;
+      height: 80px;
+
+      /* 财经快讯 */
+      .title {
+        color: white;
+        font-size: 35px;
+        text-align: left;
+        font-weight: bolder;
+        margin-top: 10px;
+        float: left;
+        margin-left: 10px;
+      }
+
+      .news_btn {
+        background: transparent;
+        /*透明背景*/
+        border: 1px solid white;
+        color: white;
+        float: right;
+        margin-right: 20px;
+        margin-top: 25px;
+        font-weight: bolder;
+      }
+
+    }
+
+    .news_list {
+      width: 480px;
+      height: 420px;
+      padding: 0;
+      text-align: left;
+      background-color: white;
+
+      .list {
+        position: relative;
+        width: 100%;
+        height: 100px;
+
+        .title {
+          position: relative;
+          ;
+          width: 400px;
+          text-align: left;
+          color: #ff0000;
+          margin-left: 0;
+          word-break: normal;
+          font-size: 15px;
+
+        }
+
+        .absrtact {
+          width: 420px;
+          color: #848b9e;
+          text-align: left;
+          font-size: 10px;
+
+        }
+      }
+
+
+
+
+    }
+
+  }
 }
