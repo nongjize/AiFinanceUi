@@ -13,10 +13,7 @@
         active-text-color="#23a2b9"
         style="border: 0; font-weight: bolder"
       >
-        <!-- <el-avatar :size="60" >
-          <img src="../assets/index/img/person.png"/>
-        </el-avatar>
-        <p>个人中心</p> -->
+       
         <div class="personbtn">
           <img src="../assets/index/img/person.png" />
           <p>个人中心</p>
@@ -297,32 +294,7 @@ export default {
   data() {
     return {
       input: "",
-      tableData: [
-        {
-          code: "688210",
-          name: "名称",
-          price: "18.74%",
-          lprice: "28.96",
-        },
-        {
-          code: "688210",
-          name: "名称",
-          price: "18.74%",
-          lprice: "28.96",
-        },
-        {
-          code: "688210",
-          name: "名称",
-          price: "18.74%",
-          lprice: "28.96",
-        },
-        {
-          code: "688210",
-          name: "名称",
-          price: "18.74%",
-          lprice: "28.96",
-        },
-      ],
+      
     };
   },
   computed: {},
@@ -330,7 +302,7 @@ export default {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
     },
-    // 点击 el-submenu 时可以跳转
+    // 点击 el-menu 时可以跳转
     handleSelectMenu(path) {
       this.$router.push(path);
     },

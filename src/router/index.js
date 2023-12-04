@@ -24,8 +24,8 @@ const routes = [
     component: () => import('../views/Investment_Classroom.vue')
   },
   {
-    path: '/community.',
-    name: 'community.',
+    path: '/community',
+    name: 'community',
     component: () => import('../views/community.vue')
   },
   {

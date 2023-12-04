@@ -1,0 +1,39 @@
+.bg{
+    position: absolute;
+    width: 1920px;
+    height: auto;
+    margin: 0;
+    background-color: #010c1a;
+    overflow: hidden;
+    padding: 0;
+  }
+  .header{
+      width: 1200px;
+      height: auto;    
+      margin-left: 160px;
+      .personbtn{
+        width: 125px;
+        height: 60px;
+        margin-right: 40px;
+      }
+      .personbtn img{
+        width: 60px;
+        float: left;
+        margin-left: 1px;
+      }
+      .personbtn p{
+        color: #ffffff;
+        float: right;
+        margin-top:17px ;
+      }
+      .search{
+        width: 250px;
+        height: 40px;
+        margin-top: 10px;
+        float: right;
+        margin-left: 50px;  
+      }
+  }
+  
+  
+  
