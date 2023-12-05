@@ -8,7 +8,7 @@
         class="el-menu-demo"
         mode="horizontal"
         @select="handleSelect"
-        background-color="#010c1a"
+        background-color="transparent"
         text-color="#ffffff"
         active-text-color="#23a2b9"
         style="border: 0; font-weight: bolder"
@@ -110,11 +110,11 @@
             <!-- 表头 -->
             <thead>
               <tr>
-              <th>组合名称</th>
-              <th>日收益</th>
-              <th>5日收益</th>
-              <th>20日收益</th>
-              <th>总收益</th>
+              <th>代码</th>
+              <th>名称</th>
+              <th>涨跌幅</th>
+              <th>最新价</th>
+              <th>加自选</th>
             </tr>
             </thead>
            
@@ -320,41 +320,7 @@ export default {
     Avatar,
     DArrowRight,
   },
-  methods: {
-    GetRouterInfo(url) {
-      var that = this;
-      that.$router.push({ path: "/" + url + "" });
-      this.className = "lun-img-two";
-      setTimeout(() => {
-        this.className = "lun-img";
-      }, 300);
-    },
-    getData(code) {
-      var that = this;
-      axios({
-        method: "get",
-        url: that.url + code,
-        //url: that.requerturl,
-      })
-        .then(function (resp) {
-          if (resp.status == 200) {
-            let res = resp.data.result;
-            that.params = res;
-            that.$store.state.fertilize = res.fertilize;
-            that.$store.state.harvest = res.harvest;
-            that.$store.state.pesticide = res.pesticide;
-            that.$store.state.pruning = res.pruning;
-            that.$store.state.weed = res.weed;
-            that.$store.state.farm = res.farm;
-          } else {
-            return;
-          }
-        })
-        .catch((err) => {
-          console.log("请求失败：", err);
-        });
-    },
-  },
+  
 };
 </script>
 

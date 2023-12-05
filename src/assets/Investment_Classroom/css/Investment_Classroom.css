@@ -1,11 +1,13 @@
 .bg{
-    position: absolute;
-    width: 1920px;
-    height: auto;
-    margin: 0;
-    background-color: #010c1a;
-    overflow: hidden;
-    padding: 0;
+  position: absolute;
+  width: 1480px;
+  height: auto;
+  margin: 0;
+  background: url(../../img/otherbac.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 0;
   }
   .header{
       width: 1200px;

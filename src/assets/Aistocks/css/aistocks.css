@@ -1,42 +1,403 @@
-.bg{
+.bg {
   position: absolute;
-  width: 1920px;
+  width: 1480px;
   height: auto;
   margin: 0;
-  background-color: #010c1a;
+  background: url(../../img/otherbac.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow: hidden;
   padding: 0;
 }
+
 /*导航栏*/
-.header{
-    width: 1200px;
-    height: auto;    
-    margin-left: 160px;
-    .personbtn{
-      width: 125px;
-      height: 60px;
-      margin-right: 40px;
-    }
-    .personbtn img{
-      width: 60px;
-      float: left;
-      margin-left: 1px;
-    }
-    .personbtn p{
-      color: #ffffff;
-      float: right;
-      margin-top:17px ;
-    }
-    .search{
-      width: 250px;
-      height: 40px;
-      margin-top: 10px;
-      float: right;
-      margin-left: 50px;  
-    }    
+.header {
+  width: 1200px;
+  height: auto;
+  margin-left: 160px;
+  margin-top: 10px;
+
+  .personbtn {
+    width: 125px;
+    height: 60px;
+    margin-right: 40px;
+  }
+
+  .personbtn img {
+    width: 60px;
+    float: left;
+    margin-left: 1px;
+  }
+
+  .personbtn p {
+    color: #ffffff;
+    float: right;
+    margin-top: 17px;
+  }
+
+  .search {
+    width: 250px;
+    height: 40px;
+    margin-top: 10px;
+    float: right;
+    margin-left: 50px;
+  }
 }
 
 /*body内容*/
+.main {
+  position: relative;
+  width: 1200px;
+  height: auto;
+  margin-left: 160px;
+  margin-top: 80px;
+
+  /* 智能推荐和自选股 */
+  .Recommended-combinations {
+    position: relative;
+    width: 1200px;
+    position: relative;
+    height: auto;
+    margin-bottom: 10px;
+
+    .Smart-recommendations {
+      /* 智能推荐 */
+      width: 590px;
+      height: 400px;
+      border: 1px solid #5c7690;
+      float: left;
+      background-color: #113978;
+
+      /*标题*/
+      .rectitle {
+        margin-top: 20px;
+      }
+
+      .rectitle img {
+        width: 300px;
+        z-index: 10;
+      }
+
+      .rectitle h3 {
+        color: #ffffff;
+        font-size: 40px;
+        font-weight: bolder;
+        letter-spacing: 4px;
+        z-index: 20;
+        margin-top: -20px;
+      }
+
+      /*数据表*/
+      .testimonial_form {
+        .tab {
+          padding: 10px;
+          width: 570px;
+          margin-left: 10px;
+          border: none;
+          margin-top: 10px;
+
+          .optional {
+            background-color: #0bfaff;
+            border: none;
+            transform: skew(-10deg);
+            color: #0f2c61;
+            font-weight: bolder;
+            height: 20px;
+          }
+        }
+
+        .tab thead {
+          background: linear-gradient(270deg, #25bbbf 0%, #1f6eae 100%);
+          width: 430px;
+          color: #ffffff;
+          font-size: 15px;
+          height: 30px;
+
+        }
+
+        .tab tbody {
+          /* position: absolute; */
+          background-color: transparent;
+          color: white;
+          border: 2px solid #18598e;
+
+
+          .tab_body1 {
+            background-color: #10316a;
+            width: auto;
+            height: 30px;
+            width: auto;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: white;
+            font-weight: bolder;
+          }
+
+          .tab_body2 {
+            background-color: #165481;
+            height: 30px;
+            width: auto;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: white;
+            font-weight: bolder;
+          }
+        }
+      }
 
 
 
+    }
+
+    .Watchlisted {
+      /*自选股*/
+      width: 590px;
+      height: 400px;
+      border: 1px solid #5c7690;
+      float: right;
+      margin-left: 16px;
+      background-color: #113978;
+      position: relative;
+      .hed {
+        color: white;
+        font-size: 25px;
+        font-weight: bolder;
+        float: left;
+        margin-left: 30px;
+        margin-top: 20px;
+        border-bottom: 3px solid white;
+        /* padding-bottom: -10px; */
+        display: flex;
+        height: 60px;
+  
+      }
+  
+      .hed button {
+        color: white;
+        font-size: 25px;
+        font-weight: bolder;
+        background-color: transparent;
+        border: none;
+        padding-bottom: 10px;
+        margin-right: 10px;
+      }
+  
+      .btn:focus,
+      .btn:active:focus,
+      .btn.active:focus,
+      .btn.focus,
+      .btn:active.focus,
+      .btn.active.focus {
+        border-bottom: 4px solid;
+        border-image: linear-gradient(to right, #1f6eae, #25bbbf) 1;
+        margin-bottom: -3px;
+      }
+  
+      .built {
+        width: 100px;
+        height: 30px;
+        float: right;
+        margin-top: 40px;
+        margin-right: 20px;
+        background: linear-gradient(270deg, #25bbbf 0%, #1f6eae 100%);
+        ;
+        /*渐变背景*/
+        border: none;
+        border-radius: 0;
+        color: white;
+        font-weight: bolder;
+      }
+  
+      .watbody {
+        position: relative;
+        display: flex;
+        width: 530px;
+        height: 270px;
+        margin-left: 30px;
+        margin-top: 100px;
+        /* border: 1px solid white; */
+        .chose{
+          display: flex;
+          height: 30px;
+          .btn {
+            background: transparent;
+            /*渐变背景*/
+            border: none;
+            border-radius: 0;
+            color: #ffffff;
+            width: 100px;
+            font-weight: bolder;
+            margin-right: 5px;          
+          }
+          .btn:focus,
+          .btn:active:focus,
+          .btn.active:focus,
+          .btn.focus,
+          .btn:active.focus,
+          .btn.active.focus {
+            border: 2px solid;
+            border-image: linear-gradient(to right, #1f6eae, #25bbbf) 1;
+            height: 30px;          
+          }
+        }
+        .table{
+          width: 530px;
+          height: auto;
+          /* border: 1px solid #ffffff; */
+          margin-top: 50px;
+          float: left;
+          margin-left: -210px;  
+          .Optional-table{
+            background: transparent;
+            color: #ff0000;
+            border: none;
+            width: auto;
+            margin-right: 10px;
+            height: 200px;
+            font-size: 10px;   
+            margin-left: 5px;    
+          }
+        }
+        
+    }
+
+    
+      
+
+      
+    }
+
+
+  }
+
+  .Newsletter-live {
+    position: relative;
+    width: 1200px;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    .Financial-Alerts {
+      /* 财经快讯 */
+      width: 590px;
+      float: left;
+      height: 600px;
+      border: 1px solid #5c7690;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      background-color: #113978;
+
+      .news-title{
+        display: flex;
+        width: 550px;
+        margin-left: 20px;
+        margin-top: 20px;
+        border-bottom: 2px solid white;
+        
+        .news{
+          font-size: 40px;
+          padding-bottom: 8px;
+          border-bottom: 4px solid;
+          font-weight: 800;
+          border-image:linear-gradient(to right, #1f6eae, #25bbbf) 1 ;
+          color: #ffffff;
+          margin-bottom: -3px;
+          float: left;
+          width: auto;
+          padding-bottom: 20px;
+        }
+        .btn{
+          background-color: transparent;
+          color: #ffffff;
+          margin-left: 290px;
+          margin-top: 18px;
+          float: right;
+        }
+      }
+      .news-list{
+        width: 520px;
+        margin-left: 10px;
+        .box-card {
+          width: 480px;
+          text-align: left;
+          font-size: 25px;
+          color: #ffffff;
+          list-style: circle;
+          
+          
+        }
+        .box-card li{
+          padding-bottom: 10px;
+        }
+        .box-card li:hover{
+          color: #ff0000;
+
+        }
+      }
+    }
+
+    .live-broadcast {
+      /* 故事直播 */
+      width: 590px;
+      height: 600px;
+      float: right;
+      margin-left: 16px;
+      border: 1px solid #5c7690;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      background-color: #113978;
+      .live-title{
+        display: flex;
+        width: 550px;
+        margin-left: 20px;
+        margin-top: 20px;
+        border-bottom: 2px solid white;
+        
+        .live{
+          font-size: 40px;
+          padding-bottom: 8px;
+          border-bottom: 4px solid;
+          font-weight: 800;
+          border-image:linear-gradient(to right, #1f6eae, #25bbbf) 1 ;
+          color: #ffffff;
+          margin-bottom: -3px;
+          float: left;
+          width: auto;
+          padding-bottom: 20px;
+        }
+        .btn{
+          background-color: transparent;
+          color: #ffffff;
+          margin-left: 290px;
+          margin-top: 18px;
+          float: right;
+        }
+      }
+      .live_list{
+        width: 550px;
+        margin-left: 10px;
+        margin-top: 20px;
+        text-align: left;
+        .list1{
+          font-size: 30px;
+          font-weight: bolder;
+          color: #ff5700;
+          list-style: none;
+          padding-top: 10px;
+        }
+        .list2{
+          color: #ffffff;
+          font-size: 20px;
+          font-weight: bolder;
+          list-style: none;
+          padding-top: 10px;
+        }
+        .next{
+         /*  */
+        }
+      }
+    }
+  }
+
+
+}

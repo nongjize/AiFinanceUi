@@ -70,42 +70,7 @@
     components: {
         Search,
       },
-      methods: {
-        GetRouterInfo(url) {
-          var that = this;
-          that.$router.push({ path: "/" + url + "" });
-          this.className = "lun-img-two";
-          setTimeout(() => {
-            this.className = "lun-img";
-          }, 300);
-        },
-        getData(code) {
-        var that = this;
-        axios({
-          method: "get",
-          url: that.url + code,
-          //url: that.requerturl,
-        })
-          .then(function (resp) {
-            if (resp.status == 200) {
-              let res = resp.data.result;
-              that.params = res;
-              that.$store.state.fertilize = res.fertilize;
-              that.$store.state.harvest = res.harvest;
-              that.$store.state.pesticide = res.pesticide;
-              that.$store.state.pruning = res.pruning;
-              that.$store.state.weed = res.weed;
-              that.$store.state.farm = res.farm;
-            } else {
-              return;
-            }
-          })
-          .catch((err) => {
-            console.log("请求失败：", err);
-          });
-      },
-  
-      },
+      
   };
   </script>
   
