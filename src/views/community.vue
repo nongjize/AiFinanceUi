@@ -8,10 +8,10 @@
           class="el-menu-demo"
           mode="horizontal"
           @select="handleSelect"
-          background-color="#010c1a"
+          background-color="transparent"
           text-color="#ffffff"
           active-text-color="#23a2b9"
-          style="border: 0; font-weight: bolder"
+          style="border: 0; font-weight: bolder;outline: none;"
         >
           <div class="personbtn">
             <img src="../assets/index/img/person.png" />

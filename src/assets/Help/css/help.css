@@ -1,39 +1,250 @@
-.bg{
-    position: absolute;
-    width: 1920px;
+.bg {
+  position: absolute;
+  width: 1480px;
+  height: auto;
+  margin: 0;
+  background: url('../../img/otherbac.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 0;
+
+  .header {
+    width: 1200px;
     height: auto;
-    margin: 0;
-    background-color: #010c1a;
-    overflow: hidden;
-    padding: 0;
+    margin-left: 160px;
+    margin-top: 20px;
+
+    .personbtn {
+      width: 125px;
+      height: 60px;
+      margin-right: 40px;
+    }
+
+    .personbtn img {
+      width: 60px;
+      float: left;
+      margin-left: 1px;
+    }
+
+    .personbtn p {
+      color: #ffffff;
+      float: right;
+      margin-top: 17px;
+    }
+
+    .search {
+      width: 250px;
+      height: 40px;
+      margin-top: 10px;
+      float: right;
+      margin-left: 50px;
+    }
   }
-  .header{
-      width: 1200px;
-      height: auto;    
-      margin-left: 160px;
-      .personbtn{
-        width: 125px;
-        height: 60px;
-        margin-right: 40px;
+
+  .main {
+    position: relative;
+    width: 1200px;
+    margin-left: 160px;
+    height: auto;
+    margin-top: 80px;
+
+    .introduce {
+      .h1 {
+        color: white;
+        margin-top: 60px;
+        font-size: 35px;
       }
-      .personbtn img{
-        width: 60px;
+
+      .p1 {
+        color: white;
+        line-height: 2.0rem;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .trait {
+    width: 1200px;
+    height: 500px;
+    margin-top: 60px;
+    /* border: 1px solid #365575; */
+
+    .trait1 {
+      height: 200px;
+      width: 520px;
+      background-color: #0b346b;
+      float: left;
+      border: 1px solid #365575;
+      margin-left: 35px;
+
+      .pic {
         float: left;
-        margin-left: 1px;
+        margin-left: 15px;
+        margin-top: 15px;
       }
-      .personbtn p{
+
+      .h1 {
         color: #ffffff;
-        float: right;
-        margin-top:17px ;
+        float: left;
       }
-      .search{
-        width: 250px;
-        height: 40px;
+
+      .p1 {
+        color: #ffffff;
+        text-align: left;
+        float: left;
+        font-size: 20px;
         margin-top: 10px;
-        float: right;
-        margin-left: 50px;  
+        margin-left: 20px;
       }
+
+    }
+
+    .trait2 {
+      height: 200px;
+      width: 520px;
+      background-color: #0b346b;
+      float: left;
+      margin-left: 90px;
+      border: 1px solid #365575;
+
+      .pic {
+        float: left;
+        margin-left: 15px;
+        margin-top: 15px;
+      }
+
+      .h1 {
+        color: #ffffff;
+        float: left;
+      }
+
+      .p1 {
+        color: #ffffff;
+        text-align: left;
+        float: left;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 30px;
+      }
+    }
+
+    .trait3 {
+      height: 200px;
+      width: 520px;
+      background-color: #0b346b;
+      float: left;
+      margin-top: 90px;
+      border: 1px solid #365575;
+      margin-left: 35px;
+
+      .pic {
+        float: left;
+        margin-left: 15px;
+        margin-top: 15px;
+      }
+
+      .h1 {
+        color: #ffffff;
+        float: left;
+      }
+
+      .p1 {
+        color: #ffffff;
+        text-align: left;
+        float: left;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 30px;
+      }
+    }
+
+    .trait4 {
+      height: 200px;
+      width: 520px;
+      background-color: #0b346b;
+      float: left;
+      margin-left: 90px;
+      margin-top: 90px;
+      border: 1px solid #365575;
+
+      .pic {
+        float: left;
+        margin-left: 15px;
+        margin-top: 15px;
+      }
+
+      .h1 {
+        color: #ffffff;
+        float: left;
+      }
+
+      .p1 {
+        color: #ffffff;
+        text-align: left;
+        float: left;
+        font-size: 20px;
+        margin-top: 10px;
+        margin-left: 30px;
+      }
+    }
   }
-  
-  
-  
+
+  .problem {
+    width: 1130px;
+    height: 600px;
+    margin-top: 80px;
+    margin-left: 40px;
+    /* border: 1px solid white; */
+    
+    .headline{
+      float: left;
+      width: 1130px;
+      height: 100px;
+      /* border: 1px solid white; */
+
+      .tit{
+        float: left;
+        border-left: 4px solid;
+        padding-left: 10px;
+        font-size: 40px;
+        color: white;
+        border-image: linear-gradient(to bottom,#1f6eae,#25bbbf) 2;
+      }
+      .vid{
+        float: left;
+        margin-left: 10px;
+        color: white;
+        margin-top: 40px;
+        text-align: left;
+      }
+    }
+
+    /* 问题列表 */
+    .problem-list{
+      width: 1120px;
+      height: 450px;
+      /* border: 1px solid white; */
+      margin-left: 10px;
+      margin-top: 20px;
+      float: left;
+
+      .list-btn{
+        width: 1120px;
+        background: transparent;
+        height: 90px;
+        font-size: 20px;
+        font-weight: bolder;
+        text-align: left;
+        float: left;
+        color: white;
+        border: none;
+        border-top:2px solid #294a6a ;
+        letter-spacing: 5px;
+        
+      }
+    }
+
+    
+  }
+}

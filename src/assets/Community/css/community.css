@@ -1,9 +1,11 @@
 .bg{
     position: absolute;
-    width: 1920px;
+    width: 1480px;
     height: auto;
     margin: 0;
-    background-color: #010c1a;
+    background:url('../../img/otherbac.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
     overflow: hidden;
     padding: 0;
   }
@@ -11,6 +13,7 @@
       width: 1200px;
       height: auto;    
       margin-left: 160px;
+      margin-top: 20px;
       .personbtn{
         width: 125px;
         height: 60px;

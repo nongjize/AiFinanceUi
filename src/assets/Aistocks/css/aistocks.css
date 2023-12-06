@@ -15,7 +15,7 @@
   width: 1200px;
   height: auto;
   margin-left: 160px;
-  margin-top: 10px;
+  margin-top: 20px;
 
   .personbtn {
     width: 125px;
@@ -46,7 +46,6 @@
 
 /*body内容*/
 .main {
-  position: relative;
   width: 1200px;
   height: auto;
   margin-left: 160px;
@@ -54,9 +53,8 @@
 
   /* 智能推荐和自选股 */
   .Recommended-combinations {
-    position: relative;
+    float: left;    
     width: 1200px;
-    position: relative;
     height: auto;
     margin-bottom: 10px;
 
@@ -154,7 +152,7 @@
       width: 590px;
       height: 400px;
       border: 1px solid #5c7690;
-      float: right;
+      float: left;
       margin-left: 16px;
       background-color: #113978;
       position: relative;
@@ -321,13 +319,17 @@
           width: 480px;
           text-align: left;
           font-size: 25px;
-          color: #ffffff;
-          list-style: circle;
+          color: #ffffff;         
           
           
         }
         .box-card li{
           padding-bottom: 10px;
+          list-style: none;
+          list-style-image: url('../img/circle.png');
+        }
+        .box-card ul li::marker{
+          font-size: 40px;
         }
         .box-card li:hover{
           color: #ff0000;
@@ -392,9 +394,7 @@
           list-style: none;
           padding-top: 10px;
         }
-        .next{
-         /*  */
-        }
+        
       }
     }
   }

@@ -1,9 +1,9 @@
 .bg {
   position: absolute;
-  width: 1920px;
+  width: 1480px;
   height: auto;
   margin: 0;
-  background-color: #010c1a;
+  background: #010c1a;
   overflow: hidden;
   padding: 0;
 }
@@ -12,6 +12,7 @@
   width: 1200px;
   height: auto;
   margin-left: 160px;
+  margin-top: 20px;
 }
 
 .personbtn {

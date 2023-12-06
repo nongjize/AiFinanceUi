@@ -12,7 +12,10 @@ import * as ElIcon from '@element-plus/icons-vue'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import axios from 'axios'
 
-createApp(App).use(store).use(router).use(elementPlus).use(ElIcon).mount('#app')
+import VideoPlayer from 'vue-video-player'
+import 'video.js/dist/video-js.css'
+
+createApp(App).use(store).use(router).use(elementPlus).use(ElIcon).use(VideoPlayer).mount('#app')
 createApp(App).prototype.$http=axios;
 /*全局注册icon图标 */
 const app=createApp(App)
