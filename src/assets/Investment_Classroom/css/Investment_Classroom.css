@@ -1,6 +1,6 @@
 .bg {
   position: absolute;
-  width: 1480px;
+  width: 100%;
   height: auto;
   margin: 0;
   background: url(../../img/otherbac.jpg);
@@ -28,10 +28,11 @@
       margin-left: 1px;
     }
 
-    .personbtn p {
+    .personbtn a {
       color: #ffffff;
       float: right;
       margin-top: 17px;
+      text-decoration: none;
     }
 
     .search {

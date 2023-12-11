@@ -1,6 +1,6 @@
 .bg {
   position: absolute;
-  width: 1480px;
+  width: 100%;
   height: auto;
   margin: 0;
   background: #010c1a;
@@ -27,10 +27,11 @@
   margin-left: 1px;
 }
 
-.personbtn p {
+.personbtn a {
   color: #ffffff;
   float: right;
   margin-top: 17px;
+  text-decoration: none;
 }
 
 .search {
@@ -99,39 +100,40 @@
   text-align: left;
   margin-left: 70px;
   padding-bottom: 0px;
-}
 
-.global {
-  /*行情指数*/
-  position: relative;
-  color: white;
-  font-size: 40px;
-  font-weight: bolder;
-  width: 170px;
-  height: 70px;
-  float: left;
 
-}
+  .global {
+    /*行情指数*/
+    position: relative;
+    color: white;
+    font-size: 40px;
+    font-weight: bolder;
+    width: 170px;
+    height: 70px;
+    float: left;
 
-.index {
-  /*Market index*/
-  position: relative;
-  color: #ffffff;
-  font-size: 24px;
-  width: auto;
-  height: 70px;
-  margin-right: 740px;
-  float: right;
-  border: 4px solid;
-  border-left: none;
-  border-top: none;
-  border-right: none;
-  /*渐变边框*/
-  border-image-source: linear-gradient(270deg, #25bbbf 0%, #1f6eae 100%);
-  border-image-slice: 1;
-  text-align: center;
-  padding-top: 20px;
+  }
 
+  .index {
+    /*Market index*/
+    position: relative;
+    color: #ffffff;
+    font-size: 24px;
+    width: auto;
+    height: 48px;
+    margin-right: 740px;
+    float: right;
+    border: 4px solid;
+    border-left: none;
+    border-top: none;
+    border-right: none;
+    /*渐变边框*/
+    border-image-source: linear-gradient(270deg, #25bbbf 0%, #1f6eae 100%);
+    border-image-slice: 1;
+    text-align: center;
+    padding-top: 20px;
+
+  }
 }
 
 .globalindex {
@@ -427,16 +429,6 @@
   box-shadow: #010c1a;
 }
 
-
-
-
-
-
-
-
-
-
-
 /*AI对话 财经快讯*/
 .dialogue {
   margin-top: 40px;
@@ -680,6 +672,7 @@
 
       .list {
         position: relative;
+        float: left;
         width: 100%;
         height: 100px;
 

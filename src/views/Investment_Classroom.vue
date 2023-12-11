@@ -15,7 +15,7 @@
       >
         <div class="personbtn">
           <img src="../assets/index/img/person.png" />
-          <p>个人中心</p>
+          <a :href="'/person'">个人中心</a>
         </div>
         <el-menu-item index="/index">首页</el-menu-item>
         <el-menu-item index="/aistocks">Ai股票</el-menu-item>
@@ -165,6 +165,6 @@ export default {
 };
 </script>
   
-  <style>
+<style lang="scss" scoped>
 @import url("../assets/Investment_Classroom/css/Investment_Classroom.css");
-</style>
+</style> 

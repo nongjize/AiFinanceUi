@@ -1,42 +1,408 @@
-.bg{
-    position: absolute;
-    width: 1480px;
-    height: auto;
-    margin: 0;
-    background:url('../../img/otherbac.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    padding: 0;
+.bg {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  background: url('../../img/otherbac.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  padding: 0;
+}
+
+/* 导航栏 */
+.header {
+  width: 1200px;
+  height: auto;
+  margin-left: 160px;
+  margin-top: 20px;
+
+  .personbtn {
+    width: 125px;
+    height: 60px;
+    margin-right: 40px;
   }
-  .header{
-      width: 1200px;
-      height: auto;    
-      margin-left: 160px;
-      margin-top: 20px;
-      .personbtn{
-        width: 125px;
-        height: 60px;
-        margin-right: 40px;
-      }
-      .personbtn img{
-        width: 60px;
-        float: left;
-        margin-left: 1px;
-      }
-      .personbtn p{
-        color: #ffffff;
-        float: right;
-        margin-top:17px ;
-      }
-      .search{
-        width: 250px;
-        height: 40px;
-        margin-top: 10px;
-        float: right;
-        margin-left: 50px;  
-      }
+
+  .personbtn img {
+    width: 60px;
+    float: left;
+    margin-left: 1px;
+  }
+
+  .personbtn a {
+    color: #ffffff;
+    float: right;
+    margin-top: 17px;
+    text-decoration: none;
+  }
+
+  .search {
+    width: 250px;
+    height: 40px;
+    margin-top: 10px;
+    float: right;
+    margin-left: 50px;
+  }
+}
+
+.investor-community {
+  width: 1200px;
+  margin-left: 160px;
+  height: auto;
+  margin-top: 80px;
+}
+/* 热门个股 */
+.hot-stocks{
+  float: left;
+  width: 700px;
+  height: 400px;
+  border: 1px solid #5c7289;
+  background-color: #113775;
+}
+/* 按钮组 */
+.hotbtngroup{
+  float: left;
+  margin-top: 20px;
+  margin-left: 10px;
+  width: 680px;
+  height: 30px;
+  /* border: 1px solid; */  
+}
+.ownbtn{
+  background-color: transparent;
+  font-size: 20px;
+  color: white;
+  float: left;
+  border: none;
+  margin-right: 20px;
+  width: 110px;
+  
+}
+.ownbtn:focus{
+  border: 3px solid; 
+  border-image: linear-gradient(to bottom, #1f6eae, #25bbbf)1;
+  background-color: transparent;
+  color: white;
+}
+.ownbtn:hover{
+  background-color: transparent;
+}
+.morebtn{
+  background:linear-gradient(95deg, #1f6eae, #25bbbf);
+  border: none;
+  border-radius: 0;
+  color: white;
+  font-size: 15px;
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  left: 150px;  
+}
+.owntable{
+  width: 670px;
+  height: 310px;
+  border: 3px solid #196296;
+  float: left;
+  margin-top: 20px;
+  margin-left: 10px;
+
+  .even {
+    background-color: transparent;
   }
   
+  .odd {
+    background-color: #165689;
+  }
   
+  .container {
+    width: 100%;
+    height: 100%;
+  }
   
+  .table {
+    width: 100%;  height: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+  
+  td {
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+  }
+  
+}
+/* 热门话题 */
+.hot-topic{
+  background-color: #113775;
+  width: 460px;
+  height: 400px;
+  margin-left: 30px;
+  border: 1px solid #5c7289;
+  float: left;
+}
+.topichead{
+  width: 420px;
+  height: 70px;
+  float: left;
+  margin-left: 20px;
+  border-bottom: 3px solid white;
+}
+/* gradient underline */
+.gradient-underline{
+  width: 80px;
+  height: 6px;
+  position: absolute;
+  background: linear-gradient(95deg, #1f6eae, #25bbbf);
+  margin-top: 68px;
+  border-radius: 10px;  
+}
+.title{
+  color: white;
+  text-align: left;
+  float: left;
+  position: absolute;
+  margin-top: 15px;
+  letter-spacing: 3px;
+}
+.topicbtn{
+  background-color: transparent;
+  color: white;
+  border-radius: 0;
+  float: right;
+  margin-top: 20px;
+}
+.topicbtn:hover{
+  background-color: transparent;
+  color: #25bbbf;
+}
+/* List of hot topics */
+.topiclist{
+  width: 420px;
+  height: 290px;
+  float: left;
+  /* border: 1px solid white; */
+  margin-left: 20px;
+  margin-top: 20px;  
+}
+
+.topiclist ul li{
+  list-style: none;
+  text-align: left;
+  margin-left: 0;
+  padding: 0 auto;
+  float: left;
+  color: white;
+  font-size: 10px;
+  /* border: 1px solid white; */
+  margin-left: -30px;
+  margin-top: -10px;
+ 
+}
+.toptitle{
+  color: white;
+  padding-left: 0px;
+  font-size: 15px;
+  font-weight: bold;  
+
+}
+.num{
+  color: #ff0000;
+}
+/* favorite收藏 */
+.favoritebtn{
+  background-color: #ff0000;
+  color: white;
+  font-weight: bold;
+  float: right;
+  border-radius:3px;
+  border: none;
+  height: 20px;
+  width: 50px;
+  position: relative;
+  margin-left: 245px;
+  margin-top: -45px;
+
+}
+
+/* 动态 */
+.dynamic-state{
+  background-color: #113775;
+  float: left;
+  width: 700px;
+  height: 400px;
+  border: 1px solid #5c7289;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.stategroupbtn{
+  float: left;
+  width: 670px;
+  height: 50px;
+  /* border: 1px solid white; */
+  margin-left: 10px;
+  padding-top: 20px;  
+}
+.statebtn{
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+}
+.statebtn:hover{
+  background-color: transparent;
+  color: #1f6eae;
+}
+.statebtn:focus{
+  border: 3px solid; 
+  border-image: linear-gradient(to bottom, #1f6eae, #25bbbf)1;  
+  color: white;
+  background-color: transparent;
+}
+.statebtn:active{
+  border: none;                                            
+  background-color: transparent;
+}
+.attentionbtn{
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  left: 80px;
+}
+.attentionbtn:hover{
+  background-color: transparent;
+  
+}
+.attentionbtn:focus{
+  border: 3px solid; 
+  border-image: linear-gradient(to bottom, #1f6eae, #25bbbf)1;  
+  color: white;
+  background-color: transparent;
+  
+}
+.refreshbtn{
+  background:linear-gradient(95deg, #1f6eae, #25bbbf);
+  left: 370px;
+  color: white;
+  border: none;
+  border-radius: 0;   
+  position: absolute; 
+}
+/* 动态列表 */
+.statelist{
+  width: 670px;
+  height: 310px;
+  border: 3px solid #196296;
+  float: left;
+  margin-left: 10px;
+}
+.statelist ul li{
+  list-style: none;
+  text-align: left;
+  margin-left: -30px;
+  margin-top: -10px;
+  position: relative;
+}
+.headline{
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  position:relative;
+  float: left;
+  margin-top: -5px;
+}
+.dynamictag{
+  color: white;
+  background-color: #ff0000;
+  font-weight: bold;
+  border:none;
+  float: left;
+  margin-top: -5px;
+  
+}
+.source{
+  float: left;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  border: none;
+  margin-left: 20px;
+  margin-top: -5px;
+}
+.excerpts{
+  color: white;
+  background-color: #16568a;
+  float: left; 
+  width: 660px;
+  padding-left: 10px;
+  margin-left: -10px;
+}
+
+/* 社区热榜 */
+.community-hot-list{
+  background-color: #113775;
+  width: 460px;
+  height: 400px;
+  margin-left: 30px;
+  border: 1px solid #5c7289;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+.hotlist{
+  width: 420px;
+  height: 290px;
+  float: left;
+  border: 1px solid white;
+  margin-left: 20px;
+  margin-top: 20px;
+  display: flex;  
+}
+.hotlist ul li{
+  color: white;
+  list-style: none;
+  text-align: left;
+  margin-left: -30px;
+  margin-top: -10px;
+  width: 420px;
+  position: relative;
+  display: flex;  
+}
+.bloggername{
+  color: white;
+  font-size: 20px;
+  text-decoration: none;  
+  margin-left: 5px;
+  float: left;
+  position: relative;
+}
+.avatar{
+ float: left;
+ /* position: absolute; */
+
+}
+.bloggerexcerpt{
+  float:left;
+  margin-top: 30px;
+  margin-left: -350px;
+  /* position: relative; */
+
+}
+.blgobtn{
+  background-color: transparent;
+  border: 2px solid red;
+  color: white;
+  font-weight: bold;
+  height: 25px;
+  border-radius: 5px;
+  float: left;
+  margin-left: 150px;
+  /* position: relative; */
+}

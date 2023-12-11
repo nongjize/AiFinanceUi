@@ -43,6 +43,11 @@ const routes = [
     name: 'hidedra',
     component: () => import('../views/Hidden_Dragon.vue')
   },
+  {
+    path: '/person',
+    name: 'person',
+    component: () => import('../views/personal.vue')
+  },
 
 ]
 

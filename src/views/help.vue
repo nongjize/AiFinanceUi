@@ -15,7 +15,7 @@
       >
         <div class="personbtn">
           <img src="../assets/index/img/person.png" />
-          <p>个人中心</p>
+          <a :href="'/person'">个人中心</a>
         </div>
         <el-menu-item index="/index">首页</el-menu-item>
         <el-menu-item index="/aistocks">Ai股票</el-menu-item>
@@ -40,7 +40,7 @@
       </el-menu>
     </div>
     <!--main-->
-    <div class="main">
+    <div class="helpmain">
       <!-- 系统简介 -->
       <div class="introduce">
         <h1 class="h1">AI智能股票投资是什么？</h1>
@@ -143,6 +143,6 @@ export default {
 };
 </script>
   
-  <style>
+<style lang="scss" scoped>
 @import url("../assets/Help/css/help.css");
 </style>
