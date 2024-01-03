@@ -1,152 +1,183 @@
 <template>
-  <div class="bg">
-    <!-- 导航栏 -->
+  <div class="back1">
+    <!-- 导航信息 -->
     <div class="header">
-      <el-menu
-        :default-active="$route.path"
-        :router="true"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-        background-color="transparent"
-        text-color="#ffffff"
-        active-text-color="#23a2b9"
-        style="border: 0; font-weight: bolder;outline: none;"
-      >
-        <div class="personbtn">
-          <img src="../assets/index/img/person.png" />
-          <a :href="'/person'">个人中心</a>
-        </div>
-        <el-menu-item index="/index">首页</el-menu-item>
-        <el-menu-item index="/aistocks">Ai股票</el-menu-item>
-        <el-menu-item index="/investclass">AI投资课堂</el-menu-item>
-        <el-menu-item index="/community">AI股民社区</el-menu-item>
-        <el-menu-item index="/news">新闻资讯</el-menu-item>
-        <el-menu-item index="/help">帮助中心</el-menu-item>
-        <el-menu-item index="/hidedra">卧虎藏龙</el-menu-item>
-        <div class="demo-input-suffix search">
-          <el-input
-            placeholder="Search"
-            v-model="input"
-            style="border-radius: 50px"
-          >
-            <template #suffix>
-              <el-icon style="color: #a0928d">
-                <Search />
-              </el-icon>
-            </template>
-          </el-input>
-        </div>
-      </el-menu>
+      <!-- 导航左边 -->
+      <ol class="headerleft">
+        <li @click="person">个人中心</li>
+      </ol>
+      <div class="headermiddle" :default-active="$route.path" :router="true"  mode="horizontal"  @select="handleSelect">
+        <el-button
+          class="btn"
+          @click="index"
+          onmouseout="this.style.color='white'"
+          >首页</el-button
+        >
+        <el-button
+          class="btn"
+          @click="aistocks"
+          onmouseout="this.style.color='white'"
+          >AI股票</el-button
+        >
+        <el-button
+          class="btn"
+          @click="investclass"
+          onmouseout="this.style.color='white'"
+          >AI投资课堂</el-button
+        >
+        <el-button
+          class="btn"
+          @click="community"
+          onmouseout="this.style.color='white'"
+          >AI股民社区</el-button
+        >
+        <el-button
+          class="btn"
+          @click="news"
+          onmouseout="this.style.color='white'"
+          >新闻资讯</el-button
+        >
+        <el-button
+          class="btn"
+          @click="help"
+          onmouseout="this.style.color='white'"
+          >帮助中心</el-button
+        >
+        <el-button
+          class="btn"
+          @click="hidedra"
+          onmouseout="this.style.color='white'"
+          >卧虎藏龙</el-button
+        >
+      </div>
+      <div class="headerright">
+        <input
+          class="sinput"
+          type="text"
+          v-model="SearchText"
+          placeholder="Search"
+        />
+        <i class="icon" @click="search"></i>
+      </div>
     </div>
-    <!--main-->
-    <div class="main">
-      <!-- 视频播放 和基础知识-->
-      <div class="video-and-knowledge">
-        <!-- 视频播放器 -->
-        <div class="video">
-          <div class="headline">
-            <h1 class="tit">视频播放</h1>
-            <p class="vid">VIDEO <br />PLAYER</p>
+    <div class="bbody">
+      <div class="bbodyleft">
+        <img
+          src="../assets/Investment_Classroom/img/video_left.png"
+          class="img1"
+        />
+        <img
+          src="../assets/Investment_Classroom/img/video_right.png"
+          class="img2"
+        />
+      </div>
+      <div class="bbodyright">
+        <img src="../assets/Aistocks/img/title1.png" class="title1" />
+        <button class="btn1">绑定账户 ></button>
+      </div>
+    </div>
+  </div>
+  <div class="back2">
+    <!-- 热门视频 -->
+    <img src="../assets/Investment_Classroom/img/11.png" class="quoimg" />
+    <div class="quomain">
+      <img src="../assets/index/img/left.png" class="left" />
+      <div class="carousel">
+        <div class="box">
+          <div class="indexs">
+            <p class="p1">股票新星</p>
+            <p class="p2">AI可视化平台</p>
+            <text class="text1">{{}}人观看</text>
           </div>
-          <div class="player">
-            <img
-              src="../assets/Investment_Classroom/img/video_left.png"
-              style="float: left; z-index: 2001; margin-top: 150px"
-            />
-            <img
-              src="../assets/Investment_Classroom/img/video_right.png"
-              style="float: right; z-index: 2001; margin-top: 150px"
-            />
-            <video-player
-              style="
-                width: auto;
-                height: 410px;
-                margin-top: 10px;
-                z-index: 1001;
-                margin-left: 14px;
-                margin-right: 14px;
-                border: 3px solid #25bbbf;
-                position: relative;
-              "
-              class="video-player vjs-custom-skin"
-              ref="videoPlayer"
-              :playsinline="true"
-              :options="playerOptions"
-            ></video-player>
+          <div class="wb">
+            One step understanding Latest stock information AI stock market
           </div>
-          <!-- 基础知识 -->
-          <div class="knowledge">
-            <div class="title">
-              <img
-                src="../assets/Investment_Classroom/img/Click_to _nter.png"
-              />
-              <p class="tit">基础知识</p>
-            </div>
-            <div class="list">
-              <ul>
-                <li v-for="o in 3" :key="o">{{ +o }}</li>
-              </ul>
-            </div>
-          </div>
+          <button class="gbbtn">了解更多&nbsp;&nbsp;></button>
+          <img src="../assets/index/img/head.png" />
+        </div>
+        <div class="box">
+          <img src="../assets/index/img/book.png" />
+        </div>
+        <div class="box">
+          <img src="../assets/index/img/book.png" />
+        </div>
+        <div class="box">
+          <img src="../assets/index/img/head.png" />
+        </div>
+        <div class="box">
+          <img src="../assets/index/img/book.png" />
         </div>
       </div>
-      <!-- 热门视频 -->
-      <div class="popular-video">
-        <div class="headline">
-          <h1 class="tit">热门视频</h1>
-          <p class="vid">POPULAR <br />VIDEOS</p>
+      <img src="../assets/index/img/right.png" class="right" />
+    </div>
+  </div>
+  <div class="back3">
+    <div class="btngroup">
+      <button class="group1" @click="showAI">AI对话</button>
+      <button class="group1">财经快讯</button>
+      <button class="group1">热榜</button>
+      <button class="group1">投顾</button>
+    </div>
+    <div class="aibody">
+      <div class="aileft"></div>
+      <div class="airight"></div>
+    </div>
+  </div>
+  <div class="back4">
+    <div class="classbody">
+      <img src="../assets/index/img/classtitle.png" class="img1" />
+      <button class="bodybtn">更多></button>
+      <div class="coursenew">
+        <div class="imagebac">
+          <img class="cimg" src="../assets/index/img/R-C1.jpg" />
+          <img class="cimg" src="../assets/index/img/R-C1.jpg" />
+          <img
+            class="cimg"
+            src="../assets/index/img/R-C1.jpg"
+            style="margin-right: 0"
+          />
         </div>
-        <div class="video-list">
-          <ul>
-            <li v-for="(news,index) in newstable" :key="news.id">
-              <p class="p1">{{ index+1>9?index+1:"0"+(index+1) }}+{{ +o }}</p>
-              <p class="p2">人观看</p>
-            </li>
-          </ul>
+        <div class="courselist">
+          <p class="p1">金融界/2023-12-12</p>
+          <p class="p2">投资课堂</p>
+          <p class="p3">运用数字科技服务</p>
+        </div>
+        <div class="courselist">
+          <p class="p1"></p>
+          <p class="p2"></p>
+          <p class="p3"></p>
+        </div>
+        <div class="courselist" style="margin-right: 0">
+          <p class="p1"></p>
+          <p class="p2"></p>
+          <p class="p3"></p>
         </div>
       </div>
     </div>
   </div>
 </template>
-  
-  <script>
+
+<script>
 import axios from "axios";
-import { Search } from "@element-plus/icons-vue";
 export default {
   name: "investclass",
   data() {
     return {
-      input: "",
-      newstable:[],
-      playerOptions: {
-        playbackRates: [0.7, 1.0, 1.5, 2.0], //播放速度
-        autoplay: false, //如果true,浏览器准备好时开始回放。
-        muted: false, // 默认情况下将会消除任何音频。
-        loop: false, // 导致视频一结束就重新开始。
-        preload: "auto", // 建议浏览器在<video>加载元素后是否应该开始下载视频数据。auto浏览器选择最佳行为,立即开始加载视频（如果浏览器支持）
-        language: "zh-CN",
-        aspectRatio: "16:9", // 将播放器置于流畅模式，并在计算播放器的动态大小时使用该值。值应该代表一个比例 - 用冒号分隔的两个数字（例如"16:9"或"4:3"）
-        fluid: true, // 当true时，Video.js player将拥有流体大小。换句话说，它将按比例缩放以适应其容器。
-        sources: [
-          {
-            type: "video/mp4",
-            src: "", //url地址
-          },
-        ],
-        poster: "", //你的封面地址
-        // width: document.documentElement.clientWidth,
-        notSupportedMessage: "此视频暂无法播放，请稍后再试", //允许覆盖Video.js无法播放媒体源时显示的默认信息。
-        controlBar: {
-          timeDivider: true,
-          durationDisplay: true,
-          remainingTimeDisplay: false,
-          fullscreenToggle: true, //全屏按钮
-        },
-      },
+      SearchText: "",
+      items: ["最新咨询", "股票"],
+      underline1: false,
+      shine1: false,
+      underline2: false,
+      shine2: false,
+      underline3: false,
+      shine3: false,
+      underline4: false,
+      shine4: false,
+      images: [{ url: require("../assets/index/img/teacher1.png") }],
+      courseimages: [{ url: require("../assets/index/img/R-C1.jpg") }],
+      AI: true,
     };
   },
-  computed: {},
   methods: {
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
@@ -158,13 +189,81 @@ export default {
     handleClick(row) {
       console.log(row);
     },
+    index() {
+      this.$router.push("/index");
+    },
+    aistocks() {
+      this.$router.push("/aistocks");
+    },
+    investclass() {
+      this.$router.push("./investclass");
+    },
+    community() {
+      this.$router.push("./community");
+    },
+    news() {
+      this.$router.push("/news");
+    },
+    help() {
+      this.$router.push("/help");
+    },
+    hidedra() {
+      this.$router.push("/hidedra");
+    },
+    person() {
+      this.$router.push("/person");
+    },
+    search() {
+      const filteredItems = this.items.filter((item) =>
+        item.includes(this.searchText)
+      );
+      console.log(filteredItems);
+    },
+    course() {
+      this.underline1 = true;
+      this.shine1 = true;
+      this.underline2 = false;
+      this.shine2 = false;
+      this.underline3 = false;
+      this.shine3 = false;
+      this.underline4 = false;
+      this.shine4 = false;
+    },
+    interflow() {
+      this.underline2 = true;
+      this.shine2 = true;
+      this.underline1 = false;
+      this.shine1 = false;
+      this.underline3 = false;
+      this.shine3 = false;
+      this.underline4 = false;
+      this.shine4 = false;
+    },
+    new() {
+      this.underline2 = false;
+      this.shine2 = false;
+      this.underline1 = false;
+      this.shine1 = false;
+      this.underline3 = true;
+      this.shine3 = true;
+      this.underline4 = false;
+      this.shine4 = false;
+    },
+    help() {
+      this.underline2 = false;
+      this.shine2 = false;
+      this.underline1 = false;
+      this.shine1 = false;
+      this.underline3 = false;
+      this.shine3 = false;
+      this.underline4 = true;
+      this.shine4 = true;
+    },
   },
-  components: {
-    Search,
-  },
+  components: {},
 };
 </script>
-  
-<style lang="scss" scoped>
+
+<style>
 @import url("../assets/Investment_Classroom/css/Investment_Classroom.css");
-</style> 
+</style>

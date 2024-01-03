@@ -1,54 +1,68 @@
 <template>
-  <div class="bg">
-    <!-- 导航栏 -->
+  <div class="back1">
+    <!-- 导航信息 -->
     <div class="header">
-      <el-menu
-        :default-active="$route.path"
-        :router="true"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-        background-color="transparent"
-        text-color="#ffffff"
-        active-text-color="#23a2b9"
-        style="border: 0; font-weight: bolder; outline: none"
-      >
-        <div class="personbtn">
-          <img src="../assets/index/img/person.png" />
-          <a :href="'/person'">个人中心</a>
-        </div>
-        <el-menu-item index="/index">首页</el-menu-item>
-        <el-menu-item index="/aistocks">Ai股票</el-menu-item>
-        <el-menu-item index="/investclass">AI投资课堂</el-menu-item>
-        <el-menu-item index="/community">AI股民社区</el-menu-item>
-        <el-menu-item index="/news">新闻资讯</el-menu-item>
-        <el-menu-item index="/help">帮助中心</el-menu-item>
-        <el-menu-item index="/hidedra">卧虎藏龙</el-menu-item>
-        <div class="demo-input-suffix search">
-          <el-input
-            placeholder="Search"
-            v-model="input"
-            style="border-radius: 50px"
-          >
-            <template #suffix>
-              <el-icon style="color: #a0928d">
-                <Search />
-              </el-icon>
-            </template>
-          </el-input>
-        </div>
-      </el-menu>
+      <!-- 导航左边 -->
+      <ol class="headerleft">
+        <li @click="person">个人中心</li>
+      </ol>
+      <div class="headermiddle">
+        <el-button
+          class="btn"
+          @click="index"
+          onmouseout="this.style.color='white'"
+          >首页</el-button
+        >
+        <el-button
+          class="btn"
+          @click="aistocks"
+          onmouseout="this.style.color='white'"
+          >AI股票</el-button
+        >
+        <el-button
+          class="btn"
+          @click="investclass"
+          onmouseout="this.style.color='white'"
+          >AI投资课堂</el-button
+        >
+        <el-button
+          class="btn"
+          @click="community"
+          onmouseout="this.style.color='white'"
+          >AI股民社区</el-button
+        >
+        <el-button
+          class="btn"
+          @click="news"
+          onmouseout="this.style.color='white'"
+          >新闻资讯</el-button
+        >
+        <el-button
+          class="btn"
+          @click="helps"
+          onmouseout="this.style.color='white'"
+          >帮助中心</el-button
+        >
+        <el-button
+          class="btn"
+          @click="hidedra"
+          onmouseout="this.style.color='white'"
+          >卧虎藏龙</el-button
+        >
+      </div>
+      <div class="headerright">
+        <input
+          class="sinput"
+          type="text"
+          v-model="SearchText"
+          placeholder="Search"
+        />
+        <i class="icon" @click="search"></i>
+      </div>
     </div>
-    <!--main-->
-    <div class="main">
-      <div class="investor-team">
-        <div class="headline">
-          <img
-            src="../assets/Hidden_Dragon/img/Investor-team.png"
-            class="pic"
-          />
-          <h1 class="h1">投资者团队</h1>
-        </div>
+    <div class="bbody">
+      <img src="../assets/Hidden_Dragon/img/Investor-team.png" class="pic" />
+      <div class="investor-team">        
         <div class="team">
           <el-button class="btnleft">
             <el-icon><ArrowLeftBold /></el-icon
@@ -166,7 +180,7 @@
             ></el-button>
           </div>
           <!-- 4 -->
-          <div class="team1" style="margin-bottom: 80px;">
+          <div class="team1" style="left: 30px;">
             <div class="circle">
               <el-avatar
                 :size="150"
@@ -190,7 +204,7 @@
             ></el-button>
           </div>
           <!-- 5 -->
-          <div class="team1">
+          <div class="team1" style="left: 30px;">
             <div class="circle">
               <el-avatar
                 :size="150"
@@ -214,7 +228,7 @@
             ></el-button>
           </div>
           <!-- 6 -->
-          <div class="team1">
+          <div class="team1" style="left: 30px;">
             <div class="circle">
               <el-avatar
                 :size="150"
@@ -237,6 +251,48 @@
                   style="margin-left: 5px" /></el-icon
             ></el-button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="back2"></div>
+  <div class="back3">
+    <div class="btngroup">
+      <button class="group1" @click="showAI">AI对话</button>
+      <button class="group1">财经快讯</button>
+      <button class="group1">热榜</button>
+      <button class="group1">投顾</button>
+    </div>
+    <div class="aibody"></div>
+  </div>
+  <div class="back4">
+    <div class="classbody">
+      <img src="../assets/index/img/classtitle.png" class="img1" />
+      <button class="bodybtn">更多></button>
+      <div class="coursenew">
+        <div class="imagebac">
+          <img class="cimg" src="../assets/index/img/R-C1.jpg" />
+          <img class="cimg" src="../assets/index/img/R-C1.jpg" />
+          <img
+            class="cimg"
+            src="../assets/index/img/R-C1.jpg"
+            style="margin-right: 0"
+          />
+        </div>
+        <div class="courselist">
+          <p class="p1">金融界/2023-12-12</p>
+          <p class="p2">投资课堂</p>
+          <p class="p3">运用数字科技服务</p>
+        </div>
+        <div class="courselist">
+          <p class="p1"></p>
+          <p class="p2"></p>
+          <p class="p3"></p>
+        </div>
+        <div class="courselist" style="margin-right: 0">
+          <p class="p1"></p>
+          <p class="p2"></p>
+          <p class="p3"></p>
         </div>
       </div>
     </div>
@@ -277,6 +333,76 @@ export default {
     },
     closedetails() {
       this.detailsshow = false; //关闭弹窗
+    },
+    index() {
+      this.$router.push("/index");
+    },
+    aistocks() {
+      this.$router.push("/aistocks");
+    },
+    investclass() {
+      this.$router.push("./investclass");
+    },
+    community() {
+      this.$router.push("./community");
+    },
+    news() {
+      this.$router.push("/news");
+    },
+    helps() {
+      this.$router.push("/help");
+    },
+    hidedra() {
+      this.$router.push("/hidedra");
+    },
+    person() {
+      this.$router.push("/person");
+    },
+    search() {
+      const filteredItems = this.items.filter((item) =>
+        item.includes(this.searchText)
+      );
+      console.log(filteredItems);
+    },
+    course() {
+      this.underline1 = true;
+      this.shine1 = true;
+      this.underline2 = false;
+      this.shine2 = false;
+      this.underline3 = false;
+      this.shine3 = false;
+      this.underline4 = false;
+      this.shine4 = false;
+    },
+    interflow() {
+      this.underline2 = true;
+      this.shine2 = true;
+      this.underline1 = false;
+      this.shine1 = false;
+      this.underline3 = false;
+      this.shine3 = false;
+      this.underline4 = false;
+      this.shine4 = false;
+    },
+    new() {
+      this.underline2 = false;
+      this.shine2 = false;
+      this.underline1 = false;
+      this.shine1 = false;
+      this.underline3 = true;
+      this.shine3 = true;
+      this.underline4 = false;
+      this.shine4 = false;
+    },
+    help() {
+      this.underline2 = false;
+      this.shine2 = false;
+      this.underline1 = false;
+      this.shine1 = false;
+      this.underline3 = false;
+      this.shine3 = false;
+      this.underline4 = true;
+      this.shine4 = true;
     },
   },
   components: {

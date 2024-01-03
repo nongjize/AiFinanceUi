@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
-
 const routes = [
   {
     //刚加载时的默认路由
@@ -12,6 +11,7 @@ const routes = [
     path: '/index',
     name:'index',
     component: () => import('../views/index.vue')
+
   },
   {
     path: '/aistocks',
@@ -48,6 +48,12 @@ const routes = [
     name: 'person',
     component: () => import('../views/personal.vue')
   },
+  
+  // {
+  //   path:"/MobileChat",
+  //   name:'MobileChat',
+  //   component:MobileChatVue,
+  // }
 
 ]
 

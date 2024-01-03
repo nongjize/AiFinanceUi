@@ -1,706 +1,565 @@
-.bg {
-  position: absolute;
-  width: 100%;
-  height: auto;
+* {
+  background-color: rgba(0, 0, 0, 0);
   margin: 0;
-  background: #010c1a;
-  overflow: hidden;
-  padding: 0;
 }
 
-.header {
-  width: 1200px;
-  height: auto;
-  margin-left: 160px;
-  margin-top: 20px;
-}
-
-.personbtn {
-  width: 125px;
-  height: 60px;
-  margin-right: 40px;
-}
-
-.personbtn img {
-  width: 60px;
-  float: left;
-  margin-left: 1px;
-}
-
-.personbtn a {
-  color: #ffffff;
-  float: right;
-  margin-top: 17px;
-  text-decoration: none;
-}
-
-.search {
-  width: 250px;
-  height: 40px;
-  margin-top: 10px;
-  float: right;
-  margin-left: 50px;
-}
-
-.contain {
+.back1 {
+  background: url('../img/back1.png');
   width: 100%;
-  height: auto;
+  height: 1025px;
+  background-size: 100% 100%;
+  left: 50%;
+  margin-top: 520.97px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  float: left;
+  background-repeat: no-repeat;
+}
+
+/* 导航栏 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  /* border: 1px solid red; */
+  background-color: transparent;
+  color: black;
+  font-family: '思源黑体 CN';
+  position: relative;
+  margin-top: 185px;
+  margin-left: 6%;
+  margin-right: 6%;
+  font-size: 25px;
+  font-weight: 700;
+  /*吸顶效果*/
+  position: sticky;
+  position: -webkit-sticky;
+  /*!*兼容 -webkit 内核的浏览器*!
+  top:5px;                   !*必须设一个值，否则不生效*!*/
+}
+
+.headerleft {
+  list-style: none;
+  width: 160px;
+  float: left;
+}
+
+.headerleft li::before {
+  background-image: url('../img/pbac.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  content: '';
+  width: 45px;
+  height: 45px;
+  vertical-align: middle;
+}
+
+.headermiddle {
+  width: auto;
+  float: left;
+  border: none;
+  background-color: transparent;
+  z-index: 1001;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  font-family: '思源黑体 CN';
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.btn:hover {
+  color: white;
+  background: none;
+}
+
+.btn::before {
+  color: #000000;
+}
+
+.btn:focus {
+  border-radius: 16px;
+  background: linear-gradient(135.00deg, rgb(37, 187, 191) -24.913%, rgb(37, 187, 191) -23.486%, rgb(31, 110, 174) 124.693%, rgb(31, 110, 174) 124.912%);
+}
+
+.btn:active {
+  border-radius: 16px;
+  background: linear-gradient(135.00deg, rgb(37, 187, 191) -24.913%, rgb(37, 187, 191) -23.486%, rgb(31, 110, 174) 124.693%, rgb(31, 110, 174) 124.912%);
+
+}
+
+/* 搜索框 */
+.headerright {
+  width: 184px;
+  height: 300px;
+  /* border: 1px solid black; */
+  margin-top: 255px;
+  float: left;
+  z-index: 2001;
+
+  position: relative;
+
+  .sinput {
+    width: 140px;
+    height: 30px;
+    margin-left: -80px;
+    border: 3px solid rgb(31, 110, 174);
+    border-radius: 20px;
+  }
+
+  .icon {
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    background-image: url('../../img/search.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 10px;
+    left: 90px;
+    z-index: 2;
+  }
+}
+
+.bbody {
+  height: 515px;
+  margin-left: 8%;
+  margin-right: 6%;
+  /* border: 1px solid black; */
+  margin-top: 183px;
+}
+
+.title1 {
+  float: left;
+  margin-top: 57px;
+}
+
+.btn1 {
+  background: url(../img/btn1.png);
+  width: 195.74px;
+  height: 46.1px;
+  float: left;
+  font-family: 黑体;
+  color: white;
+  border: none;
+  position: relative;
+  margin-top: 364px;
+  margin-left: -400px;
+  font-size: 27px;
+  font-weight: 400px;
+}
+
+.bbodyright {
+  width: 750px;
+  height: 512px;
+  float: right;
+  background-color: rgb(8, 21, 76);
+  border-radius: 10px;
+}
+
+.rmenu {
+  width: 183px;
+  height: 512px;
+  position: absolute;
+  border-radius: 10px;
+  background: linear-gradient(114.70deg, rgb(15, 94, 157) 21.205%, rgb(15, 94, 157) 21.289%, rgb(13, 140, 143) 78.402%, rgb(13, 140, 143) 78.795%);
   z-index: 1001;
 
 }
 
-.elmain {
-  background-image: url('../img/bac.png');
-  width: 800px;
-  height: 600px;
-  background-size: contain;
+.rmenu ul li {
+  list-style: none;
+  color: rgb(255, 255, 255);
+  font-family: 思源黑体 CN;
+  font-size: 26.71px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.rmenu ul {
+  padding-bottom: 20px;
+  position: relative;
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.rmenu ul p {
+  color: rgb(255, 255, 255);
+  text-align: left;
+  font-size: 15px;
+}
+
+.rmenu ul img {
+  float: left;
+  position: absolute;
+  margin-left: -118px;
+  background-size: auto 100%;
+}
+
+.underline {
+  width: 131px;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  border-radius: 1px;
+  margin-top: 10px;
+}
+
+.classimg {
+  background-color: white;
+  width: 76%;
+  height: 100%;
+  float: left;
+  margin-left: 180px;
+  position: relative;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 505;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.back2 {
+  width: 100%;
+  height: 780px;
+  background: url('../img/back2.png');
+  position: relative;
+  background-size: 100% 100%;
+  left: 50%;
+  margin-top: 1545.97px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  float: left;
   background-repeat: no-repeat;
 }
 
-.Systitle {
-  font-size: 50px;
-  font-weight: bolder;
-  color: #ffffff;
-  margin-top: 60px;
-  text-align: left;
-  margin-left: 220px;
+.quoimg {
+  float: left;
+  margin-left: 180.33px;
 }
 
-.Systitle p {
-  font-size: 12px;
-  align-items: left;
-}
-
-.set-other-btn {
-  background-image: url('../img/cte.png');
-  width: 140px;
-  height: 40px;
-  font-size: 15px;
-  font-weight: bolder;
-  background-size: cover;
-  margin-left: 25px;
-  margin-top: 40px;
-  border: 0;
-}
-
-.markindex {
+/* 行情指数 */
+.quomain {
+  width: 80%;
+  margin-left: 10%;
+  height: 500px;
+  background-color: transparent;
   position: relative;
-  height: 320px;
-  width: 1200px;
-  margin-left: 160px;
-  margin-top: 0px;
-  z-index: 2001;
-}
+  display: block;
+  margin-top: 180px;
+  /* border: 1px solid black; */
+  z-index: 1000;
 
-.market {
-  position: relative;
-  height: 70px;
-  width: 1060px;
-  border-bottom: 2px solid white;
-  text-align: left;
-  margin-left: 70px;
-  padding-bottom: 0px;
-
-
-  .global {
-    /*行情指数*/
+  .left {
+    float: left;
     position: relative;
-    color: white;
-    font-size: 40px;
-    font-weight: bolder;
-    width: 170px;
-    height: 70px;
+    left: 40px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .right {
+    float: left;
+    position: relative;
+    right: -80px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+}
+
+.carousel {
+  float: left;
+  background-color: transparent;
+  width: 80%;
+  margin-left: 10px;
+  height: 100%;
+  position: relative;
+
+  .box {
+    width: 14%;
+    height: 60%;
+    top: 50%;
+    left: 80px;
+    transform: translate(-50%, -50%);
+    background: url('../img/inbac.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-left: 40px;
     float: left;
 
+    img {
+      float: right;
+      position: absolute;
+      width: 70%;
+      height: auto;
+      right: 5px;
+      bottom: 5px;
+      z-index: 501;
+
+    }
   }
 
-  .index {
-    /*Market index*/
-    position: relative;
-    color: #ffffff;
-    font-size: 24px;
-    width: auto;
-    height: 48px;
-    margin-right: 740px;
-    float: right;
-    border: 4px solid;
-    border-left: none;
-    border-top: none;
-    border-right: none;
-    /*渐变边框*/
-    border-image-source: linear-gradient(270deg, #25bbbf 0%, #1f6eae 100%);
-    border-image-slice: 1;
-    text-align: center;
-    padding-top: 20px;
+  .box:hover {
+    width: 20%;
+    height: 62%;
 
+    .p1 {
+      color: black;
+      padding-bottom: 5px;
+      border-bottom: 5px solid black;
+      border-radius: 3px;
+    }
+
+    .wb {
+      color: white;
+      z-index: 1001;
+    }
+
+    .gbbtn {
+      background-color: #FFFFFF;
+      color: black;
+      border-radius: 10px;
+      z-index: 1001;
+    }
   }
 }
 
-.globalindex {
+.indexs {
+  height: 60%;
+  width: 70%;
+  /* border: 1px solid black; */
   position: absolute;
-  height: 170px;
-  width: 1060px;
-  /* border: 1px solid #949faa; */
-  margin-top: 120px;
-  margin-left: 70px;
-  background-color: #0f2f66;
 }
 
-.globalindex th {
-  width: 265px;
-  height: 170px;
-  border: 1px solid #949faa;
+.p1 {
+  width: 100px;
+  height: 25px;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  margin-top: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.globalindex table {
-  height: 170px;
+.p2 {
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: left;
+  position: relative;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.text1 {
+  color: white;
+  font-size: 20px;
+  padding-left: 10px;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  margin-top: 10pzx;
+}
+
+.wb {
+  color: transparent;
+  position: relative;
+  top: 60%;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.gbbtn {
+  border: none;
+  background-color: transparent;
+  position: relative;
+  top: 65%;
+  color: transparent;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.back3 {
+  width: 100%;
+  height: 657px;
+  background:url('../img/back3.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-top: 1935.97px;
+  margin-left: 0px;
+  padding-right: 0;
+  margin-left: 0;
+  float: left;
+}
+.back4{
+  background: url('../img/back4.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 500px;
+  position: relative;
+  margin-top: 2545px;
+  .btngroup{
+    margin-left: 10%;
+    width: 60%;
+    height: 60px;
+    border-bottom: 5px solid rgb(186, 188, 204);
+    float: left;
+    position: relative;
+  }
+  .group1{
+    color:#75767f;;
+    font-size: 30px;
+    font-weight: 500;
+    float: left;
+    width: 150px;
+    border: none;
+    margin-right: 20px;
+  }
+  .group1:active{
+    background: linear-gradient(-13.50deg, rgb(37, 187, 191) 13.221%,rgb(37, 187, 191) 13.922%,rgb(31, 110, 174) 86.671%,rgb(31, 110, 174) 86.779%);;
+    border-radius: 30px;
+    color: white;    
+  }
+  .group1:focus{
+    background: linear-gradient(-13.50deg, rgb(37, 187, 191) 13.221%,rgb(37, 187, 191) 13.922%,rgb(31, 110, 174) 86.671%,rgb(31, 110, 174) 86.779%);;
+    border-radius: 30px;
+    color: white;  
+  }
+}
+.body4{
+  width: 80%;
+  height: 520px;
+  background-color: white;
+  margin-left: 10%;
+  float: left;
+  position: relative;
+  margin-top:40px;
+  z-index: 1000;
+  border-radius: 30px;
+
+  .airight{
+    width: 60%;
+    float: left;
+    height:100%;
+  }
+  .aileft{
+    background-color: rgb(213, 213, 213);
+    width: 40%;
+    height: 100%;
+    float: left;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+}
+.back5{
+  background: url('../img/back5.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 1000px;
+  position: relative;
+  margin-top: 0px;
   z-index: 201;
 }
-
-.globalindex table tr th {
-  text-align: center;
-
-}
-
-.globalindex h3 {
-  color: #ffffff;
-  font-size: 25px;
-  font-weight: bolder;
-}
-
-.globalindex p {
-  font-weight: bolder;
-}
-
-.value1 {
-  font-size: 35px;
-  color: #ffffff;
-}
-
-.value2 {
+.classbody{
+  width: 80%;
+  height: 600px;
   position: relative;
-  background-image: linear-gradient(45deg, #25bbbf 0%, #1f6eae 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  /*背景被裁减为文字的前景色*/
-  -webkit-text-fill-color: transparent;
-  /*文字填充为透明，优先级比color高。*/
-  color: #25b6be;
-  font-size: 25px;
-  /* float: left; */
-  text-align: center;
-
-}
-
-.edleft {
-  position: absolute;
-  z-index: 3001;
-  background-color: #ffffff;
-  width: 30px;
-  height: 30px;
   float: left;
-  margin-top: 190px;
-  margin-left: 20px;
-  border: none;
-  border-radius: 5px;
-}
+  background-color: transparent;
+  margin-left: 10%;
+  margin-top: 80px;
 
-.edright {
-  position: absolute;
-  z-index: 3001;
-  background-color: #ffffff;
-  width: 30px;
-  height: 30px;
-  float: right;
-  margin-top: 190px;
-  left: 1150px;
-  border-radius: 5px;
-  border: none;
-}
-
-/*智能推荐和投资组合*/
-.Testcombin {
-  width: 1200px;
-  height: 360px;
-  /* border: 1px solid white; */
-  margin-top: 40px;
-  margin-left: 160px;
-}
-
-.recommend {
-  height: 360px;
-  width: 450px;
-  border: 1px solid #949faa;
-  background-color: #113775;
-  float: left;
-
-  .testimonial_form {
-    .tab {
-      padding: 10px;
-      width: 450px;
-
-      .optional {
-        background-color: #0bfaff;
-        border: none;
-        transform: skew(-10deg);
-        color: #0f2c61;
-        font-weight: bolder;
-        height: 20px;
-      }
-    }
-
-    .tab thead {
-      background: linear-gradient(270deg, #25bbbf 0%, #1f6eae 100%);
-      width: 430px;
-      color: #ffffff;
-      font-size: 15px;
-    }
-
-    .tab tbody {
-      /* position: absolute; */
-      background-color: transparent;
-      width: 430px;
-      color: white;
-      border: 2px solid #18598e;
-      margin-left: 10px;
-      margin-top: 10px;
-
-      .tab_body1 {
-        background-color: #10316a;
-        width: auto;
-        height: 30px;
-        width: 430px;
-        margin-left: 10px;
-        margin-right: 10px;
-        color: white;
-        font-weight: bolder;
-      }
-
-      .tab_body2 {
-        background-color: #165481;
-        height: 30px;
-        width: auto;
-        margin-left: 10px;
-        margin-right: 10px;
-        color: white;
-        font-weight: bolder;
-      }
-
-
-    }
-
-  }
-}
-
-.combination {
-  height: 360px;
-  width: 700px;
-  margin-left: 30px;
-  border: 1px solid #949faa;
-  background-color: #113775;
-  float: right;
-
-  /*智能组合*/
-  .comhead {
-    width: 550px;
-    height: 50px;
-  }
-
-  .comtitle {
-    color: white;
-    font-size: 30px;
-    font-weight: bolder;
-    width: auto;
+  .img1{
     float: left;
-    border-bottom: 1px solid #25bbbf;
-    margin-left: 20px;
-    margin-top: 10px;
   }
-
-  .combtn button {
+  .bodybtn{
+    background-color: white;
+    border-radius: 10px;
+    width: 80px;
+    height: 40px;
+    position: relative;
     float: right;
-    width: 200px;
-    height: 30px;
+    margin-top: 60px;
+    font-size: 20px;
     border: none;
-    background-image: url('../img/cte.png');
-    margin-top: 29px;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: bolder;
-    margin-right: -120px;
-  }
-
-  .combody {
-    margin-top: 20px;
-    width: 650px;
-    height: auto;
-    margin-left: 20px;
-
-    .com_btn {
-      background-color: transparent;
-      border: none;
-      margin-right: 30px;
-      color: white;
-      font-weight: bolder;
-      margin-top: 5px;
-    }
 
   }
 
-  .tab {
+}
+.coursenew{
+  width:100%;
+  height: 500px;
+  position: relative;
+  float: left;
+  background-color: transparent;
+  margin-top: 40px;
+}
+.imagebac{
+  width: 100%;
+  height: 250px;
+  background: url('../img/R-C.jpg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  position: relative;
+  float: left;
+
+}
+.cimg{ 
+    width: 30%;
+    height: 100%;
     position: relative;
-    width: 650px;
-    height: auto;
-    margin-top: 10px;
-    background-color: transparent;
+    float: left;  
+    margin-right: 5%;
+}
+.courselist{
+  width: 30%;
+  height: 100px;
+  float: left;
+  margin-right: 5%;
 
-    .tab_body1 {
-      background-color: #10316a;
-      margin-left: 5px;
-      padding-left: 3px;
-      width: 630px;
-      height: 30px;
-      margin-left: 10px;
-      margin-right: 10px;
-      color: #ff0000;
-      font-weight: bolder;
-    }
-
-    .tab_body2 {
-      background-color: #165481;
-      margin-left: 5px;
-      padding-left: 3px;
-      width: 630px;
-      height: 30px;
-      margin-left: 10px;
-      margin-right: 10px;
-      color: #ff0000;
-      font-weight: bolder;
-
-    }
-  }
-
-  .tab table {
-    width: 650px;
-    color: white;
-  }
-
-  .tab_hed {
-    color: #ffffff;
-    font-size: 15px;
-  }
-
-  .tab thead {
+  .p1{
+    width: 100%;
+    text-align: left;
     position: relative;
-    background: linear-gradient(270deg, #25bbbf 0%, #1f6eae 100%);
-    margin-bottom: 10px;
-    width: 650px;
-    height: 30px;
+    float: left;
+    padding-left: 20px;
     font-size: 20px;
   }
-
-  .tab tbody {
-    position: relative;
-    border: 2px solid #18598e;
-    width: 630px;
-    margin-top: 10px;
-    margin-left: 5px;
-  }
-
-
-}
-
-.rectitle {
-  margin-top: 20px;
-}
-
-.rectitle img {
-  width: 300px;
-  z-index: 10;
-}
-
-.rectitle h3 {
-  color: #ffffff;
-  font-size: 40px;
-  font-weight: bolder;
-  letter-spacing: 4px;
-  z-index: 20;
-  /* margin-top: px; */
-  box-shadow: #010c1a;
-}
-
-/*AI对话 财经快讯*/
-.dialogue {
-  margin-top: 40px;
-  margin-left: 160px;
-  margin-bottom: 40px;
-  height: 500px;
-  width: 1200px;
-
-  /*AI对话*/
-  .chat-content {
-    width: 700px;
-    height: 500px;
+  .p2{
+    width: 100%;
     float: left;
+    position: relative;
+    padding-left: 10px;
+    text-align: left;
+    font-size: 40px;
+    font-weight: 400;
+  }
+  .p3{
+    color: white;
+    font-size: 15px;
+    text-align: left;
+    float: left;
+    padding-left: 10px;
+    margin-top: 10px;
+    word-break: normal;/**默认浏览器的换行方式*/
 
-    /* border: 1px solid white;     */
-    .chat_header {
-      background: linear-gradient(45deg, #1f6eae 0%, #25bbbf 100%);
-      width: 700px;
-      height: 80px;
-      padding: 0;
-    }
-
-    .chat_header text {
-      color: #ffffff;
-      font-weight: bolder;
-      float: left;
-      margin-left: 30px;
-      margin-top: 20px;
-    }
-
-    .chat_body {
-      background-color: white;
-      width: 520px;
-      height: 420px;
-      float: left;
-
-      /*对话列表*/
-      .chatcontent {
-        width: 100%;
-        height: 250px;
-        padding: 20px;
-
-        /* ai内容 */
-        .word {
-          display: flex;
-          margin-bottom: 30px;
-
-          .el-icon {
-            width: 40px;
-            height: 40px;
-            color: #0f2c61;
-          }
-
-          .info {
-            margin-left: 10px;
-            text-align: left;
-            width: 200px;
-            height: auto;
-
-            .time {
-              font-size: 10px;
-              color: #8e8e8e;
-              margin: 0;
-              height: 20px;
-              line-height: 20px;
-              margin-top: -5px;
-            }
-
-            .info-content {
-              padding: 5px;
-              font-size: 14px;
-              position: relative;
-              color: #8e8e8e;
-              margin-top: 2px;
-              background-color: #e8e8e8;
-            }
-
-            /*三角形*/
-            .info-content::before {
-              position: absolute;
-              left: -8px;
-              top: 8px;
-              content: '';
-              border-right: 10px solid #e8e8e8;
-              border-top: 8px solid transparent;
-              border-bottom: 8px solid transparent;
-            }
-          }
-        }
-
-        /* 用户提问 */
-        .word-my {
-          display: flex;
-          justify-content: flex-end;
-          margin-bottom: 20px;
-          margin-top: 80px;
-
-          .el-icon {
-            width: 40px;
-            height: 40px;
-            color: #25bbbf;
-          }
-
-          .info {
-            margin-left: 10px;
-            text-align: right;
-            width: 200px;
-            height: auto;
-
-            .time {
-              font-size: 12px;
-              color: rgba(51, 51, 51, 0.8);
-              margin: 0;
-              height: 20px;
-              line-height: 20px;
-              margin-top: -5px;
-              margin-right: 10px;
-            }
-
-            .info-content {
-              max-width: 400px;
-              padding: 10px;
-              font-size: 14px;
-              float: right;
-              margin-right: 10px;
-              position: relative;
-              margin-top: 8px;
-              background: #25bbbf;
-              text-align: left;
-            }
-
-            .info-content::after {
-              position: absolute;
-              right: -8px;
-              top: 8px;
-              content: '';
-              border-left: 10px solid #25bbbf;
-              border-top: 8px solid transparent;
-              border-bottom: 8px solid transparent;
-            }
-          }
-        }
-      }
-
-      .chat_bottom {
-        width: 519px;
-        height: auto;
-        margin-top: 5px;
-        border-top: 2px solid #ededed;
-
-        .chat_input {
-          width: 500px;
-          height: auto;
-          outline: none;
-          text-align: left;
-          border: none;
-        }
-
-        .send_btn {
-          background-color: #ff0000;
-          border: none;
-          border-radius: 5px;
-          font-size: 16px;
-          font-weight: bolder;
-          color: white;
-          float: right;
-          margin-top: 100px;
-          margin-right: 5px;
-        }
-      }
-    }
-
-    .chat_right {
-      float: right;
-      width: 180px;
-      height: 420px;
-      margin-top: 0px;
-      background-color: #e8e8e8;
-      margin-left: 0px;
-
-      .title {
-        color: #414141;
-        font-size: 20px;
-        font-weight: bolder;
-        text-align: left;
-        margin-top: 10px;
-        margin-left: 5px;
-      }
-
-      .list {
-        font-size: 12px;
-        color: #6e6e6e;
-        text-align: left;
-        word-break: normal;
-        margin-left: 5px;
-      }
-    }
   }
 
-  .news_content {
-    width: 480px;
-    height: 500px;
-    border: 1px solid white;
-    float: right;
-
-    .news_header {
-      background: linear-gradient(25deg, #25bbbf 0%, #1f6eae 100%);
-      width: 480px;
-      height: 80px;
-
-      /* 财经快讯 */
-      .title {
-        color: white;
-        font-size: 35px;
-        text-align: left;
-        font-weight: bolder;
-        margin-top: 10px;
-        float: left;
-        margin-left: 10px;
-      }
-
-      .news_btn {
-        background: transparent;
-        /*透明背景*/
-        border: 1px solid white;
-        color: white;
-        float: right;
-        margin-right: 20px;
-        margin-top: 25px;
-        font-weight: bolder;
-      }
-
-    }
-
-    .news_list {
-      width: 480px;
-      height: 420px;
-      padding: 0;
-      text-align: left;
-      background-color: white;
-
-      .list {
-        position: relative;
-        float: left;
-        width: 100%;
-        height: 100px;
-
-        .title {
-          position: relative;
-          ;
-          width: 400px;
-          text-align: left;
-          color: #ff0000;
-          margin-left: 0;
-          word-break: normal;
-          font-size: 15px;
-
-        }
-
-        .absrtact {
-          width: 420px;
-          color: #848b9e;
-          text-align: left;
-          font-size: 10px;
-
-        }
-      }
 
 
-
-
-    }
-
-  }
 }

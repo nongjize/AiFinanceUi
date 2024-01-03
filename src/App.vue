@@ -19,10 +19,12 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  
- 
+  color: #2c3e50; 
+  margin-top: 0;
+  margin-left: 0;
+  padding: 0px;
 }
+
 @import url('element-plus/theme-chalk/index.css');
 
 </style>

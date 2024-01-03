@@ -1,220 +1,639 @@
-.bg {
-  position: absolute;
-  width: 100%;
-  height: auto;
+* {
+  background-color: rgba(0, 0, 0, 0);
   margin: 0;
-  background: url(../../img/otherbac.jpg);
-  background-size: cover;
+}
+
+.back1 {
+  background: url('../img/back1.png');
+  width: 100%;
+  height: 900px;
+  background-size: 100% 100%;
+  position: relative;
+  float: left;
   background-repeat: no-repeat;
-  overflow: hidden;
-  padding: 0;
+}
 
-  /*导航栏*/
-  .header {
-    width: 1200px;
-    height: auto;
-    margin-left: 160px;
+/* 导航栏 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  /* border: 1px solid red; */
+  background-color: transparent;
+  color: black;
+  font-family: '思源黑体 CN';
+  position: relative;
+  margin-top: 125px;
+  margin-left: 6%;
+  margin-right: 6%;
+  font-size: 25px;
+  font-weight: 700;
+  /*吸顶效果*/
+  position: sticky;
+  position: -webkit-sticky;
+  /*!*兼容 -webkit 内核的浏览器*!
+  top:5px;                   !*必须设一个值，否则不生效*!*/
+}
+
+.headerleft {
+  list-style: none;
+  width: 160px;
+  float: left;
+}
+
+.headerleft li::before {
+  background-image: url('../img/pbac.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: inline-block; 
+  width: 45px;
+  height: 45px;
+  vertical-align: middle;
+}
+
+.headermiddle {
+  width: auto;
+  float: left;
+  border: none;
+  background-color: transparent;
+  z-index: 1001;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  font-family: '思源黑体 CN';
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.btn:hover {
+  color: white;
+  background: none;
+}
+
+.btn::before {
+  color: #000000;
+}
+
+.btn:focus {
+  border-radius: 16px;
+  background: linear-gradient(135.00deg, rgb(37, 187, 191) -24.913%, rgb(37, 187, 191) -23.486%, rgb(31, 110, 174) 124.693%, rgb(31, 110, 174) 124.912%);
+}
+
+.btn:active {
+  border-radius: 16px;
+  background: linear-gradient(135.00deg, rgb(37, 187, 191) -24.913%, rgb(37, 187, 191) -23.486%, rgb(31, 110, 174) 124.693%, rgb(31, 110, 174) 124.912%);
+
+}
+.btn:link{
+  border-radius: 16px;
+  background: linear-gradient(135.00deg, rgb(37, 187, 191) -24.913%, rgb(37, 187, 191) -23.486%, rgb(31, 110, 174) 124.693%, rgb(31, 110, 174) 124.912%);
+
+}
+
+/* 搜索框 */
+.headerright {
+  width: 184px;
+  height: 300px;
+  /* border: 1px solid black; */
+  margin-top: 255px;
+  float: left;
+  z-index: 2001;
+
+  position: relative;
+
+  .sinput {
+    width: 140px;
+    height: 30px;
+    margin-left: -80px;
+    border: 3px solid rgb(31, 110, 174);
+    border-radius: 20px;
+  }
+
+  .icon {
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    background-image: url('../../img/search.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 10px;
+    left: 90px;
+    z-index: 2;
+  }
+}
+
+.bbody {
+  height: 515px;
+  margin-left: 8%;
+  margin-right: 6%;
+  position: relative;
+  /* border: 1px solid black; */
+  margin-top: 120px;
+}
+
+.title1 {
+  float: left;
+  margin-top: -20px;
+  position: relative;
+  width: 40%;
+}
+
+.btn1 {
+  background: url(../img/btn1.png);
+  width: 195.74px;
+  height: 46.1px;
+  float: left;
+  font-family: 黑体;
+  color: white;
+  border: none;
+  position: relative;
+  margin-top: 300px;
+  margin-left: -400px;
+  font-size: 27px;
+  font-weight: 400px;
+}
+
+.bbodyleft {
+  width: 50%;
+  height: 412px;
+  float: left;
+  background: url('../img/radiusbac.png');
+  border-radius: 10px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-top: -20px;
+
+  .img1 {
+    float: left;
+    top: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    margin-left: -10px;
+  }
+
+  .img2 {
+    float: right;
+    top: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+    margin-right: -32px;
+  }
+}
+
+.bbodyright {
+  float:left;
+  width: 40%;
+  height: 412px;
+  position: relative;
+  margin-left: 5%;
+  margin-top: -20px;
+
+  .title1 {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 262px;
     margin-top: 20px;
+  }
+  .btn1 {
+    background: url(../img/btn1.png);
+    width: 195.74px;
+    height: 46.1px;
+    float: left;
+    font-family: 黑体;
+    color: white;
+    border: none;
+    position: relative;
+    margin-top: 60px;
+    margin-left: 0px;
+    font-size: 27px;
+    font-weight: 400px;
+  }
 
-    .personbtn {
-      width: 125px;
-      height: 60px;
-      margin-right: 40px;
-    }
+}
 
-    .personbtn img {
-      width: 60px;
-      float: left;
-      margin-left: 1px;
-    }
+.rmenu {
+  width: 183px;
+  height: 512px;
+  position: absolute;
+  border-radius: 10px;
+  background: linear-gradient(114.70deg, rgb(15, 94, 157) 21.205%, rgb(15, 94, 157) 21.289%, rgb(13, 140, 143) 78.402%, rgb(13, 140, 143) 78.795%);
+  z-index: 1001;
 
-    .personbtn a {
-      color: #ffffff;
+}
+
+.rmenu ul li {
+  list-style: none;
+  color: rgb(255, 255, 255);
+  font-family: 思源黑体 CN;
+  font-size: 26.71px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.rmenu ul {
+  margin-top: 20px;
+  padding-bottom: 60px;
+
+}
+
+.rmenu ul p {
+  color: rgb(255, 255, 255);
+  text-align: left;
+  font-size: 15px;
+}
+
+.rmenu ul img {
+  float: left;
+  position: absolute;
+  margin-left: -118px;
+  background-size: auto 100%;
+}
+
+.underline {
+  width: 131px;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  border-radius: 1px;
+}
+
+.classimg {
+  background-color: white;
+  width: 76%;
+  height: 100%;
+  float: left;
+  margin-left: 180px;
+  position: relative;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 505;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.back2 {
+  width: 100%;
+  height: 480px;
+  background: url('../img/back2.png');
+  position: relative;
+  background-size: 100% 100%;
+  margin-top: 80px;
+  float: left;
+  background-repeat: no-repeat;
+}
+
+.quoimg {
+  float: left;
+  margin-left: 130.33px;
+  position: relative;
+  margin-top: -180px;
+}
+.quomain {
+  width: 80%;
+  margin-left: 10%;
+  height: 500px;
+  background-color: transparent;
+  position: relative;
+  display: block;
+  margin-top: -140px;
+  /* border: 1px solid black; */
+  z-index: 1000;
+
+  .left {
+    float: left;
+    position: relative;
+    left: 40px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -80px;
+  }
+
+  .right {
+    float: left;
+    position: relative;
+    right: -80px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -80px;
+
+  }
+}
+
+.carousel {
+  float: left;
+  background-color: transparent;
+  width: 80%;
+  margin-left: 10px;
+  height: 100%;
+  position: relative;
+  margin-top: -80px;
+  
+
+  .box {
+    width: 14%;
+    height: 60%;
+    top: 50%;
+    left: 80px;    
+    transform: translate(-50%, -50%);
+    background: url('../img/inbac.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-left: 40px;
+    float: left;
+
+    img {
       float: right;
-      margin-top: 17px;
-      text-decoration: none;
-    }
+      position: absolute;
+      width: 70%;
+      height: auto;
+      right: 5px;
+      bottom: 5px;
+      z-index: 501;
 
-    .search {
-      width: 250px;
-      height: 40px;
-      margin-top: 10px;
-      float: right;
-      margin-left: 50px;
     }
   }
 
-  /* 视频播放器和基础知识 */
-  .main {
-    width: auto;
-    height: auto;
-    display: flex;
-    margin-top: 60px;
-    margin-left: 160px;
-    margin-bottom: 30px;
+  .box:hover {
+    width: 20%;
+    height: 62%;
 
-    .video-and-knowledge {
-      width: 800px;
-      height: 1200px;
-      /* border: 1px solid white; */
-      display: flex;
-
-      .video {
-        width: 800px;
-        height: auto;
-
-        /* 标题 */
-        .headline {
-          width: 800px;
-          height: 110px;
-          /* border: 1px solid white; */
-          text-align: left;
-          display: flex;
-
-          .tit {
-            font-size: 40px;
-            color: white;
-            font-weight: bolder;
-            border-left: 4px solid;
-            border-radius: 10px;
-            border-image: linear-gradient(to bottom, #1f6eae, #25bbbf)1;
-            padding-left: 10px;
-            float: left;
-          }
-
-          .vid {
-            color: white;
-            margin-left: 8px;
-            margin-top: 40px;
-          }
-
-        }
-
-        /* 播放器 */
-        .player {
-          width: 800px;
-          height: 500px;
-          margin-top: 20px;
-
-
-        }
-
-        /* 基础知识 */
-        .knowledge {
-          width: auto;
-          height: 500px;
-          margin-left: 17px;
-          margin-right: 17px;
-          margin-bottom: 20px;
-          border: 1px solid #848b9e;
-          background-color: #113978;
-          position: relative;
-
-          .title {
-            margin-top: 20px;
-            height: 100px;
-            width: auto;
-            border-bottom: 5px solid #2185b3;
-            margin-left: 20px;
-            margin-right: 20px;
-
-            .tit {
-              color: white;
-              font-weight: bolder;
-              font-size: 40px;
-              margin-top: -20px;
-
-            }
-
-          }
-
-          /*知识列表*/
-          .list {
-            width: auto;
-            height: 330px;
-            border: 2px solid #185393;
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-top: 20px;
-            background-color: transparent;
-            text-align: left;
-
-          }
-
-          .list ul li {
-            color: white;
-            font-size: 25px;
-            font-weight: bold;
-            list-style: none;
-            list-style-image: url('../img/circle.png');
-            padding: 10px;
-            margin-left: 10px;
-          }
-        }
-      }
-
-    }
-    .popular-video{
-      float: right;
-      width: auto;
-      height: 1200px;
-      margin-left: 30px;
-      margin-right: 0;
-      /* border: 1px solid #848b9e; */
-
-       /* 标题 */
-       .headline {
-        width: 400px;
-        height: 110px;
-        /* border: 1px solid white; */
-        text-align: left;
-        display: flex;
-
-        .tit {
-          font-size: 40px;
-          color: white;
-          font-weight: bolder;
-          border-left: 4px solid;
-          border-radius: 10px;
-          border-image: linear-gradient(to bottom, #1f6eae, #25bbbf)1;
-          padding-left: 10px;
-          float: left;
-        }
-
-        .vid {
-          color: white;
-          margin-left: 8px;
-          margin-top: 40px;
-        }
-
-      }
-      /* 视频列表 */
-      .video-list{
-        width: 400px;
-        height: 1000px;
-        margin-top: 20px;
-        border: 1px solid #848b9e;
-        background-color: #113978;
-        text-align: left; 
-        color: white;    
-        
-
-        
-      }
-      .video-list ul li{
-        list-style: none;
-
-      }
-      .p1{
-        color: white;
-      }
-      .p2{
-        color: #a0b2cd;
-      }
+    .p1 {
+      color: black;
+      padding-bottom: 5px;
+      border-bottom: 5px solid black;
+      border-radius: 3px;
+      text-align: left;
+      left: 60px;
       
     }
 
+    .wb {
+      color: white;
+      z-index: 1001;
+    }
+
+    .gbbtn {
+      background-color: #FFFFFF;
+      color: black;
+      border-radius: 10px;
+      z-index: 1001;
+    }
   }
+}
+
+.indexs {
+  height: 60%;
+  width: 95%;
+  /* border: 1px solid black; */
+  position: absolute;
+}
+
+.p1 {
+  width: 100px;
+  height: 25px;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  margin-top: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.p2 {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  position: relative;
+  margin-top: 10px;
+  padding-left: 10px;
+}
+
+.text1 {
+  color: white;
+  font-size: 15px;
+  padding-left: 10px;
+  width: 100%;
+  text-align: left;
+  position: relative;
+  margin-top: 10px;
+}
+
+.wb {
+  color: transparent;
+  position: relative;
+  top: 50%;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.gbbtn {
+  border: none;
+  background-color: transparent;
+  position: relative;
+  top: 65%;
+  color: transparent;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+/* AI对话 */
+.back3 {
+  width: 100%;
+  height: 720px;
+  background: url('../img/back3.png');
+  position: relative;
+  background-size: 100% 100%;
+  margin-top: 0px;
+  float: left;
+  background-repeat: no-repeat;
+  z-index: 1001;
+
+  .btngroup {
+    margin-left: 10%;
+    width: 60%;
+    height: 60px;
+    border-bottom: 5px solid rgb(186, 188, 204);
+    float: left;
+    position: relative;
+    margin-top: 80px;
+  }
+
+  .group1 {
+    color: #75767f;
+    font-size: 30px;
+    font-weight: 500;
+    float: left;
+    width: 150px;
+    border: none;
+    margin-right: 20px;
+  }
+
+  .group1:active {
+    background: linear-gradient(-13.50deg, rgb(37, 187, 191) 13.221%, rgb(37, 187, 191) 13.922%, rgb(31, 110, 174) 86.671%, rgb(31, 110, 174) 86.779%);
+    ;
+    border-radius: 30px;
+    color: white;
+  }
+
+  .group1:focus {
+    background: linear-gradient(-13.50deg, rgb(37, 187, 191) 13.221%, rgb(37, 187, 191) 13.922%, rgb(31, 110, 174) 86.671%, rgb(31, 110, 174) 86.779%);
+    ;
+    border-radius: 30px;
+    color: white;
+  }
+}
+
+.aibody {
+  width: 80%;
+  height: 420px;
+  background-color: white;
+  margin-left: 10%;
+  float: left;
+  position: relative;
+  margin-top:40px;
+  z-index: 1000;
+  border-radius: 30px;
+
+  .aileft{
+    width: 60%;
+    float: left;
+    height:100%;
+  }
+  .airight{
+    background-color: rgb(213, 213, 213);
+    width: 40%;
+    height: 100%;
+    float: left;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+}
+
+.back4 {
+  width: 100%;
+  height: 880px;
+  background: url('../img/back4.png');
+  position: relative;
+  background-size: 100% 100%;
+  float: left;
+  background-repeat: no-repeat;
+  z-index: 201;
+
+
+  .classbody {
+    width: 80%;
+    height: 600px;
+    position: relative;
+    float: left;
+    background-color: transparent;
+    margin-left: 10%;
+    margin-top: -60px;
+
+    .img1 {
+      float: left;
+      position: relative;
+      margin-top: 160px;
+    }
+
+    .bodybtn {
+      background-color: white;
+      border-radius: 10px;
+      width: 80px;
+      height: 40px;
+      position: relative;
+      float: right;
+      margin-top: 230px;
+      font-size: 20px;
+      border: none;
+      font-weight: bold;
+      color: #0f7297;
+      font-family: 'SourceHanSansCN';
+
+    }
+
+  }
+
+  .coursenew {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    float: left;
+    background-color: transparent;
+    margin-top: 40px;
+  }
+
+  .imagebac {
+    width: 100%;
+    height: 250px;
+    background: url('../img/R-C.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    float: left;
+
+  }
+
+  .cimg {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    float: left;
+    margin-right: 5%;
+  }
+
+  .courselist {
+    width: 30%;
+    height: 100px;
+    float: left;
+    margin-right: 5%;
+
+    .p1 {
+      width: 100%;
+      text-align: left;
+      position: relative;
+      margin-top: 20px;
+      float: left;
+      padding-left: 10px;
+      font-size: 20px;
+      color: white;
+    }
+
+    .p2 {
+      width: 100%;
+      float: left;
+      position: relative;
+      padding-left: 10px;
+      text-align: left;
+      font-size: 40px;
+      font-weight: 400;
+      color: white;
+    }
+
+    .p3 {
+      color: white;
+      font-size: 15px;
+      text-align: left;
+      float: left;
+      padding-left: 10px;
+      margin-top: 10px;
+      word-break: normal;
+      /**默认浏览器的换行方式*/
+
+    }
+  }
+
 
 
 }

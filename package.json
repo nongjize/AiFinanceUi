@@ -14,8 +14,9 @@
     "core-js": "^3.8.3",
     "element": "^0.1.4",
     "element-plus": "^2.4.3",
+    "emoji-vue": "^0.2.4",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3",
+    "vue-router": "^4.0.13",
     "vue-video-player": "^6.0.0",
     "vuex": "^4.0.0"
   },

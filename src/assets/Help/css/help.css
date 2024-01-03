@@ -1,260 +1,582 @@
-.bg {
-  position: absolute;
-  width: 100%;
-  height: auto;
+* {
+  background-color: rgba(0, 0, 0, 0);
   margin: 0;
-  background: url('../../img/otherbac.jpg');
-  background-size: cover;
+}
+
+.back1 {
+  background: url('../img/back1.png');
+  width: 100%;
+  height: 900px;
+  background-size: 100% 100%;
+  position: relative;
+  float: left;
   background-repeat: no-repeat;
-  overflow: hidden;
-  padding: 0;
+}
 
-  .header {
-    width: 1200px;
-    height: auto;
-    margin-left: 160px;
-    margin-top: 20px;
+/* 导航栏 */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 45px;
+  /* border: 1px solid red; */
+  background-color: transparent;
+  color: black;
+  font-family: '思源黑体 CN';
+  position: relative;
+  margin-top: 125px;
+  margin-left: 6%;
+  margin-right: 6%;
+  font-size: 25px;
+  font-weight: 700;
+  /*吸顶效果*/
+  position: sticky;
+  position: -webkit-sticky;
+  /*!*兼容 -webkit 内核的浏览器*!
+  top:5px;                   !*必须设一个值，否则不生效*!*/
+}
 
-    .personbtn {
-      width: 125px;
-      height: 60px;
-      margin-right: 40px;
-    }
+.headerleft {
+  list-style: none;
+  width: 160px;
+  float: left;
+}
 
-    .personbtn img {
-      width: 60px;
-      float: left;
-      margin-left: 1px;
-    }
+.headerleft li::before {
+  background-image: url('../img/pbac.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: inline-block;
+  content: '';
+  width: 45px;
+  height: 45px;
+  vertical-align: middle;
+}
 
-    .personbtn a {
-      color: #ffffff;
-      float: right;
-      margin-top: 17px;
-      text-decoration: none;
-    }
+.headermiddle {
+  width: auto;
+  float: left;
+  border: none;
+  background-color: transparent;
+  z-index: 1001;
+}
 
-    .search {
-      width: 250px;
-      height: 40px;
-      margin-top: 10px;
-      float: right;
-      margin-left: 50px;
-    }
+.btn {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  font-family: '思源黑体 CN';
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.btn:hover {
+  color: white;
+  background: none;
+}
+
+.btn::before {
+  color: #000000;
+}
+
+.btn:focus {
+  border-radius: 16px;
+  background: linear-gradient(135.00deg, rgb(37, 187, 191) -24.913%, rgb(37, 187, 191) -23.486%, rgb(31, 110, 174) 124.693%, rgb(31, 110, 174) 124.912%);
+}
+
+.btn:active {
+  border-radius: 16px;
+  background: linear-gradient(135.00deg, rgb(37, 187, 191) -24.913%, rgb(37, 187, 191) -23.486%, rgb(31, 110, 174) 124.693%, rgb(31, 110, 174) 124.912%);
+
+}
+
+/* 搜索框 */
+.headerright {
+  width: 184px;
+  height: 300px;
+  /* border: 1px solid black; */
+  margin-top: 255px;
+  float: left;
+  z-index: 2001;
+
+  position: relative;
+
+  .sinput {
+    width: 140px;
+    height: 30px;
+    margin-left: -80px;
+    border: 3px solid rgb(31, 110, 174);
+    border-radius: 20px;
   }
 
-  .helpmain {
-    position: relative;
-    width: 1200px;
-    margin-left: 160px;
-    height: auto;
-    margin-top: 80px;
+  .icon {
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    background-image: url('../../img/search.png');
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 10px;
+    left: 90px;
+    z-index: 2;
+  }
+}
 
-    .introduce {
+.bbody {
+  height: 515px;
+  margin-left: 8%;
+  margin-right: 6%;
+  position: relative;
+  /* border: 1px solid black; */
+  margin-top: 120px;
+}
+
+.helpmain {
+  width: 1200px;
+  height: auto;
+  position: relative;
+  margin-top: 700px;
+  left: 50%;
+  z-index: 1000;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+
+  .introduce {
+    width: 1200px;
+    height: auto;
+    float: left;
+
+    .h1 {
+      color: black;
+      margin-top: 30px;
+      font-size: 35px;
+      position: relative;
       width: 1200px;
-      height: 450px;
-      float: left;
-      .h1 {
-        color: white;
-        margin-top: 60px;
-        font-size: 35px;
-        position: relative;
-        width: 1200px;
-        text-align: center;
-      }
+      text-align: center;
+      font-weight: bold;
 
-      .p1 {
-        color: white;
-        line-height: 2.0rem;
-        font-size: 20px;
-        position: relative;
-        width: 1200px;
-        text-align: center;
-      }
+    }
+
+    .p1 {
+      color: black;
+      line-height: 2.0rem;
+      font-size: 20px;
+      position: relative;
+      width: 1200px;
+      text-align: center;
+      margin-top: 20px;
     }
   }
+}
 
-  .trait {
-    width: 1200px;
-    height: 500px;
-    margin-top: 60px;
-    /* border: 1px solid #365575; */
+.trait {
+  width: 1200px;
+  height: 500px;
+  margin-top: 60px;
+  /* border: 1px solid #365575; */
 
-    .trait1 {
-      height: 200px;
-      width: 520px;
-      background-color: #0b346b;
-      float: left;
-      border: 1px solid #365575;
-      margin-left: 35px;
+  .trait1 {
+    height: 200px;
+    width: 520px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0,0.1);
+    float: left;
+    margin-left: 35px;
+    margin-top: 40px;
+   
 
-      .pic {
-        float: left;
-        margin-left: 15px;
-        margin-top: 15px;
-      }
-
-      .h1 {
-        color: #ffffff;
-        float: left;
-      }
-
-      .p1 {
-        color: #ffffff;
-        text-align: left;
-        float: left;
-        font-size: 20px;
-        margin-top: 10px;
-        margin-left: 20px;
-      }
-
-    }
-
-    .trait2 {
-      height: 200px;
-      width: 520px;
-      background-color: #0b346b;
-      float: left;
-      margin-left: 90px;
-      border: 1px solid #365575;
-
-      .pic {
-        float: left;
-        margin-left: 15px;
-        margin-top: 15px;
-      }
-
-      .h1 {
-        color: #ffffff;
-        float: left;
-      }
-
-      .p1 {
-        color: #ffffff;
-        text-align: left;
-        float: left;
-        font-size: 20px;
-        margin-top: 10px;
-        margin-left: 30px;
-      }
-    }
-
-    .trait3 {
-      height: 200px;
-      width: 520px;
-      background-color: #0b346b;
-      float: left;
-      margin-top: 90px;
-      border: 1px solid #365575;
-      margin-left: 35px;
-
-      .pic {
-        float: left;
-        margin-left: 15px;
-        margin-top: 15px;
-      }
-
-      .h1 {
-        color: #ffffff;
-        float: left;
-      }
-
-      .p1 {
-        color: #ffffff;
-        text-align: left;
-        float: left;
-        font-size: 20px;
-        margin-top: 10px;
-        margin-left: 30px;
-      }
-    }
-
-    .trait4 {
-      height: 200px;
-      width: 520px;
-      background-color: #0b346b;
-      float: left;
-      margin-left: 90px;
-      margin-top: 90px;
-      border: 1px solid #365575;
-
-      .pic {
-        float: left;
-        margin-left: 15px;
-        margin-top: 15px;
-      }
-
-      .h1 {
-        color: #ffffff;
-        float: left;
-      }
-
-      .p1 {
-        color: #ffffff;
-        text-align: left;
-        float: left;
-        font-size: 20px;
-        margin-top: 10px;
-        margin-left: 30px;
-      }
-    }
   }
 
-  .problem {
-    width: 1130px;
-    height: 600px;
-    margin-top: 80px;
-    margin-left: 40px;
-    /* border: 1px solid white; */
+  .trait2 {
+    height: 200px;
+    width: 520px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0,0.1);
+    float: left;
+    margin-left: 90px;
+    margin-top: 40px;
+
+   
+  }
+
+  .trait3 {
+    height: 200px;
+    width: 520px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0,0.1);
+    float: left;
+    margin-top: 90px;
+    margin-left: 35px;
     
-    .headline{
-      float: left;
-      width: 1130px;
-      height: 100px;
-      /* border: 1px solid white; */
+  }
 
-      .tit{
-        float: left;
-        border-left: 4px solid;
-        padding-left: 10px;
-        font-size: 40px;
-        color: white;
-        border-image: linear-gradient(to bottom,#1f6eae,#25bbbf) 2;
-      }
-      .vid{
-        float: left;
-        margin-left: 10px;
-        color: white;
-        margin-top: 40px;
-        text-align: left;
-      }
+  .trait4 {
+    height: 200px;
+    width: 520px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0,0.1);
+    float: left;
+    margin-left: 90px;
+    margin-top: 90px;   
+  }
+  .pic {
+    float: left;
+    margin-left: 15px;
+    margin-top: 15px;
+    opacity: 1;
+  }
+
+  .h1 {
+    color: black;
+    float: left;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+
+  .p1 {
+    color: black;
+    text-align: left;
+    position: absolute;
+    float: left;
+    font-size: 20px;
+    margin-top: 70px;
+    margin-left: 70px;
+  }
+}
+
+.problem {
+  width: 1130px;
+  height: 600px;
+  margin-top: 80px;
+  margin-left: 40px;
+  margin-bottom: 40px;
+  /* border: 1px solid white; */
+
+  .headline {
+    float: left;
+    width: 1130px;
+    height: 100px;
+    margin-top: 60px;
+    /* border: 1px solid white; */
+
+    .tit {
+      float: left;
+      border-left: 4px solid;
+      padding-left: 10px;
+      font-size: 40px;
+      color: black;
+      border-image: linear-gradient(to bottom, #1f6eae, #25bbbf) 2;
     }
 
-    /* 问题列表 */
-    .problem-list{
-      width: 1120px;
-      height: 450px;
-      /* border: 1px solid white; */
+    .vid {
+      float: left;
       margin-left: 10px;
+      color: black;
+      margin-top: 15px;
+      text-align: left;
+    }
+  }
+
+  /* 问题列表 */
+  .problem-list {
+    width: 1120px;
+    height: 450px;
+    /* border: 1px solid white; */
+    margin-left: 10px;
+    margin-top: 20px;
+    float: left;
+    margin-bottom: 40px;
+
+    .list-btn {
+      width: 1120px;
+      background: transparent;
+      height: 90px;
+      font-size: 20px;
+      font-weight: bolder;
+      text-align: left;
+      float: left;
+      color: black;
+      border: none;
+      border-top: 2px solid rgba(0, 0, 0,0.2);
+      letter-spacing: 5px;
+
+     
+    }
+  }
+}
+
+
+
+
+.rmenu {
+  width: 183px;
+  height: 512px;
+  position: absolute;
+  border-radius: 10px;
+  background: linear-gradient(114.70deg, rgb(15, 94, 157) 21.205%, rgb(15, 94, 157) 21.289%, rgb(13, 140, 143) 78.402%, rgb(13, 140, 143) 78.795%);
+  z-index: 1001;
+
+}
+
+.rmenu ul li {
+  list-style: none;
+  color: rgb(255, 255, 255);
+  font-family: 思源黑体 CN;
+  font-size: 26.71px;
+  font-weight: 700;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.rmenu ul {
+  margin-top: 20px;
+  padding-bottom: 60px;
+
+}
+
+.rmenu ul p {
+  color: rgb(255, 255, 255);
+  text-align: left;
+  font-size: 15px;
+}
+
+.rmenu ul img {
+  float: left;
+  position: absolute;
+  margin-left: -118px;
+  background-size: auto 100%;
+}
+
+.underline {
+  width: 131px;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  border-radius: 1px;
+}
+
+.classimg {
+  background-color: white;
+  width: 76%;
+  height: 100%;
+  float: left;
+  margin-left: 180px;
+  position: relative;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 505;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.back2 {
+  width: 100%;
+  height: 680px;
+  background: url('../img/back2.png');
+  position: relative;
+  background-size: 100% 100%;
+  margin-top: 300px;
+  float: left;
+  z-index: 201;
+  background-repeat: no-repeat;
+}
+
+.quoimg {
+  float: left;
+  margin-left: 130.33px;
+  position: relative;
+  margin-top: -180px;
+}
+
+.back3 {
+  width: 100%;
+  height: 620px;
+  background: url('../img/back3.png');
+  position: relative;
+  background-size: 100% 100%;
+  margin-top: 0px;
+  float: left;
+  background-repeat: no-repeat;
+  z-index: 1001;
+
+  .btngroup {
+    margin-left: 10%;
+    width: 60%;
+    height: 60px;
+    border-bottom: 5px solid rgb(186, 188, 204);
+    float: left;
+    position: relative;
+    margin-top: 80px;
+  }
+
+  .group1 {
+    color: #75767f;
+    font-size: 30px;
+    font-weight: 500;
+    float: left;
+    width: 150px;
+    border: none;
+    margin-right: 20px;
+  }
+
+  .group1:active {
+    background: linear-gradient(-13.50deg, rgb(37, 187, 191) 13.221%, rgb(37, 187, 191) 13.922%, rgb(31, 110, 174) 86.671%, rgb(31, 110, 174) 86.779%);
+    ;
+    border-radius: 30px;
+    color: white;
+  }
+
+  .group1:focus {
+    background: linear-gradient(-13.50deg, rgb(37, 187, 191) 13.221%, rgb(37, 187, 191) 13.922%, rgb(31, 110, 174) 86.671%, rgb(31, 110, 174) 86.779%);
+    ;
+    border-radius: 30px;
+    color: white;
+  }
+}
+
+.aibody {
+  width: 80%;
+  height: 520px;
+  background-color: white;
+  margin-left: 10%;
+  float: left;
+  position: relative;
+  margin-top:40px;
+  z-index: 1000;
+  border-radius: 30px;
+
+  .aileft{
+    width: 60%;
+    float: left;
+    height:100%;
+  }
+  .airight{
+    background-color: rgb(213, 213, 213);
+    width: 40%;
+    height: 100%;
+    float: left;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+  }
+}
+
+.back4 {
+  width: 100%;
+  height: 880px;
+  background: url('../img/back4.png');
+  position: relative;
+  background-size: 100% 100%;
+  float: left;
+  background-repeat: no-repeat;
+  z-index: 201;
+
+
+  .classbody {
+    width: 80%;
+    height: 600px;
+    position: relative;
+    float: left;
+    background-color: transparent;
+    margin-left: 10%;
+    margin-top: 80px;
+
+    .img1 {
+      float: left;
+      position: relative;
+      margin-top: 160px;
+    }
+
+    .bodybtn {
+      background-color: white;
+      border-radius: 10px;
+      width: 80px;
+      height: 40px;
+      position: relative;
+      float: right;
+      margin-top: 230px;
+      font-size: 20px;
+      border: none;
+      font-weight: bold;
+      color: #0f7297;
+      font-family: 'SourceHanSansCN';
+
+    }
+
+  }
+
+  .coursenew {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    float: left;
+    background-color: transparent;
+    margin-top: 40px;
+  }
+
+  .imagebac {
+    width: 100%;
+    height: 250px;
+    background: url('../img/R-C.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    float: left;
+
+  }
+
+  .cimg {
+    width: 30%;
+    height: 100%;
+    position: relative;
+    float: left;
+    margin-right: 5%;
+  }
+
+  .courselist {
+    width: 30%;
+    height: 100px;
+    float: left;
+    margin-right: 5%;
+
+    .p1 {
+      width: 100%;
+      text-align: left;
+      position: relative;
       margin-top: 20px;
       float: left;
-
-      .list-btn{
-        width: 1120px;
-        background: transparent;
-        height: 90px;
-        font-size: 20px;
-        font-weight: bolder;
-        text-align: left;
-        float: left;
-        color: white;
-        border: none;
-        border-top:2px solid #294a6a ;
-        letter-spacing: 5px;
-        
-      }
+      padding-left: 10px;
+      font-size: 20px;
+      color: white;
     }
 
-    
+    .p2 {
+      width: 100%;
+      float: left;
+      position: relative;
+      padding-left: 10px;
+      text-align: left;
+      font-size: 40px;
+      font-weight: 400;
+      color: white;
+    }
+
+    .p3 {
+      color: white;
+      font-size: 15px;
+      text-align: left;
+      float: left;
+      padding-left: 10px;
+      margin-top: 10px;
+      word-break: normal;
+      /**默认浏览器的换行方式*/
+
+    }
   }
+
 }

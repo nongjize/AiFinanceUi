@@ -1,3 +1,7 @@
+*{
+    margin: 0;
+    padding: 0;
+  }
 .back {
     position: absolute;
     width: 100%;
@@ -8,6 +12,8 @@
     background-repeat: no-repeat;
     overflow: hidden;
     padding: 0;
+    
+
 }
 
 /*导航栏*/
@@ -306,3 +312,4 @@
     height: 30px;
     color: white;
 }
+

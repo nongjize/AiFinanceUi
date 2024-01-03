@@ -38,7 +38,7 @@
           </el-input>
         </div>
       </el-menu>
-      <!-- 个人中心主要内容 -->
+      <!-- 内容 -->
       <div class="mainpart">
         <div class="center">
           <div class="centerleft">
@@ -161,15 +161,16 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    
+                    <td></td>                    
                   </tr>
                 </tbody>
               </table>
             </div>
-          </div>
+          </div>          
         </div>
+        <div></div>
       </div>
+
     </div>
   </div>
 </template>
