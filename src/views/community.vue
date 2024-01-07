@@ -5,49 +5,56 @@
     <div class="header">
       <!-- 导航左边 -->
       <ol class="headerleft">
-        <li @click="person">个人中心</li>
+        <li @click="GetRouterInfo('person')">个人中心</li>
       </ol>
       <div class="headermiddle">
         <el-button
           class="btn"
-          @click="index"
+          @click="GetRouterInfo('index')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >首页</el-button
         >
         <el-button
           class="btn"
-          @click="aistocks"
+          @click="GetRouterInfo('aistocks')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >AI股票</el-button
         >
         <el-button
           class="btn"
-          @click="investclass"
+          @click="GetRouterInfo('investclass')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >AI投资课堂</el-button
         >
         <el-button
           class="btn"
-          @click="community"
+          @click="GetRouterInfo('community')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >AI股民社区</el-button
         >
         <el-button
           class="btn"
-          @click="news"
+          @click="GetRouterInfo('news')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >新闻资讯</el-button
         >
         <el-button
           class="btn"
-          @click="helps"
+          @click="GetRouterInfo('help')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >帮助中心</el-button
         >
         <el-button
           class="btn"
-          @click="hidedra"
+          @click="GetRouterInfo('hidedra')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >卧虎藏龙</el-button
         >
       </div>
@@ -64,22 +71,279 @@
     <div class="bbody">
       <img src="../assets/Aistocks/img/title1.png" class="title1" />
       <button class="btn1">绑定账户 ></button>
-      <div class="bbodyright"></div>
+      <div class="bbodyright">
+        <div class="table">
+          <div class="btngroup">
+            <button class="tbtn">
+              <p>01</p>
+              热门个股
+              <img src="../assets/index/img/x2.png" />
+              <div class="line1">
+                <div class="dot1"></div>
+                <div class="dot1"></div>
+              </div>
+            </button>
+            <button class="tbtn">
+              <p>02</p>
+              热门主题
+              <img src="../assets/index/img/x2.png" />
+              <div class="line2">
+                <div class="dot2"></div>
+                <div class="dot2"></div>
+              </div>
+            </button>
+            <button class="tbtn">
+              <p>03</p>
+              热门概念
+              <img src="../assets/index/img/x2.png" />
+              <div class="line2">
+                <div class="dot2"></div>
+                <div class="dot2"></div>
+              </div>
+            </button>
+            <button class="mbtn">更多></button>
+          </div>
+          <div class="table-container">
+            <el-table
+              :data="tableData"
+              style="width: 90%"
+              height="100%"
+              :header-row-style="{ height: '60px', color: 'white' }"
+              :row-style="{ height: '60px' }"
+            >
+              <el-table-column
+                fixed
+                prop="namecode"
+                label="名称代码"
+                width="120"
+              />
+              <el-table-column prop="name" label="股吧" width="80" />
+              <el-table-column prop="price" label="最新价" width="80" />
+              <el-table-column prop="pricelimit" label="涨跌幅" width="80" />
+              <el-table-column prop="range" label="涨跌额" width="80" />
+              <el-table-column prop="masterhand" label="总手" width="80" />
+              <el-table-column prop="presentsale" label="现手" width="80" />
+              <el-table-column prop="buy" label="买入价" width="80" />
+              <el-table-column prop="sale" label="卖出价" width="80" />
+              <el-table-column prop="yesclosing" label="昨收" width="80" />
+              <el-table-column prop="volumetran" label="成交额" width="80" />
+              <el-table-column prop="turnoverrate" label="换手率" width="80" />
+              <el-table-column prop="swing" label="振幅" width="80" />
+              <el-table-column prop="ratio" label="量比" width="80" />
+              <el-table-column prop="acceleration" label="涨速" width="80" />
+              <el-table-column prop="peratio" label="市盈率" width="80" />
+              <el-table-column prop="earings" label="每股收益" width="120" />
+              <el-table-column prop="trade" label="所属行业版块" width="120" />
+              <el-table-column align="right" fixed="right">
+                <template #header> 加自选 </template>
+                <template #default="scope">
+                  <el-button
+                    size="small"
+                    class="cbtn"
+                    @click="handleEdit(scope.$index, scope.row)"
+                    >+自选</el-button
+                  >
+                </template>
+              </el-table-column>
+            </el-table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="back2">
     <!-- 行情指数 -->
     <img src="../assets/index/img/11.png" class="quoimg" />
+    <!-- 社区热榜 -->
+    <div class="hotlist">
+      <div class="hottitle">
+        <h1>社区热榜</h1>
+        <div class="line"></div>
+      </div>
+      <div class="list">
+        <div class="listitem" v-for="item in hotlists" :key="index">
+          <el-avatar
+            class="avatar"
+            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+          />
+          <el-button class="attentionbtn">关注</el-button>
+          <div class="item">
+            <h2>{{ item.name }}</h2>
+            <h4>{{ item.excerpts }}</h4>
+            <text>讨论数：{{ item.diccuss }}</text>
+            <text>浏览量：{{ item.view }}</text>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hotstock">
+      <div class="group">
+        <button class="hbtn">
+          热门个股<el-icon><CaretBottom /></el-icon>
+        </button>
+        <button class="hbtn">
+          热门主题<el-icon><CaretBottom /></el-icon>
+        </button>
+        <button class="hbtn">
+          热门概念<el-icon><CaretBottom /></el-icon>
+        </button>
+        <button class="hbtn">
+          我的关注<el-icon><CaretBottom /></el-icon>
+        </button>
+        <button class="hmore">
+          更多<el-icon><DArrowRight /></el-icon>
+        </button>
+      </div>
+      <div class="stocklist">
+        <table>
+          <tbody>
+            <tr v-for="(row, rowIndex) in rows" :key="rowIndex">
+              <td
+                v-for="(cell, cellIndex) in row"
+                :key="cellIndex"
+                :style="{
+                  backgroundColor: getBackgroundColor(rowIndex, cellIndex),
+                  color: 'white',
+                }"
+              >
+                {{ cell }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
   <div class="back3">
     <div class="btngroup">
       <button class="group1" @click="showAI">AI对话</button>
-      <button class="group1">财经快讯</button>
+      <button class="group1" @click="shownews">财经快讯</button>
       <button class="group1">热榜</button>
       <button class="group1">投顾</button>
     </div>
-    <div class="gbody">
-
+    <div class="body4">
+      <div class="aibody" v-show="Aidialog">
+        <div class="aileft">
+          <div class="botoom">
+            <div class="chat-content" ref="chatContent">
+              <div
+                class="chat-wrapper"
+                v-for="(item, index) in chatList"
+                :key="item.id"
+              >
+                <div class="chat-friend" v-if="item.uid !== '1001'">
+                  <div class="info-time">
+                    <img :src="item.headImg" alt="" />
+                    <span>{{ item.name }}</span>
+                    <span>{{ item.time }}</span>
+                  </div>
+                  <div class="chat-text" v-if="item.chatType == 0">
+                    <template v-if="isSend && index == chatList.length - 1">
+                      <span class="flash_cursor"></span>
+                    </template>
+                    <template v-else>
+                      <pre>{{ item.msg }}</pre>
+                    </template>
+                  </div>
+                  <div class="chat-img" v-if="item.chatType == 1">
+                    <img
+                      :src="item.msg"
+                      alt="表情"
+                      v-if="item.extend.imgType == 1"
+                      style="width: 100px; height: 100px"
+                    />
+                    <el-image
+                      :src="item.msg"
+                      :preview-src-list="srcImgList"
+                      v-else
+                    >
+                    </el-image>
+                  </div>
+                  <div class="chat-img" v-if="item.chatType == 2">
+                    <div class="word-file">
+                      <FileCard
+                        :fileType="item.extend.fileType"
+                        :file="item.msg"
+                      ></FileCard>
+                    </div>
+                  </div>
+                </div>
+                <div class="chat-me" v-else>
+                  <div class="info-time">
+                    <span>{{ item.name }}</span>
+                    <span>{{ item.time }}</span>
+                    <img :src="item.headImg" alt="" />
+                  </div>
+                  <div class="chat-text" v-if="item.chatType == 0">
+                    {{ item.msg }}
+                  </div>
+                  <div class="chat-img" v-if="item.chatType == 1">
+                    <img
+                      :src="item.msg"
+                      alt="表情"
+                      v-if="item.extend.imgType == 1"
+                      style="width: 100px; height: 100px"
+                    />
+                    <el-image
+                      style="max-width: 300px; border-radius: 10px"
+                      :src="item.msg"
+                      :preview-src-list="srcImgList"
+                      v-else
+                    >
+                    </el-image>
+                  </div>
+                  <div class="chat-img" v-if="item.chatType == 2">
+                    <div class="word-file">
+                      <FileCard
+                        :fileType="item.extend.fileType"
+                        :file="item.msg"
+                      ></FileCard>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chatInputs">
+              <input
+                class="inputs"
+                v-model="inputMsg"
+                @keyup.enter="sendText"
+              />
+              <el-button
+                class="send boxinput"
+                :disabled="isSend"
+                @click="sendText"
+              >
+                发送
+              </el-button>
+            </div>
+          </div>
+        </div>
+        <div class="airight">
+          <h1>大家都在问我</h1>
+          <ul>
+            <li v-for="item in questions" @click="selectItem(item)">
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 财经快讯 -->
+      <div class="newbody" v-show="newsList">
+        <div class="newbtngroup">
+          <button class="nbtn" @click="showflashnew">动态<el-icon><CaretBottom /></el-icon></button>
+          <button class="nbtn">关注<el-icon><CaretBottom /></el-icon></button>
+          <button class="refesh">刷新<el-icon><Refresh /></el-icon></button>
+        </div>
+        <div class="quicklist" v-show="newsflash">
+          <ul v-for="item in newsflashlists" :key="index">
+            <li>{{ item.headline }}</li>
+            <el-tag>{{ item.state }}</el-tag>
+            <text>{{ item.source }}</text>
+            <text>{{ item.read }}评</text>
+          </ul>          
+        </div>
+      </div>
     </div>
   </div>
   <div class="back4">
@@ -106,18 +370,23 @@
           <p class="p2"></p>
           <p class="p3"></p>
         </div>
-        <div class="courselist" style="margin-right: 0;">
+        <div class="courselist" style="margin-right: 0">
           <p class="p1"></p>
           <p class="p2"></p>
           <p class="p3"></p>
+        </div>
       </div>
     </div>
-  </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import { animation } from "@/util/util";
+import { getChatMsg, chatgpt, chatgpt_1 } from "@/api/getData";
+import HeadPortrait from "@/components/HeadPortrait.vue";
+import FileCard from "@/components/FileCard.vue";
+import { CaretBottom, DArrowRight,Refresh} from "@element-plus/icons";
 export default {
   name: "community",
   data() {
@@ -134,34 +403,168 @@ export default {
       shine4: false,
       images: [{ url: require("../assets/index/img/teacher1.png") }],
       courseimages: [{ url: require("../assets/index/img/R-C1.jpg") }],
-      AI: true,
+      Aidialog: false,
+      newsList: true,
+      newsflash:true,
+      //存储社区热榜
+      hotlists: [
+        {
+          name: "布衣书先生走天下",
+          title: "市场会涨多久",
+          excerpts: "创业板指",
+          diccuss: "16.62w",
+          view: "972W",
+        },
+        {
+          name: "布衣书先生走天下",
+          title: "市场会涨多久",
+          excerpts: "创业板指",
+          diccuss: "16.62w",
+          view: "972W",
+        },
+        {
+          name: "布衣书先生走天下",
+          title: "市场会涨多久",
+          excerpts: "创业板指",
+          diccuss: "16.62w",
+          view: "972W",
+        },
+        {
+          name: "布衣书先生走天下",
+          title: "市场会涨多久",
+          excerpts: "创业板指",
+          diccuss: "16.62w",
+          view: "972W",
+        },
+      ],
+      // 热门个股
+      rows: [
+        [
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+        ],
+        [
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+        ],
+        [
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+        ],
+        [
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+        ],
+        [
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+        ],
+        [
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+        ],
+        [
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+        ],
+        [
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+          "圣龙股份",
+          "23.38%",
+        ],
+      ],
+      newsflashlists:[
+        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
+        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
+        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
+        {headline:'中央金融工作会议：活跃资本市场',state:'新闻',source:'新华社',read:'408'},
+        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
+
+      ],
+      chatList: [],
+      inputMsg: "",
+      showEmoji: false,
+      frinedInfo: {},
+      srcImgList: [],
+      isSend: false,
     };
   },
   methods: {
-    index() {
-      this.$router.push("/index");
+    GetRouterInfo(url) {
+      var that = this;
+      that.$router.push({ path: "/" + url + "" });
+      this.className = "lun-img-two";
+      setTimeout(() => {
+        this.className = "lun-img";
+      }, 300);
     },
-    aistocks() {
-      this.$router.push("/aistocks");
+    getBackgroundColor(rowIndex) {
+      // 根据行索引和列索引判断背景颜色
+      if (rowIndex % 2 === 0) {
+        return "transparent"; // 偶数行背景颜色
+      } else {
+        return "rgba(19, 111, 160, 1.00)"; // 奇数行背景颜色
+      }
     },
-    investclass() {
-      this.$router.push("./investclass");
+    showAI(){
+      this.Aidialog=true;
+      this.newsList=false;
     },
-    community() {
-      this.$router.push("./community");
+    shownews() {
+      this.newsList = true;
+      this.Aidialog=false;
     },
-    news() {
-      this.$router.push("/news");
+    showflashnew(){
+      this.newsflash=true;
     },
-    helps() {
-      this.$router.push("/help");
-    },
-    hidedra() {
-      this.$router.push("/hidedra");
-    },
-    person() {
-      this.$router.push("/person");
-    },
+
     search() {
       const filteredItems = this.items.filter((item) =>
         item.includes(this.searchText)
@@ -208,362 +611,108 @@ export default {
       this.underline4 = true;
       this.shine4 = true;
     },
+    //获取聊天记录
+    getFriendChatMsg() {
+      let params = {
+        frinedId: this.frinedInfo.id,
+      };
+      getChatMsg(params).then((res) => {
+        this.chatList = res;
+        this.chatList.forEach((item) => {
+          if (item.chatType == 2 && item.extend.imgType == 2) {
+            this.srcImgList.push(item.msg);
+          }
+        });
+        this.scrollBottom();
+      });
+    },
+    //发送信息
+    sendMsg(msgList) {
+      this.chatList.push(msgList);
+      this.scrollBottom();
+    },
+    //获取窗口高度并滚动至最底层
+    scrollBottom() {
+      this.$nextTick(() => {
+        const scrollDom = this.$refs.chatContent;
+        animation(scrollDom, scrollDom.scrollHeight - scrollDom.offsetHeight);
+      });
+    },
+    //发送文字信息
+    sendText() {
+      if (this.inputMsg) {
+        let chatMsg = {
+          headImg: require("@/assets/img/head_portrait.jpg"),
+          name: "username",
+          time: new Date().toLocaleTimeString(),
+          msg: this.inputMsg,
+          chatType: 0, //信息类型，0文字，1图片
+          uid: "1001", //uid
+        };
+        this.sendMsg(chatMsg); //显示发出的信息
+        this.$emit("personCardSort", this.frinedInfo.id);
+        this.inputMsg = ""; //清空聊天输入框的内容
+        let data = {
+          prompt: chatMsg.msg,
+          temperature: 1,
+          top_p: 1,
+          model: "text-davinci-003",
+          max_tokens: 2048,
+          frequency_penalty: 0,
+          presence_penalty: 0,
+          stop: ["Human:", "AI:"],
+        };
+        this.loading = true;
+        this.isSend = true;
+        let chatGPT = {
+          headImg: require("@/assets/img/ai1.png"),
+          name: "ai投资顾问",
+          time: new Date().toLocaleTimeString(),
+          msg: "",
+          chatType: 0, //信息类型，0文字，1图片
+          uid: "1002", //uid
+        };
+        this.sendMsg(chatGPT); //显示机器人条目
+        chatgpt_1(data).then((res) => {
+          //console.log(res)
+          this.isSend = false;
+          this.chatList[this.chatList.length - 1].msg = res.Result;
+        });
+      } else {
+        this.$message({
+          message: "消息不能为空哦~",
+          type: "warning",
+        });
+      }
+    },
+    selectItem(item) {
+      this.inputMsg = item;
+    },
   },
-  components: {},
+  mounted() {
+    this.getFriendChatMsg();
+  },
+  components: {
+    HeadPortrait,
+    FileCard,
+    CaretBottom,
+    DArrowRight,
+    Refresh
+  },
+  props: {
+    frinedInfo: Object,
+    default() {
+      return {};
+    },
+  },
+  watch: {
+    frinedInfo() {
+      this.getFriendMsg();
+    },
+  },
 };
 </script>
 
 <style>
 @import url("../assets/Community/css/community.css");
 </style>
-<!-- <template>
-  <div class="bg">
-    
-    <el-header class="header">
-      <el-menu
-        :default-active="$route.path"
-        :router="true"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-        background-color="transparent"
-        text-color="#ffffff"
-        active-text-color="#23a2b9"
-        style="border: 0; font-weight: bolder; outline: none"
-      >
-        <div class="personbtn">
-          <img src="../assets/index/img/person.png" />
-          <a :href="'/person'">个人中心</a>
-        </div>
-        <el-menu-item index="/index">首页</el-menu-item>
-        <el-menu-item index="/aistocks">Ai股票</el-menu-item>
-        <el-menu-item index="/investclass">AI投资课堂</el-menu-item>
-        <el-menu-item index="/community">AI股民社区</el-menu-item>
-        <el-menu-item index="/news">新闻资讯</el-menu-item>
-        <el-menu-item index="/help">帮助中心</el-menu-item>
-        <el-menu-item index="/hidedra">卧虎藏龙</el-menu-item>
-        <div class="demo-input-suffix search">
-          <el-input
-            placeholder="Search"
-            v-model="input"
-            style="border-radius: 50px"
-          >
-            <template #suffix>
-              <el-icon style="color: #a0928d">
-                <Search />
-              </el-icon>
-            </template>
-          </el-input>
-        </div>
-      </el-menu>
-    </el-header>
-    
-    <div class="investor-community">
-      
-      <div class="hot-stocks">
-        <el-button-group class="hotbtngroup">
-          <el-button class="ownbtn" @click="Ownbtnclick1"
-            >热门个股<el-icon v-show="ownicon1"><CaretBottom /></el-icon
-          ></el-button>
-          <el-button class="ownbtn" @click="Ownbtnclick2"
-            >热门主题<el-icon v-show="ownicon2"><CaretBottom /></el-icon
-          ></el-button>
-          <el-button class="ownbtn" @click="Ownbtnclick3"
-            >热门概念<el-icon v-show="ownicon3"><CaretBottom /></el-icon
-          ></el-button>
-          <el-button class="ownbtn" @click="Ownbtnclick4"
-            >我的关注<el-icon v-show="ownicon4"><CaretBottom /></el-icon
-          ></el-button>
-          <el-button class="morebtn"
-            >更多<el-icon><DArrowRight /></el-icon
-          ></el-button>
-        </el-button-group>
-       
-        <div class="owntable">
-          <table class="table table-bordered">
-            <tbody>
-              <tr
-                v-for="(row, index) in rows"
-                :key="index"
-                :class="index % 2 === 0 ? 'even' : 'odd'"
-              >
-                <td v-for="(col, j) in cols" :key="j">
-                  {{ data[index * cols + j] }}
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-      
-      <div class="hot-topic">
-        <div class="topichead">
-          <h1 class="title">热门话题</h1>
-          <el-button class="topicbtn"
-            >更多<el-icon><DArrowRight /></el-icon
-          ></el-button>
-         
-          <div class="gradient-underline"></div>
-        </div>
-        
-        <div class="topiclist">
-          <ul>
-            <li v-for="topic in topics" :key="topic.id">
-              <p class="toptitle">
-                {{ topic.id }}&nbsp;&nbsp;{{ topic.title }}
-              </p>
-              讨论数：<text class="num">{{ topic.discuss }}</text
-              >&nbsp;&nbsp;&nbsp; 浏览量：<text class="num">{{
-                topic.view
-              }}</text>
-              <el-button class="favoritebtn" @click="favoriteTopic(topic)"
-                >收藏</el-button
-              >
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="dynamic-state">
-        <el-button-group class="stategroupbtn">
-          <el-button class="statebtn" @click="stateChose"
-            >动态<el-icon v-show="stateicon1" style="margin-left: 30px"
-              ><CaretBottom /></el-icon
-          ></el-button>
-          <el-button class="attentionbtn" @click="attentionChose"
-            >关注&nbsp;&nbsp;&nbsp;<el-icon
-              v-show="stateicon2"
-              style="margin-left: 30px"
-              ><CaretBottom /></el-icon
-          ></el-button>
-          <el-button class="refreshbtn" @click="refreshChose"
-            >刷新<el-icon style="margin-left: 10px"><Refresh /></el-icon
-          ></el-button>
-        </el-button-group>
-        <div class="statelist">
-          <ul>
-            <li v-for="trend in trends" :key="trend.title">
-              <h3 class="headline">{{ trend.title }}</h3>
-              <el-tag class="dynamictag">{{ trend.tag }}</el-tag>
-              <el-tag class="source">{{ trend.source }}</el-tag>
-              <el-tag class="source">{{ trend.num }}评</el-tag>
-              <p class="excerpts">{{ trend.excerpts }}</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="community-hot-list">
-        <div class="topichead">
-          <h1 class="title">社区热榜</h1>
-        
-          <div class="gradient-underline"></div>
-        </div>
-        <div class="hotlist">
-          <ul>
-            <li v-for="(blogger, index) in hotBloggers" :key="index">
-              <el-avatar :src="blogger.avatar" class="avatar" />
-            
-              <a :href="'/profile/' + blogger.id" class="bloggername">{{ blogger.name }}</a>
-              <button @click="followBlogger(blogger)" class="blgobtn">关注</button>
-              <p class="bloggerexcerpt">{{ blogger.excerpt }}</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
-  
-  <script>
-import axios from "axios";
-import {
-  Search,
-  CaretBottom,
-  ArrowRight,
-  DArrowRight,
-  Refresh,
-} from "@element-plus/icons-vue";
-export default {
-  name: "community",
-  data() {
-    return {
-      input: "",
-      ownicon1: false, //默认不显示
-      ownicon2: false,
-      ownicon3: false,
-      ownicon4: false,
-      stateicon1: false,
-      stateicon2: false,
-      rows: 6,
-      cols: 8,
-      data: [],
-      topics: [
-        {
-          id: "1",
-          title: "重磅会议首题“金融强国”",
-          discuss: "16.62w",
-          view: "927w",
-        },
-      ],
-      trends: [
-        {
-          title: "中央金融工作会议：活跃资本",
-          tag: "焦点",
-          source: "新华社",
-          num: "408",
-          excerpts: "贵州茅台：自11月1日起上调53%VOL贵州茅台酒出厂价格平均上调",
-        },
-      ],
-      hotBloggers: [
-        {
-          avatar:'../assets/Community/img/people.png',
-          name:'布衣书先生走天下',
-          excerpt:'市场会长多久'
-        },        
-      ],
-      fullWidth:document.documentElement.clientWidth
-    };
-  },
-  watch:{
-    fullWidth(val){//监测浏览器的宽度变化
-      if(!this.timer){
-        this.fullWidth=val
-        this.timer=true
-        let that=this
-        setTimeout(function(){
-          that.timer=false
-        },400)
-      }
-    }
-  },
-  mounted() {
-    // 从后端获取数据
-    // 假设数据为一个一维数组
-    this.data = [
-      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-      22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
-      40, 41, 42, 43, 44, 45, 46, 47, 48,
-    ];
-    this.get_bodyWidth
-  },
-  computed: {},
-  created() {
-    this.fetchTopics();
-  },
-  methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
-    },
-    // 点击 el-menu 时可以跳转
-    handleSelectMenu(path) {
-      this.$router.push(path);
-    },
-    handleClick(row) {
-      console.log(row);
-    },
-    Ownbtnclick1() {
-      this.ownicon1 = true; //点击按钮显示icon图标
-      this.ownicon2 = false;
-      this.ownicon3 = false;
-      this.ownicon4 = false;
-    },
-    Ownbtnclick2() {
-      this.ownicon2 = true; //点击按钮显示icon图标
-      this.ownicon1 = false;
-      this.ownicon3 = false;
-      this.ownicon4 = false;
-    },
-    Ownbtnclick3() {
-      this.ownicon3 = true; //点击按钮显示icon图标
-      this.ownicon2 = false;
-      this.ownicon1 = false;
-      this.ownicon4 = false;
-    },
-    Ownbtnclick4() {
-      this.ownicon4 = true; //点击按钮显示icon图标
-      this.ownicon2 = false;
-      this.ownicon3 = false;
-      this.ownicon1 = false;
-    },
-    stateChose() {
-      this.stateicon1 = true;
-      this.stateicon2 = false;
-    },
-    attentionChose() {
-      this.stateicon1 = false;
-      this.stateicon2 = true;
-    },
-    get_bodyWidth(){//动态获取浏览器宽度
-      const that=this
-      window.onresize=()=>{
-        return(()=>{
-          window.fullWidth=document.documentElement.clientWidth
-          that.fullWidth=window.fullWidth
-
-        })()
-      }
-
-    },
-    fetchTopics() {
-      // 这里替换为你的后端接口地址
-      const apiUrl = "https://api.example.com/topics";
-      fetch(apiUrl)
-        .then((response) => response.json())
-        .then((data) => {
-          this.topics = data;
-        })
-        .catch((error) => {
-          console.error("获取话题数据失败：", error);
-        });
-    },
-    favoriteTopic(topic) {
-      // 这里替换为你的后端接口地址
-      const apiUrl = `https://api.example.com/favorites/${topic.id}`;
-      fetch(apiUrl, {
-        method: "POST",
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          if (data.success) {
-            alert("收藏成功");
-          } else {
-            alert("收藏失败");
-          }
-        })
-        .catch((error) => {
-          console.error("收藏话题失败：", error);
-        });
-    },
-    async fetchHotBloggers() {
-      try {
-        const response = await this.$http.get('/api/hot-bloggers');
-        this.hotBloggers = response.data;
-      } catch (error) {
-        console.error(error);
-      }
-    },
-    async followBlogger(blogger) {
-      try {
-        await this.$http.post('/api/follow', {
-          bloggerId: blogger.id,
-        });
-        alert('关注成功');
-      } catch (error) {
-        console.error(error);
-      }
-    },
-  },
-  components: {
-    Search,
-    CaretBottom,
-    ArrowRight,
-    DArrowRight,
-    Refresh,
-  },
-};
-</script>
-  
-  <style lang="scss" scoped>
-@import url("../assets/Community/css/community.css");
-</style> -->

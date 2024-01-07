@@ -4,49 +4,56 @@
     <div class="header">
       <!-- 导航左边 -->
       <ol class="headerleft">
-        <li @click="person">个人中心</li>
+        <li @click="GetRouterInfo('person')">个人中心</li>
       </ol>
       <div class="headermiddle">
         <el-button
           class="btn"
-          @click="index"
+          @click="GetRouterInfo('index')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >首页</el-button
         >
         <el-button
           class="btn"
-          @click="aistocks"
+          @click="GetRouterInfo('aistocks')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >AI股票</el-button
         >
         <el-button
           class="btn"
-          @click="investclass"
+          @click="GetRouterInfo('investclass')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >AI投资课堂</el-button
         >
         <el-button
           class="btn"
-          @click="community"
+          @click="GetRouterInfo('community')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >AI股民社区</el-button
         >
         <el-button
           class="btn"
-          @click="news"
+          @click="GetRouterInfo('news')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >新闻资讯</el-button
         >
         <el-button
           class="btn"
-          @click="helps"
+          @click="GetRouterInfo('help')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >帮助中心</el-button
         >
         <el-button
           class="btn"
-          @click="hidedra"
+          @click="GetRouterInfo('hidedra')"
           onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
           >卧虎藏龙</el-button
         >
       </div>
@@ -136,13 +143,133 @@
   <div class="back3">
     <div class="btngroup">
       <button class="group1" @click="showAI">AI对话</button>
-      <button class="group1">财经快讯</button>
+      <button class="group1" @click="shownews">财经快讯</button>
       <button class="group1">热榜</button>
       <button class="group1">投顾</button>
     </div>
-    <div class="aibody">
-      <div class="aileft"></div>
-      <div class="airight"></div>
+    <div class="body4">
+      <div class="aibody" v-show="Aidialog">
+        <div class="aileft">
+          <div class="botoom">
+            <div class="chat-content" ref="chatContent">
+              <div
+                class="chat-wrapper"
+                v-for="(item, index) in chatList"
+                :key="item.id"
+              >
+                <div class="chat-friend" v-if="item.uid !== '1001'">
+                  <div class="info-time">
+                    <img :src="item.headImg" alt="" />
+                    <span>{{ item.name }}</span>
+                    <span>{{ item.time }}</span>
+                  </div>
+                  <div class="chat-text" v-if="item.chatType == 0">
+                    <template v-if="isSend && index == chatList.length - 1">
+                      <span class="flash_cursor"></span>
+                    </template>
+                    <template v-else>
+                      <pre>{{ item.msg }}</pre>
+                    </template>
+                  </div>
+                  <div class="chat-img" v-if="item.chatType == 1">
+                    <img
+                      :src="item.msg"
+                      alt="表情"
+                      v-if="item.extend.imgType == 1"
+                      style="width: 100px; height: 100px"
+                    />
+                    <el-image
+                      :src="item.msg"
+                      :preview-src-list="srcImgList"
+                      v-else
+                    >
+                    </el-image>
+                  </div>
+                  <div class="chat-img" v-if="item.chatType == 2">
+                    <div class="word-file">
+                      <FileCard
+                        :fileType="item.extend.fileType"
+                        :file="item.msg"
+                      ></FileCard>
+                    </div>
+                  </div>
+                </div>
+                <div class="chat-me" v-else>
+                  <div class="info-time">
+                    <span>{{ item.name }}</span>
+                    <span>{{ item.time }}</span>
+                    <img :src="item.headImg" alt="" />
+                  </div>
+                  <div class="chat-text" v-if="item.chatType == 0">
+                    {{ item.msg }}
+                  </div>
+                  <div class="chat-img" v-if="item.chatType == 1">
+                    <img
+                      :src="item.msg"
+                      alt="表情"
+                      v-if="item.extend.imgType == 1"
+                      style="width: 100px; height: 100px"
+                    />
+                    <el-image
+                      style="max-width: 300px; border-radius: 10px"
+                      :src="item.msg"
+                      :preview-src-list="srcImgList"
+                      v-else
+                    >
+                    </el-image>
+                  </div>
+                  <div class="chat-img" v-if="item.chatType == 2">
+                    <div class="word-file">
+                      <FileCard
+                        :fileType="item.extend.fileType"
+                        :file="item.msg"
+                      ></FileCard>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chatInputs">
+              <input
+                class="inputs"
+                v-model="inputMsg"
+                @keyup.enter="sendText"
+              />
+              <el-button
+                class="send boxinput"
+                :disabled="isSend"
+                @click="sendText"
+              >
+                发送
+              </el-button>
+            </div>
+          </div>
+        </div>
+        <div class="airight">
+          <h1>大家都在问我</h1>
+          <ul>
+            <li v-for="item in questions" @click="selectItem(item)">
+              {{ item }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 财经快讯 -->
+      <div class="newbody" v-show="newsList">
+        <div class="newbtngroup">
+          <button class="nbtn" @click="showflashnew">动态<el-icon><CaretBottom /></el-icon></button>
+          <button class="nbtn">关注<el-icon><CaretBottom /></el-icon></button>
+          <button class="refesh">刷新<el-icon><Refresh /></el-icon></button>
+        </div>
+        <div class="quicklist" v-show="newsflash">
+          <ul v-for="item in newsflashlists" :key="index">
+            <li>{{ item.headline }}</li>
+            <el-tag>{{ item.state }}</el-tag>
+            <text>{{ item.source }}</text>
+            <text>{{ item.read }}评</text>
+          </ul>          
+        </div>
+      </div>
     </div>
   </div>
   <div class="back4">
@@ -180,7 +307,11 @@
 </template>
   <script>
 import axios from "axios";
-import { CirclePlusFilled } from "@element-plus/icons";
+import { CirclePlusFilled,CaretBottom } from "@element-plus/icons";
+import { animation } from "@/util/util";
+import { getChatMsg, chatgpt, chatgpt_1 } from "@/api/getData";
+import HeadPortrait from "@/components/HeadPortrait.vue";
+import FileCard from "@/components/FileCard.vue";
 export default {
   name: "aistocks",
   data() {
@@ -197,34 +328,57 @@ export default {
       shine4: false,
       images: [{ url: require("../assets/index/img/teacher1.png") }],
       courseimages: [{ url: require("../assets/index/img/R-C1.jpg") }],
-      AI: true,
+      Aidialog:true,
+      newsList: false,
+      newsflash:true,
+      questions: ["每年几月份是最佳的融资窗口?"],
+      chatList: [],
+      inputMsg: "",
+      showEmoji: false,
+      frinedInfo: {},
+      srcImgList: [],
+      isSend: false,
+      newsflashlists:[
+        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
+        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
+        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
+        {headline:'中央金融工作会议：活跃资本市场',state:'新闻',source:'新华社',read:'408'},
+        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
+
+      ]
     };
   },
+  props: {
+    frinedInfo: Object,
+    default() {
+      return {};
+    },
+  },
+  watch: {
+    frinedInfo() {
+      this.getFriendMsg();
+    },
+  },
   methods: {
-    index() {
-      this.$router.push("/index");
+    GetRouterInfo(url) {
+      var that = this;
+      that.$router.push({path: "/" + url + "",});
+      this.className = "lun-img-two";
+      setTimeout(() => {
+        this.className = "lun-img";
+      }, 300);
+    }, 
+    showAI(){
+      this.Aidialog=true;
+      this.newsList=false;
     },
-    aistocks() {
-      this.$router.push("/aistocks");
+    shownews() {
+      this.newsList = true;
+      this.Aidialog=false;
     },
-    investclass() {
-      this.$router.push("./investclass");
-    },
-    community() {
-      this.$router.push("./community");
-    },
-    news() {
-      this.$router.push("/news");
-    },
-    helps() {
-      this.$router.push("/help");
-    },
-    hidedra() {
-      this.$router.push("/hidedra");
-    },
-    person() {
-      this.$router.push("/person");
-    },
+    showflashnew(){
+      this.newsflash=true;
+    },  
     search() {
       const filteredItems = this.items.filter((item) =>
         item.includes(this.searchText)
@@ -271,9 +425,90 @@ export default {
       this.underline4 = true;
       this.shine4 = true;
     },
+    
+    //获取聊天记录
+    getFriendChatMsg() {
+      let params = {
+        frinedId: this.frinedInfo.id,
+      };
+      getChatMsg(params).then((res) => {
+        this.chatList = res;
+        this.chatList.forEach((item) => {
+          if (item.chatType == 2 && item.extend.imgType == 2) {
+            this.srcImgList.push(item.msg);
+          }
+        });
+        this.scrollBottom();
+      });
+    },
+    //发送信息
+    sendMsg(msgList) {
+      this.chatList.push(msgList);
+      this.scrollBottom();
+    },
+    //获取窗口高度并滚动至最底层
+    scrollBottom() {
+      this.$nextTick(() => {
+        const scrollDom = this.$refs.chatContent;
+        animation(scrollDom, scrollDom.scrollHeight - scrollDom.offsetHeight);
+      });
+    },
+    //发送文字信息
+    sendText() {
+      if (this.inputMsg) {
+        let chatMsg = {
+          headImg: require("@/assets/img/head_portrait.jpg"),
+          name: "username",
+          time: new Date().toLocaleTimeString(),
+          msg: this.inputMsg,
+          chatType: 0, //信息类型，0文字，1图片
+          uid: "1001", //uid
+        };
+        this.sendMsg(chatMsg); //显示发出的信息
+        this.$emit("personCardSort", this.frinedInfo.id);
+        this.inputMsg = ""; //清空聊天输入框的内容
+        let data = {
+          prompt: chatMsg.msg,
+          temperature: 1,
+          top_p: 1,
+          model: "text-davinci-003",
+          max_tokens: 2048,
+          frequency_penalty: 0,
+          presence_penalty: 0,
+          stop: ["Human:", "AI:"],
+        };
+        this.loading = true;
+        this.isSend = true;
+        let chatGPT = {
+          headImg: require("@/assets/img/ai1.png"),
+          name: "ai投资顾问",
+          time: new Date().toLocaleTimeString(),
+          msg: "",
+          chatType: 0, //信息类型，0文字，1图片
+          uid: "1002", //uid
+        };
+        this.sendMsg(chatGPT); //显示机器人条目
+        chatgpt_1(data).then((res) => {
+          //console.log(res)
+          this.isSend = false;
+          this.chatList[this.chatList.length - 1].msg = res.Result;
+        });
+      } else {
+        this.$message({
+          message: "消息不能为空哦~",
+          type: "warning",
+        });
+      }
+    },
+    selectItem(item) {
+      this.inputMsg = item;
+    },
+  },
+  mounted() {
+    this.getFriendChatMsg();
   },
   components: {
-    CirclePlusFilled
+    CirclePlusFilled,CaretBottom
   },
 };
 </script>

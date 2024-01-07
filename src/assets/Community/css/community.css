@@ -131,7 +131,132 @@
   /* border: 1px solid black; */
   margin-top: 120px;
 }
+/*table*/
+.table-container {
+  position: relative;
+  width: 100%;
+  height: 80%;
+}
 
+.el-table {
+  margin-left: 5%;
+  margin-top: 20px;
+  --el-table-border-color: rgba(186, 188, 204, 1.00);
+  --el-table-bg-color: transparent;
+  --el-table-text-color: white;
+  --el-table-header-bg-color: transparent;
+  --el-table-tr-bg-color: transparent;
+  border: 1px solid rgba(186, 188, 204, 1.00);
+}
+
+.el-table__body tr:hover>td {
+  background-color: #fc3b2513 !important;
+}
+
+.cbtn {
+  background-color: white;
+  color: red;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+
+.btngroup {
+  width: 90%;
+  position: relative;
+  height: 60px;
+  margin-top: 10px;
+  margin-left: 5%;
+
+
+  .tbtn {
+    background-color: transparent;
+    font-size: 20px;
+    color: white;
+    float: left;
+    margin-top: 10px;
+    border: none;
+    margin-right: 4.5%;
+
+    p {
+      text-align: left;
+      font-size: 15px;
+      color: rgba(186, 188, 204, 1.00);
+    }
+
+    .line1 {
+      position: relative;
+      width: 140%;
+      height: 2px;
+      background-color: white;
+      margin-top: 10px;
+    }
+
+    .dot1::before,
+    .dot1::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: white;
+    }
+
+    .dot1::before {
+      top: -3px;
+      left: -4px;
+    }
+
+    .dot1::after {
+      bottom: -3px;
+      right: -4px;
+    }
+
+    .line2 {
+      position: relative;
+      width: 140%;
+      height: 2px;
+      background-color: rgba(186, 188, 204, 1.00);
+      margin-top: 10px;
+    }
+
+    .dot2::before,
+    .dot2::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: rgba(186, 188, 204, 1.00);
+    }
+
+    .dot2::before {
+      top: -3px;
+      left: -4px;
+    }
+
+    .dot2::after {
+      bottom: -3px;
+      right: -4px;
+    }
+  }
+
+  .mbtn {
+    background-color: white;
+    color:  rgb(15, 114, 151);;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    width: 60px;
+    height: 30px;
+    position: relative;
+    float: right;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    right: -5%;
+  }
+}
 .title1 {
   float: left;
   margin-top: -20px;
@@ -244,6 +369,172 @@
   position: relative;
   margin-top: -180px;
 }
+/*社区热榜*/
+.hotlist{
+  width: 35%;
+  height: 100%;  
+  float: left;
+  /* border: 1px solid black; */
+  position: absolute;
+}
+.hottitle{
+  width: 80%;
+  height: 50px;
+  margin-top: 10px;
+  border-bottom: 1px solid white;
+  position: relative;
+  margin-left: 10%;
+  h1{
+    color: black;    
+    text-align: left;
+  }
+  .line{
+    width: 70px;
+    height: 7.03px;
+    border-radius: 3px;
+    background:linear-gradient(90.00deg, rgb(31, 110, 174) -17.5%,rgb(31, 110, 174) -17.302%,rgb(37, 187, 191) 116.215%,rgb(37, 187, 191) 117.5%); 
+    position: absolute;
+    top: 48px;
+  }
+}
+.list{
+  width: 80%;
+  height: 80%;
+  margin-left: 10%;
+  margin-top: 20px;
+  position: relative;
+  border: 1px solid transparent;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: 0;
+    /* Safari,Chrome 隐藏滚动条 */
+    height: 0;
+    /* Safari,Chrome 隐藏滚动条 */
+    display: none;
+    /* 移动端、pad 上Safari，Chrome，隐藏滚动条 */
+  }
+  .listitem{
+    width: 100%;
+    height: 25%;
+    border: 1px solid transparent;
+    position: relative;
+    text-align: left; 
+    color: black; 
+    .attentionbtn{
+      background-color: red;
+      color: white;
+      font-weight: bolder;
+      float: right;
+      position: absolute;
+      border-radius: 5px;
+      font-size: 20px;
+      top: 15%;
+      left: 80%;
+      letter-spacing: 3.27px;
+    }
+    .item{
+      width: 80%;
+      height: 80%;
+      margin-top: 5%;
+      margin-left: 10%;
+    }
+    
+    .h2{
+      padding-left:20px;
+      position: relative;
+      margin-top: 5%;
+      font-weight: bold;
+    }
+
+    .avatar{
+      float: left;
+      height:50%;
+      width: auto;
+      margin-top: 5%;
+    }
+  } 
+
+}
+/* 热门个股 */
+.hotstock{
+  width:65%;
+  height: 100%;
+  border: 1px solid transparent;
+  float: right;
+  position: absolute;
+  margin-left: 35%;
+
+  .stocklist{
+    width: 90%;
+    margin-left: 5%;
+    height: 75%;
+    position: relative;
+    border: 3px solid rgb(45, 129, 196);;
+    float: left;
+    
+    
+    table {
+      width: 100%;
+      height: 100%;
+      border-collapse: collapse;
+    }
+    
+    td {
+      border: 1px solid transparent;
+      padding: 8px;
+      text-align: center;
+    }
+  }
+
+  .group{
+    width: 90%;
+    height: 15%;
+    position: relative;
+    border: 1px solid transparent;
+    margin-left: 5%;
+
+    .hmore{
+      width: 10%;
+      height: 40px;
+      position: relative;
+      float: right;
+      margin-top: 5%;
+      color: white;
+      font-size: 20px;
+      border: none;
+      background: linear-gradient(-25.64deg, rgb(37, 187, 191) 22.225%,rgb(37, 187, 191) 22.754%,rgb(31, 110, 174) 77.694%,rgb(31, 110, 174) 77.775%);
+      font-weight: bold;
+
+    }
+
+    .hbtn{
+      width: 15%;
+      height:40px;
+      font-size: 20px;
+      margin-top: 5%;
+      float: left;
+      margin-right: 5%;
+      font-weight: bold;
+      position: relative;
+      color: white;
+      border: none;
+
+      .el-icon{
+        color: transparent;
+      }
+    }
+    .hbtn:focus{
+      border: 3px solid rgb(45, 129, 196); ;
+      .el-icon{
+        color: white;
+      }
+    }
+    
+    
+  }
+  
+}
+
 .back3{
   width: 100%;
   height: 620px;
@@ -284,21 +575,404 @@
     color: white;  
   }  
 }
-.gbody{
+
+.body4{
   width: 80%;
   height:580px;
-  background:url('../img/radius3.png');
+  background:white;
   margin-left: 10%;
   float: left;
   position: absolute;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+  background-size: 100% 100%;  
   margin-top:220px;
   margin-bottom: -80px;
   z-index: 2001;
   border-radius: 30px;
   background-color: white;
 }
+.aibody {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  float: left;
+  position: absolute;
+  border-radius: 30px;
+
+  .aileft {
+    width: 60%;
+    float: left;
+    height: 100%;
+
+    .botoom {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      padding: 20px;
+      box-sizing: border-box;
+      position: relative;
+
+      .chat-content {
+        width: 100%;
+        height: 60%;
+        overflow-y: scroll;
+        padding: 20x;
+        box-sizing: border-box;
+        border-bottom: 3px solid rgb(162, 162, 164);
+
+        &::-webkit-scrollbar {
+          width: 0;
+          /* Safari,Chrome 隐藏滚动条 */
+          height: 0;
+          /* Safari,Chrome 隐藏滚动条 */
+          display: none;
+          /* 移动端、pad 上Safari，Chrome，隐藏滚动条 */
+        }
+
+        .chat-wrapper {
+          position: relative;
+          word-break: break-all;
+
+          .chat-friend {
+            width: 100%;
+            float: left;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .chat-text {
+              max-width: 90%;
+              padding: 20px;
+              border-radius: 20px 20px 20px 5px;
+              background-color: rgb(56, 60, 75);
+              color: #fff;
+
+              &:hover {
+                background-color: rgb(39, 42, 55);
+              }
+
+              pre {
+                white-space: break-spaces;
+              }
+            }
+
+            .chat-img {
+              img {
+                width: 100px;
+                height: 100px;
+              }
+            }
+
+            .info-time {
+              margin: 10px 0;
+              color: black;
+              font-size: 14px;
+
+              img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                vertical-align: middle;
+                margin-right: 10px;
+              }
+
+              span:last-child {
+                color: rgb(101, 104, 115);
+                margin-left: 10px;
+                vertical-align: middle;
+              }
+            }
+          }
+
+          .chat-me {
+            width: 100%;
+            float: right;
+            margin-bottom: 20px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            .chat-text {
+              float: right;
+              max-width: 90%;
+              padding: 20px;
+              border-radius: 20px 20px 5px 20px;
+              background-color: rgb(29, 144, 245);
+              color: #fff;
+
+              &:hover {
+                background-color: rgb(26, 129, 219);
+              }
+            }
+
+            .chat-img {
+              img {
+                max-width: 300px;
+                max-height: 200px;
+                border-radius: 10px;
+              }
+            }
+
+            .info-time {
+              margin: 10px 0;
+              color: black;
+              font-size: 14px;
+              display: flex;
+              justify-content: flex-end;
+
+              img {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                vertical-align: middle;
+                margin-left: 10px;
+              }
+
+              span {
+                line-height: 30px;
+              }
+
+              span:first-child {
+                color: rgb(101, 104, 115);
+                margin-right: 10px;
+                vertical-align: middle;
+              }
+            }
+          }
+        }
+      }
+
+      .chatInputs {
+        width: 90%;
+        height: 40%;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        float: left;
+        margin-left: 0px;
+
+        .boxinput {
+          width: 80px;
+          height: 40px;
+          background-color: rgb(66, 70, 86);
+          border-radius: 10px;
+          position: absolute;
+          cursor: pointer;
+          font-size: 20px;
+          color: white;
+          font-weight: bold;
+          left: 85%;
+          bottom: 5%;
+
+
+
+
+        }
+
+        .emoji {
+          transition: 0.3s;
+
+          &:hover {
+            background-color: rgb(46, 49, 61);
+            border: 1px solid rgb(71, 73, 82);
+          }
+        }
+
+        .inputs {
+          width: 100%;
+          height: 100%;
+          background-color: white;
+          border-radius: 0;
+          padding: 10px;
+          box-sizing: border-box;
+          border: none;
+          transition: 0.2s;
+          font-size: 20px;
+          color: black;
+          font-weight: 100;
+          margin: 0 0px;
+          text-align: left;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .send {
+          background-color: rgb(253, 5, 5);
+          border: 0;
+          transition: 0.3s;
+          box-shadow: 0px 0px 5px 0px rgba(0, 136, 255);
+
+          &:hover {
+            box-shadow: 0px 0px 10px 0px rgba(0, 136, 255);
+          }
+        }
+      }
+    }
+  }
+
+  .airight {
+    background-color: rgb(213, 213, 213);
+    width: 40%;
+    height: 100%;
+    float: right;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    h1 {
+      text-align: left;
+      padding-left: 10px;
+      padding-top: 10px;
+    }
+
+    ul {
+      width: 100%;
+      height: 80%;
+      overflow: scroll;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        /* Safari,Chrome 隐藏滚动条 */
+        height: 0;
+        /* Safari,Chrome 隐藏滚动条 */
+        display: none;
+        /* 移动端、pad 上Safari，Chrome，隐藏滚动条 */
+      }
+    }
+
+    ul li {
+      padding-top: 20px;
+      list-style: none;
+      text-align: left;
+      font-size: 20px;
+    }
+  } 
+}
+/* 财经快讯 */
+.newbody{
+  width: 100%;
+  height:100%;
+  background:url('../img/radius3.png');
+  float: left;
+  position: absolute;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;  
+  z-index: 2001;
+  border-radius: 30px;
+  background-color: white;
+}
+.newbtngroup {
+  width: 80%;
+  position: relative;
+  margin-left: 10%;
+  height: 60px;
+  padding-top: 10px;
+  padding-top: 30px;
+  float: left;
+  border: 1px solid transparent;
+
+  .nbtn {
+    float: left;
+    color: black;
+    position: relative;
+    width: 120px;
+    height: 30px;
+    font-size: 20px;
+    letter-spacing: 5px;
+    font-weight: bolder;
+    border: none;
+    margin-right: 10%;
+
+    .el-icon {
+      color: transparent;
+      margin-left: 30%;
+      position: relative;
+    }
+  }
+
+  .nbtn:focus {
+    border: 2px solid rgb(45, 129, 196);
+
+    .el-icon {
+      color: rgb(45, 129, 196);
+    }
+  }
+
+  .nbtn:active {
+    border: 2px solid rgb(45, 129, 196);
+
+    .el-icon {
+      color: rgb(45, 129, 196);
+    }
+  }
+  .refesh{
+    color: white;
+    width: 80px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: bolder;
+    background: linear-gradient(-25.64deg, rgb(37, 187, 191) 22.225%,rgb(37, 187, 191) 22.754%,rgb(31, 110, 174) 77.694%,rgb(31, 110, 174) 77.775%);
+    border: none;
+    float: right;
+  }  
+}
+/* 动态 */
+.quicklist{
+  width: 80%;
+  height: 70%;
+  position: absolute;
+  margin-left: 10%;
+  border: 3px solid #2D81C4;
+  margin-top: 90px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    /* Safari,Chrome 隐藏滚动条 */
+    height: 0;
+    /* Safari,Chrome 隐藏滚动条 */
+    display: none;
+    /* 移动端、pad 上Safari，Chrome，隐藏滚动条 */
+  }
+  .el-tag{
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+    margin-right: 30px;
+  }
+  text{
+    color: black;
+    margin-right: 30px;
+
+  }
+
+}
+.quicklist ul{
+  height: 25%;
+  width: 100%;
+  text-align: left;
+  margin: 0;
+}
+.quicklist ul li{
+  list-style: none;
+  color: black;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 10px;
+  width: 100%;
+  height: 40%;
+}
+.quicklist ul li:hover{
+  background: linear-gradient(180.00deg, rgb(31, 110, 174) 23.004%,rgb(31, 110, 174) 23.083%,rgb(37, 187, 191) 76.482%,rgb(37, 187, 191) 76.996%);
+  opacity: 0.35;
+
+}
+
+
 .back4{
   width: 100%;
   height: 880px;

@@ -52,7 +52,7 @@ export default {
   width: 250px;
   height: 80px;
   border-radius: 10px;
-  background-color: rgb(50, 54, 68);
+  background-color:red;
   position: relative;
   margin: 25px 0;
   cursor: pointer;
