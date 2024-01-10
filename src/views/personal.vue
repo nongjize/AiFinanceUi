@@ -1,176 +1,287 @@
 <template>
-  <div class="back">
-    <!-- 导航栏 -->
+  <div class="back1">
+    <!-- 导航信息 -->
     <div class="header">
-      <el-menu
-        :default-active="$route.path"
-        :router="true"
-        class="el-menu-demo"
-        mode="horizontal"
-        @select="handleSelect"
-        background-color="transparent"
-        text-color="#ffffff"
-        active-text-color="#23a2b9"
-        style="border: 0; font-weight: bolder; outline: none"
-      >
-        <div class="personbtn">
-          <img src="../assets/index/img/person.png" />
-          <a :href="'/person'">个人中心</a>
-        </div>
-        <el-menu-item index="/index">首页</el-menu-item>
-        <el-menu-item index="/aistocks">Ai股票</el-menu-item>
-        <el-menu-item index="/investclass">AI投资课堂</el-menu-item>
-        <el-menu-item index="/community">AI股民社区</el-menu-item>
-        <el-menu-item index="/news">新闻资讯</el-menu-item>
-        <el-menu-item index="/help">帮助中心</el-menu-item>
-        <el-menu-item index="/hidedra">卧虎藏龙</el-menu-item>
-        <div class="demo-input-suffix search">
-          <el-input
-            placeholder="Search"
-            v-model="input"
-            style="border-radius: 50px"
-          >
-            <template #suffix>
-              <el-icon style="color: #a0928d">
-                <Search />
-              </el-icon>
-            </template>
-          </el-input>
-        </div>
-      </el-menu>
-      <!-- 内容 -->
-      <div class="mainpart">
-        <div class="center">
-          <div class="centerleft">
-            <div class="bac">
-              <el-avatar class="avatar"></el-avatar>
-            </div>
-            <div class="cright">
-              <h1>姓名{{ name }}</h1>
-              <p>{{}}粉丝·{{}}关注</p>
-            </div>
-            <div class="cfooter">
-              <p class="p1">
-                <img src="../assets/personal/img/approve.png" />未认证{{}}
-              </p>
-              <p class="p2">
-                投资者{{}} &nbsp;&nbsp;&nbsp;| IP属地：{{}}
-                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
-                <img
-                  src="../assets/personal/img/whiteqq.png"
-                />&nbsp;&nbsp;&nbsp;
-                <img src="../assets/personal/img/microblogwhite.png" />
-              </p>
-              <el-row class="btngroup mb-4">
-                <el-button class="btn1">编辑个人信息</el-button>
-                <el-button class="btn2">分享</el-button>
-              </el-row>
-            </div>
-          </div>
-          <!-- 自选股票 -->
-          <div class="centerright">
-            <div class="rhed">
-              <el-row class="btngroup1">
-                <el-button class="choseown">自选股票</el-button>
-                <el-button class="choseown">组选组合</el-button>
-              </el-row>
-              <el-button class="refreshbtn"
-                >刷新<el-icon><Refresh /></el-icon
-              ></el-button>
-              <div class="underline"></div>
-            </div>
-            <div class="rhed2">
-              <el-row>
-                <el-button @click="Market" class="rhedbtn"
-                  >行情<el-icon v-show="rhedbtn1"><CaretBottom /></el-icon
-                ></el-button>
-                <el-button @click="Stranded" class="rhedbtn"
-                  >多股同列<el-icon v-show="rhedbtn2"><CaretBottom /></el-icon
-                ></el-button>
-                <el-button @click="Forecast" class="rhedbtn"
-                  >盈利预测<el-icon v-show="rhedbtn3"><CaretBottom /></el-icon
-                ></el-button>
-                <el-button @click="Finance" class="rhedbtn"
-                  >财务数据<el-icon v-show="rhedbtn4"><CaretBottom /></el-icon
-                ></el-button>
-                <el-button @click="Glance" class="rhedbtn"
-                  >盈亏一览<el-icon v-show="rhedbtn5"><CaretBottom /></el-icon
-                ></el-button>
-              </el-row>
-            </div>
-            <div class="stocktable">
-              <table ref="table" style="width: 1200px; height: 200px; overflow-x: auto; overflow-y: hidden; position: relative;" class="owntable">
-                <thead>
-                  <tr>
-                    <th>
-                      <input
-                        type="checkbox"
-                        v-model="selectAll"
-                        @change="selectAllChange"
-                      />全选
-                    </th>
-                    <th>代码</th>
-                    <th>名称</th>
-                    <th>股吧</th>
-                    <th>最新价</th>
-                    <th>涨跌幅</th>
-                    <th>涨跌额</th>
-                    <th>总手</th>
-                    <th>现手</th>
-                    <th>买入价</th>
-                    <th>卖出价</th>
-                    <th>昨收</th>
-                    <th>成交额</th>
-                    <th>换手率</th>
-                    <th>振幅</th>
-                    <th>量比</th>
-                    <th>涨速</th>
-                    <th>市盈率</th>
-                    <th>每股收益</th>
-                    <th>所属行业模块</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr
-                    v-for="stock in stocks"
-                    :key="stock.code"
-                    :style="{ backgroundColor: getRowColor(stock) }"
-                  >
-                    <td>
-                      <input
-                        type="checkbox"
-                        v-model="stock.selected"
-                        @change="selectStock(stock)"
-                      />
-                    </td>
-                    <td>{{ stock.code }}</td>
-                    <td>{{ stock.name }}</td>
-                    <td>{{ stock.Share }}</td>
-                    <td>{{ stock.nprice}}</td>
-                    <td>{{ stock.cprice}}</td>
-                    <td>{{ stock.camount }}</td>
-                    <td>{{ stock.totalhand }}</td>
-                    <td>{{ stock.nowhand }}</td>
-                    <td>{{ stock.Bidprice }}</td>
-                    <td>{{ stock.Askprice }}</td>
-                    <td>{{ stock.yesterdayreceive }}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>                    
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>          
-        </div>
-        <div></div>
+      <!-- 导航左边 -->
+      <ol class="headerleft">
+        <!-- <img src="../assets/personal/img/pbac.png"> -->
+        <li @click="GetRouterInfo('person')">个人中心</li>
+      </ol>
+      <div class="headermiddle">
+        <el-button
+          class="btn"
+          @click="GetRouterInfo('index')"
+          onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
+          >首页</el-button
+        >
+        <el-button
+          class="btn"
+          @click="GetRouterInfo('aistocks')"
+          onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
+          >AI股票</el-button
+        >
+        <el-button
+          class="btn"
+          @click="GetRouterInfo('investclass')"
+          onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
+          >AI投资课堂</el-button
+        >
+        <el-button
+          class="btn"
+          @click="GetRouterInfo('community')"
+          onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
+          >AI股民社区</el-button
+        >
+        <el-button
+          class="btn"
+          @click="GetRouterInfo('news')"
+          onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
+          >新闻资讯</el-button
+        >
+        <el-button
+          class="btn"
+          @click="GetRouterInfo('help')"
+          onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
+          >帮助中心</el-button
+        >
+        <el-button
+          class="btn"
+          @click="GetRouterInfo('hidedra')"
+          onmouseout="this.style.color='white'"
+          onmouseleave="this.style.color='black'"
+          >卧虎藏龙</el-button
+        >
       </div>
+      <div class="headerright">
+        <input
+          class="sinput"
+          type="text"
+          v-model="SearchText"
+          placeholder="Search"
+        />
+        <i class="icon" @click="search"></i>
+      </div>
+    </div>
+    <div class="main1">
+      <!-- 个人信息 -->
+      <div class="bodyleft" v-for="item in personals" v-bind:key="item">
+        <!-- 头像 -->
+        <el-avatar :src="item.image" />
+        <div class="name">
+          <h1>{{ item.name }}</h1>
+          <p>{{ item.fans }}粉丝·{{ item.attention }}关注</p>
+        </div>
+        <div class="infor">
+          <h3>
+            <img src="../assets/personal/img/approve.png" />{{ item.state }}
+          </h3>
+          <p>
+            {{ item.identity }}&nbsp;&nbsp;|&nbsp;&nbsp; IP属地：{{
+              item.ip
+            }}&nbsp;&nbsp;|&nbsp;&nbsp;
+            <img src="../assets/personal/img/qq.png" />
+            <img src="../assets/personal/img/weibo.png" />
+          </p>
+        </div>
+        <div class="ibtngroup">
+          <el-button>编辑个人信息</el-button>
+          <el-button>分享</el-button>
+        </div>
+      </div>
+      <!-- 自选股票 -->
+      <div class="bodyright">
+        <div class="table">
+          <div class="btngroup">
+            <button class="tbtn">
+              <p>01</p>
+              自选股票
+              <img src="../assets/index/img/x2.png" />
+              <div class="line1">
+                <div class="dot1"></div>
+                <div class="dot1"></div>
+              </div>
+            </button>
+            <button class="tbtn">
+              <p>02</p>
+              自选组合
+              <img src="../assets/index/img/x2.png" />
+              <div class="line2">
+                <div class="dot2"></div>
+                <div class="dot2"></div>
+              </div>
+            </button>
+            <button class="mbtn">更多></button>
+          </div>
+          <div class="sbtngroup">
+            <el-button
+              >行情<el-icon><CaretBottom /></el-icon
+            ></el-button>
+            <el-button
+              >多股同列<el-icon><CaretBottom /></el-icon
+            ></el-button>
+            <el-button
+              >盈利预测<el-icon><CaretBottom /></el-icon
+            ></el-button>
+            <el-button
+              >财务数据<el-icon><CaretBottom /></el-icon
+            ></el-button>
+            <el-button
+              >盈亏一览<el-icon><CaretBottom /></el-icon
+            ></el-button>
+          </div>
+          <div class="table-container">
+            <el-table
+              :data="tableData"
+              style="width: 90%"
+              height="100%"
+              :header-row-style="{ height: '60px', color: 'white' }"
+              :row-style="{ height: '60px' }"
+            >
+              <el-table-column
+                fixed
+                prop="namecode"
+                label="名称代码"
+                width="120"
+              />
+              <el-table-column prop="name" label="股吧" width="80" />
+              <el-table-column prop="price" label="最新价" width="80" />
+              <el-table-column prop="pricelimit" label="涨跌幅" width="80" />
+              <el-table-column prop="range" label="涨跌额" width="80" />
+              <el-table-column prop="masterhand" label="总手" width="80" />
+              <el-table-column prop="presentsale" label="现手" width="80" />
+              <el-table-column prop="buy" label="买入价" width="80" />
+              <el-table-column prop="sale" label="卖出价" width="80" />
+              <el-table-column prop="yesclosing" label="昨收" width="80" />
+              <el-table-column prop="volumetran" label="成交额" width="80" />
+              <el-table-column prop="turnoverrate" label="换手率" width="80" />
+              <el-table-column prop="swing" label="振幅" width="80" />
+              <el-table-column prop="ratio" label="量比" width="80" />
+              <el-table-column prop="acceleration" label="涨速" width="80" />
+              <el-table-column prop="peratio" label="市盈率" width="80" />
+              <el-table-column prop="earings" label="每股收益" width="120" />
+              <el-table-column prop="trade" label="所属行业版块" width="120" />
+              <el-table-column align="right" fixed="right">
+                <template #header> 加自选 </template>
+                <template #default="scope">
+                  <el-button
+                    size="small"
+                    class="cbtn"
+                    @click="handleEdit(scope.$index, scope.row)"
+                    >+自选</el-button
+                  >
+                </template>
+              </el-table-column>
+            </el-table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="back2">
+    <div class="publish">
+      <div class="btngroup2">
+        <el-button round>全部</el-button>
+        <el-button round>我关注的股</el-button>
+        <el-button round>我关注的人</el-button>
+        <el-button round>我的发言</el-button>
+        <el-button round>我的收藏</el-button>
+      </div>
+      <div class="speakerboard">
+        <el-avatar
+          src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+        ></el-avatar>
+        <div class="board">
+          <div class="top">
+            <el-input
+              type="text"
+              id="title"
+              v-model="currentArticle.title"
+              maxlength="40"
+              placeholder="请输入标题"
+              show-word-limit
+              @input="changeTitle"
+              style="background-color: transparent"
+            >
+            </el-input>
+          </div>
+          <div class="bottom">
+            <el-input
+              type="textarea"
+              id="content"
+              rows="5"
+              v-model="currentArticle.content"
+              placeholder="请输入内容"
+              @input="changeTitle"
+              textareaStyle="{border:'none'}"
+            >
+            </el-input>
+          </div>
+        </div>
+        <div class="owngroup">
+          <p>
+            发布至
+            <el-input
+              type="text"
+              id="guba"
+              v-model="currentArticle.guba"
+              placeholder="请输入个股代码或股吧关键字"
+              @input="changeTitle"
+            ></el-input>
+            <el-button type="submit" @click="article">发布</el-button>
+          </p>
+        </div>
+      </div>
+      <!-- 已发布文章列表 -->
+      <div class="lists">
+        <div class="item" v-for="(article, index) in articles" :key="index">
+          <!-- v-for="(article, index) in articles" :key="index" -->
+          <el-avatar :size="60" :src="url">             
+            </el-avatar>
+          <div class="underline">
+            
+          </div>
 
+        </div>
+      </div>
+    </div>
+   
+  </div>
+  <div class="back4">
+    <div class="classbody">
+      <img src="../assets/index/img/classtitle.png" class="img1" />
+      <button class="bodybtn">更多></button>
+      <div class="coursenew">
+        <div class="imagebac">
+          <img class="cimg" src="../assets/index/img/R-C1.jpg" />
+          <img class="cimg" src="../assets/index/img/R-C1.jpg" />
+          <img
+            class="cimg"
+            src="../assets/index/img/R-C1.jpg"
+            style="margin-right: 0"
+          />
+        </div>
+        <div class="courselist">
+          <p class="p1">金融界/2023-12-12</p>
+          <p class="p2">投资课堂</p>
+          <p class="p3">运用数字科技服务</p>
+        </div>
+        <div class="courselist">
+          <p class="p1"></p>
+          <p class="p2"></p>
+          <p class="p3"></p>
+        </div>
+        <div class="courselist" style="margin-right: 0">
+          <p class="p1"></p>
+          <p class="p2"></p>
+          <p class="p3"></p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -182,111 +293,87 @@ export default {
   name: "person",
   data() {
     return {
-        input:'',
-      rhedbtn1: false, //默认不显示icon
-      rhedbtn2: false,
-      rhedbtn3: false,
-      rhedbtn4: false,
-      rhedbtn5: false,
-      selectAll: false,
-      stocks:[
+      personals: [
         {
-            code:'300059',
-            name:'东方财富',
-
-        }
+          image: require("../assets/personal/img/avatar.png"),
+          name: "王百万",
+          fans: "0",
+          attention: "34",
+          state: "未认证",
+          identity: "投资者",
+          ip: "云南",
+          
+        },
       ],
+      articles: [], //存储已发表的文章
+      currentArticle: {
+        title: "",
+        content: "",
+        guba: "",
+      },
+      url:'../assets/personal/img/avatar.png"'
     };
   },
   computed() {},
   methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath);
+    GetRouterInfo(url) {
+      var that = this;
+      that.$router.push({ path: "/" + url + "" });
+      this.className = "lun-img-two";
+      setTimeout(() => {
+        this.className = "lun-img";
+      }, 300);
     },
-    // 点击 el-menu 时可以跳转
-    handleSelectMenu(path) {
-      this.$router.push(path);
+    changeTitle() {
+      //强制刷新渲染
+      this.$forceUpdate();
     },
-    handleClick(row) {
-      console.log(row);
-    },
-    // market
-    Market() {
-      this.rhedbtn1 = true;
-      this.rhedbtn2 = false;
-      this.rhedbtn3 = false;
-      this.rhedbtn4 = false;
-      this.rhedbtn5 = false;
-    },
-    // Multiple strands in the same column
-    Stranded() {
-      this.rhedbtn1 = false;
-      this.rhedbtn2 = true;
-      this.rhedbtn3 = false;
-      this.rhedbtn4 = false;
-      this.rhedbtn5 = false;
-    },
-    // Earnings forecasts
-    Forecast() {
-      this.rhedbtn1 = false;
-      this.rhedbtn2 = false;
-      this.rhedbtn3 = true;
-      this.rhedbtn4 = false;
-      this.rhedbtn5 = false;
-    },
-    // Financial data
-    Finance() {
-      this.rhedbtn1 = false;
-      this.rhedbtn2 = false;
-      this.rhedbtn3 = false;
-      this.rhedbtn4 = true;
-      this.rhedbtn5 = false;
-    },
-    //Profit and loss as one
-    Glance() {
-      this.rhedbtn1 = false;
-      this.rhedbtn2 = false;
-      this.rhedbtn3 = false;
-      this.rhedbtn4 = false;
-      this.rhedbtn5 = true;
-    },
-    fetchStocks() {
-      // 这里替换为你的后端API接口
-      const apiUrl = "https://api.example.com/stocks";
-      fetch(apiUrl)
-        .then((response) => response.json())
-        .then((data) => {
-          this.stocks = data;
-        })
-        .catch((error) => {
-          console.error("Error fetching stocks:", error);
-        });
-    },
-    selectAllChange() {
-      if (this.selectAll) {
-        this.stocks.forEach((stock) => (stock.selected = true));
+    article() {
+      if (this.currentArticle.title && this.currentArticle.content) {
+        this.articles.push({ ...this.currentArticle });
+        this.currentArticle.title = "";
+        this.currentArticle.content = "";
       } else {
-        this.stocks.forEach((stock) => (stock.selected = false));
+        alert("请填写完整的文章信息");
       }
     },
-    selectStock(stock) {
-      stock.selected = !stock.selected;
-      if (!this.selectAll) {
-        this.selectAll = this.stocks.every((s) => s.selected);
-      }
-    },
-    getRowColor(stock) {
-      return stock.index % 2 === 0 ? '#136183' : 'transparent';
-    },
+    // fetchStocks() {
+    //   // 这里替换为你的后端API接口
+    //   const apiUrl = "https://api.example.com/stocks";
+    //   fetch(apiUrl)
+    //     .then((response) => response.json())
+    //     .then((data) => {
+    //       this.stocks = data;
+    //     })
+    //     .catch((error) => {
+    //       console.error("Error fetching stocks:", error);
+    //     });
+    // },
+    // selectAllChange() {
+    //   if (this.selectAll) {
+    //     this.stocks.forEach((stock) => (stock.selected = true));
+    //   } else {
+    //     this.stocks.forEach((stock) => (stock.selected = false));
+    //   }
+    // },
+    // selectStock(stock) {
+    //   stock.selected = !stock.selected;
+    //   if (!this.selectAll) {
+    //     this.selectAll = this.stocks.every((s) => s.selected);
+    //   }
+    // },
+    // getRowColor(stock) {
+    //   return stock.index % 2 === 0 ? "#136183" : "transparent";
+    // },
   },
   components: {
     Search,
     Refresh,
     CaretBottom,
   },
-  mounted(){
-    this.fetchStocks();
-  }
+  mounted() {
+    // this.fetchStocks();
+  },
 };
 </script>
 

@@ -94,13 +94,13 @@
         <div class="stockbody">
           <div class="stockleft">
             <el-tag>大盘</el-tag>
-            <div class="excerpt" v-for="item in largecaps" :key="index">
+            <div class="excerpt" v-for="item in largecaps" v-bind:key="item">
               <p>{{ item.excerpt }}</p>
             </div>
           </div>
           <div class="stockright">
             <el-tag>个股</el-tag>
-            <div class="excerpt" v-for="item in ownstocks" :key="index">
+            <div class="excerpt" v-for="item in ownstocks" v-bind:key="item">
               <p>{{ item.excerpt }}</p>
             </div>
           </div>
@@ -246,7 +246,7 @@
         <div class="airight">
           <h1>大家都在问我</h1>
           <ul>
-            <li v-for="item in questions" @click="selectItem(item)">
+            <li v-for="item in questions" v-bind:key="item" @click="selectItem(item)">
               {{ item }}
             </li>
           </ul>
@@ -266,7 +266,7 @@
           </button>
         </div>
         <div class="quicklist" v-show="newsflash">
-          <ul v-for="item in newsflashlists" :key="index">
+          <ul v-for="item in newsflashlists" v-bind:key="item">
             <li>{{ item.headline }}</li>
             <el-tag>{{ item.state }}</el-tag>
             <text>{{ item.source }}</text>
@@ -586,7 +586,7 @@ export default {
     },
   },
   mounted() {
-    this.getFriendChatMsg();
+    // this.getFriendChatMsg();
   },
   components: {
     HeadPortrait,

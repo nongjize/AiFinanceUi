@@ -369,26 +369,12 @@
           </div>
         </div>
         <div class="airight">
-          <!-- <h1>大家都在问我</h1>
+          <h1>大家都在问我</h1>
           <ul>
-            <li v-for="item in questions" @click="selectItem(item)">
+            <li v-for="item in questions" v-bind:key="item" @click="selectItem(item)">
               {{ item }}
             </li>
-          </ul> -->
-          <span class="onlin-text">Ai理财顾问列表</span>
-          <div class="person-cards-wrapper">
-            <div
-              class="personList"
-              v-for="personInfo in personList"
-              :key="personInfo.id"
-              @click="clickPerson(personInfo)"
-            >
-              <PersonCard
-                :personInfo="personInfo"
-                :pcCurrent="pcCurrent"
-              ></PersonCard>
-            </div>
-          </div>
+          </ul>          
         </div>
       </div>
       <!-- 财经快讯 -->
@@ -405,7 +391,7 @@
           </button>
         </div>
         <div class="quicklist" v-show="newsflash">
-          <ul v-for="item in newsflashlists" :key="index">
+          <ul v-for="item in newsflashlists" v-bind:key="item">
             <li>{{ item.headline }}</li>
             <el-tag>{{ item.state }}</el-tag>
             <text>{{ item.source }}</text>
@@ -461,7 +447,7 @@ import {
 import { getFriend } from "@/api/getData";
 import PersonCard from "@/components/PersonCard.vue";
 import { animation } from "@/util/util";
-import { getChatMsg, chatgpt, chatgpt_1 } from "@/api/getData";
+import { chatgpt, chatgpt_1 } from "@/api/getData";
 import HeadPortrait from "@/components/HeadPortrait.vue";
 import FileCard from "@/components/FileCard.vue";
 export default {
@@ -603,15 +589,15 @@ export default {
       let params = {
         frinedId: this.frinedInfo.id,
       };
-      getChatMsg(params).then((res) => {
-        this.chatList = res;
-        this.chatList.forEach((item) => {
-          if (item.chatType == 2 && item.extend.imgType == 2) {
-            this.srcImgList.push(item.msg);
-          }
-        });
-        this.scrollBottom();
-      });
+      // getChatMsg(params).then((res) => {
+      //   this.chatList = res;
+      //   this.chatList.forEach((item) => {
+      //     if (item.chatType == 2 && item.extend.imgType == 2) {
+      //       this.srcImgList.push(item.msg);
+      //     }
+      //   });
+      //   this.scrollBottom();
+      // });
     },
     clickPerson(info) {
       this.showChatWindow = true;
@@ -698,7 +684,7 @@ export default {
     
   },
   mounted() {
-    this.getFriendChatMsg();
+    // this.getFriendChatMsg();
     getFriend().then((res) => {
       //console.log("哈哈哈哈");
       //console.log(res);
@@ -712,6 +698,8 @@ export default {
     ArrowRightBold,
     CaretBottom,
     PersonCard,
+    HeadPortrait,
+    FileCard
   },
 };
 </script>

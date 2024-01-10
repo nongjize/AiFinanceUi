@@ -161,7 +161,7 @@
         <div class="line"></div>
       </div>
       <div class="list">
-        <div class="listitem" v-for="item in hotlists" :key="index">
+        <div class="listitem" v-for="item in hotlists" v-bind:key="item">
           <el-avatar
             class="avatar"
             src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
@@ -322,7 +322,7 @@
         <div class="airight">
           <h1>大家都在问我</h1>
           <ul>
-            <li v-for="item in questions" @click="selectItem(item)">
+            <li v-for="item in questions" v-bind:key="item" @click="selectItem(item)">
               {{ item }}
             </li>
           </ul>
@@ -336,7 +336,7 @@
           <button class="refesh">刷新<el-icon><Refresh /></el-icon></button>
         </div>
         <div class="quicklist" v-show="newsflash">
-          <ul v-for="item in newsflashlists" :key="index">
+          <ul v-for="item in newsflashlists" v-bind:key="item">
             <li>{{ item.headline }}</li>
             <el-tag>{{ item.state }}</el-tag>
             <text>{{ item.source }}</text>
@@ -690,7 +690,7 @@ export default {
     },
   },
   mounted() {
-    this.getFriendChatMsg();
+    // this.getFriendChatMsg();
   },
   components: {
     HeadPortrait,

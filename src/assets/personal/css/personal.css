@@ -1,315 +1,787 @@
-*{
+* {
+    background-color: rgba(0, 0, 0, 0);
     margin: 0;
-    padding: 0;
-  }
-.back {
-    position: absolute;
+}
+
+.back1 {
+    background: url('../img/back1.png');
     width: 100%;
-    height: auto;
-    margin: 0;
-    background: url('../../img/otherbac.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    padding: 0;
-    
-
-}
-
-/*导航栏*/
-.header {
-    width: 1200px;
-    height: 100px;
-    margin-left: 160px;
-    margin-top: 20px;
-    /* border: 1px solid white; */
-
-    .personbtn {
-        width: 125px;
-        height: 60px;
-        margin-right: 40px;
-    }
-
-    .personbtn img {
-        width: 60px;
-        float: left;
-        margin-left: 1px;
-    }
-
-    .personbtn a {
-        color: #ffffff;
-        float: right;
-        margin-top: 17px;
-        text-decoration: none;
-    }
-
-    .search {
-        width: 250px;
-        height: 40px;
-        margin-top: 10px;
-        float: right;
-        margin-left: 50px;
-    }
-}
-
-.mainpart {
-    width: 1200px;
-    height: 1300px;
-    margin-bottom: 40px;
-    margin-top: 80px;
-    float: left;
+    height: 900px;
+    background-size: 100% 100%;
     position: relative;
-    border: 1px solid white;
-}
-
-.center {
-    width: 1200px;
-    height: 400px;
-    border-bottom: 4px solid #0e526c;
-}
-
-.centerleft {
-    width: 400px;
-    height: 400px;
     float: left;
-    /* border: 1px solid white; */
-    margin-left: 30px;
+    background-repeat: no-repeat;
+}
 
-    .bac {
-        width: 100px;
-        height: 100px;
-        background: url(../img/circlebac.png);
+/* 导航栏 */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 45px;
+    /* border: 1px solid red; */
+    background-color: transparent;
+    color: black;
+    font-family: '思源黑体 CN';
+    position: relative;
+    margin-top: 125px;
+    margin-left: 6%;
+    margin-right: 6%;
+    font-size: 25px;
+    font-weight: 700;
+    /*吸顶效果*/
+    position: sticky;
+    position: -webkit-sticky;
+    /*!*兼容 -webkit 内核的浏览器*!
+    top:5px;                   !*必须设一个值，否则不生效*!*/
+}
+
+.headerleft {
+    list-style: none;
+    width: 160px;
+    float: left;
+
+    img{
+        width: 45px;
+        height: auto;
         float: left;
-        margin-left: 30px;
-        margin-top: 30px;
+    }
+    
+}
 
-        .avatar {
-            width: 90px;
-            height: 90px;
-            margin-top: 5px;
-        }
+.headerleft li::before {
+    background-image: url('../img/pbac.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: inline-block;
+    content: '';
+    width: 45px;
+    height: 45px;
+    vertical-align: middle;
+}
+
+.headermiddle {
+    width: auto;
+    float: left;
+    border: none;
+    background-color: transparent;
+    z-index: 1001;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+    font-family: '思源黑体 CN';
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.btn:hover {
+    color: white;
+    background: none;
+}
+
+.btn::before {
+    color: #000000;
+}
+
+.btn:focus {
+    border-radius: 16px;
+    background: linear-gradient(135.00deg, rgb(37, 187, 191) -24.913%, rgb(37, 187, 191) -23.486%, rgb(31, 110, 174) 124.693%, rgb(31, 110, 174) 124.912%);
+}
+
+.btn:active {
+    border-radius: 16px;
+    background: linear-gradient(135.00deg, rgb(37, 187, 191) -24.913%, rgb(37, 187, 191) -23.486%, rgb(31, 110, 174) 124.693%, rgb(31, 110, 174) 124.912%);
+
+}
+
+/* 搜索框 */
+.headerright {
+    width: 184px;
+    height: 300px;
+    /* border: 1px solid black; */
+    margin-top: 255px;
+    float: left;
+    z-index: 2001;
+
+    position: relative;
+
+    .sinput {
+        width: 140px;
+        height: 30px;
+        margin-left: -80px;
+        border: 3px solid rgb(31, 110, 174);
+        border-radius: 20px;
     }
 
-    .cright {
-        width: 268px;
-        height: 100px;
-        float: left;
-        /* border: 1px solid white; */
-        margin-top: 30px;
+    .icon {
+        display: inline-block;
+        height: 22px;
+        width: 22px;
+        background-image: url('../../img/search.png');
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 10px;
+        left: 90px;
+        z-index: 2;
+    }
+}
 
-        h1 {
-            letter-spacing: 2px;
-            color: white;
-            text-align: left;
-            width: 120px;
-            height: 45px;
-            /* border: 1px solid; */
-            position: relative;
-            margin-top: 10px;
-            margin-left: 20px;
-        }
+.main1 {
+    height: 55%;
+    margin-left: 8%;
+    margin-right: 6%;
+    position: relative;
+    /* border: 1px solid black; */
+    margin-top: 160px;
+}
+
+.bodyleft {
+    width: 35%;
+    height: 100%;
+    /* border: 1px solid black; */
+    float: left;
+
+    .el-avatar {
+        width: auto;
+        height: 25%;
+        float: left;
+        margin-left: 10%;
+        margin-top: 10%;
+        position: relative;
+    }
+}
+
+.name {
+    width: 60%;
+    height: 25%;
+    position: relative;
+    margin-left: 40%;
+    margin-top: 12%;
+    text-align: left;
+
+    h1 {
+        letter-spacing: 5px;
+        font-size: 40px;
+
+    }
+
+    p {
+        color: black;
+        font-weight: 400;
+        font-size: 18px;
+        padding-top: 15px;
+    }
+}
+
+.infor {
+    width: 90%;
+    height: 20%;
+    margin-left: 10%;
+    margin-top: 6%;
+    /* border: 1px solid; */
+    text-align: left;
+
+    h3 {
+        letter-spacing: 2px;
+        font-size: 18px
+    }
+
+    p {
+        color: #707073;
+        font-weight: bolder;
+        padding-top: 10px;
+    }
+
+    img {
+        height: 18px;
+        width: auto;
+        margin-right: 15px;
+    }
+}
+
+.ibtngroup {
+    width: 90%;
+    height: 15%;
+    margin-top: 2%;
+    margin-left: 10%;
+    /* border: 1px solid; */
+
+    .el-button {
+        color: black;
+        font-weight: bolder;
+        background: url('../img/btnbac.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border: none;
+        font-size: 20px;
+        float: left;
+        height: 45px;
+        margin-right: 5%;
+    }
+}
+
+.bodyright {
+    width: 60%;
+    height: 100%;
+    /* border: 1px solid black; */
+    float: left;
+    margin-left: 4.5%;
+    background: url('../img/bac16.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/*table*/
+.table-container {
+    position: relative;
+    width: 100%;
+    height: 80%;
+}
+
+.el-table {
+    margin-left: 5%;
+    margin-top: 20px;
+    --el-table-border-color: rgba(186, 188, 204, 1.00);
+    --el-table-bg-color: transparent;
+    --el-table-text-color: white;
+    --el-table-header-bg-color: transparent;
+    --el-table-tr-bg-color: transparent;
+    border: 1px solid rgba(186, 188, 204, 1.00);
+}
+
+.el-table__body tr:hover>td {
+    background-color: #fc3b2513 !important;
+}
+
+.cbtn {
+    background-color: white;
+    color: red;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+
+.btngroup {
+    width: 90%;
+    position: relative;
+    float: left;
+    height: 60px;
+    margin-top: 10px;
+    margin-left: 2%;
+    border: none;
+
+
+
+    .tbtn {
+        background-color: transparent;
+        font-size: 20px;
+        color: white;
+        float: left;
+        margin-top: 10px;
+        border: none;
+        margin-right: 4.5%;
+        margin-left: 5%;
 
         p {
-            /* border: 1px solid; */
-            width: 200px;
-            height: 30px;
-            color: white;
-            font-weight: bold;
+            text-align: left;
+            font-size: 15px;
+            color: rgba(186, 188, 204, 1.00);
+        }
+
+        .line1 {
             position: relative;
-            float: left;
-            margin-left: 20px;
-            margin-top: -10px;
-            text-align: left;
+            width: 140%;
+            height: 2px;
+            background-color: white;
+            margin-top: 10px;
+        }
+
+        .dot1::before,
+        .dot1::after {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .dot1::before {
+            top: -3px;
+            left: -4px;
+        }
+
+        .dot1::after {
+            bottom: -3px;
+            right: -4px;
+        }
+
+        .line2 {
+            position: relative;
+            width: 140%;
+            height: 2px;
+            background-color: rgba(186, 188, 204, 1.00);
+            margin-top: 10px;
+        }
+
+        .dot2::before,
+        .dot2::after {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(186, 188, 204, 1.00);
+        }
+
+        .dot2::before {
+            top: -3px;
+            left: -4px;
+        }
+
+        .dot2::after {
+            bottom: -3px;
+            right: -4px;
         }
     }
-    
 
-    .cfooter {
-        width: 370px;
-        height: 200px;
+    .mbtn {
+        background-color: white;
+        color: rgb(15, 114, 151);
+        border: none;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: bold;
+        width: 60px;
+        height: 30px;
+        position: absolute;
         float: left;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin-left: 63%;
+    }
+
+}
+
+.sbtngroup {
+    width: 90%;
+    height: 40px;
+    margin-left: 5%;
+    margin-top: 20px;
+    position: relative;
+    float: left;
+
+    .el-button {
+        color: white;
+        font-weight: bolder;
         position: relative;
-        /* border: 1px solid white; */
-        margin-left: 30px;
-        margin-top: 20px;
+        float: left;
+        background-color: transparent;
+        font-size: 15px;
+        border: none;
+        margin-left: 10px;
+        margin-right: 2%;
 
-        .p1 {
-            text-align: left;
-            font-size: 20px;
-            color: #b4bdc6;
+        .el-icon {
+            color: transparent;
+        }
+    }
 
-            img {
-                width: 20px;
-                margin-right: 10px;
-            }
+    .el-button:hover {
+        background: url('../img/btnbac.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+
+        .el-icon {
+            color: white;
         }
 
-        .p2 {
-            text-align: left;
-            font-size: 20px;
-            color: #b4bdc6;
+    }
 
-            img {
-                height: 20px;
-                margin-top: 2px;
-            }
+    .el-button:active {
+        background: url('../img/btnbac.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
 
+        .el-icon {
+            color: white;
         }
 
-        .btngroup {
-            float: left;
-            margin-left: 20px;
+    }
 
-            .btn1 {
-                background-color: transparent;
-                border: 2px solid;
-                border-image: linear-gradient(to right, #1f6eae, #25bbbf)1;
-                border-radius: 25px !important;
-                font-size: 20px;
-                height: 40px;
-                color: white;
-                font-weight: bold;
-            }
+    /* 按钮点击 */
+    .el-button:focus {
+        background: url('../img/btnbac.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
 
-            .btn2 {
-                background-color: transparent;
-                border: 2px solid;
-                border-image: linear-gradient(to right, #1f6eae, #25bbbf)1;
-                border-radius: 25px !important;
-                font-size: 20px;
-                height: 40px;
-                color: white;
-                font-weight: bold;
-                margin-left: 30px;
-            }
+        .el-icon {
+            color: white;
         }
 
-       
     }
 }
-/*自选股票*/
-.centerright {
-    width: 600px;
-    height: 350px;
-    border-radius: 24px;
-    /* border: 1px solid white; */
-    /* background-color: #2856c4; */
-    background: url('../img/ownbac.png');   
-    background-size: conver;
+
+.title1 {
+    float: left;
+    margin-top: -20px;
+    position: relative;
+    width: 40%;
+}
+
+.btn1 {
+    background: url(../img/btn1.png);
+    width: 195.74px;
+    height: 46.1px;
+    float: left;
+    font-family: 黑体;
+    color: white;
+    border: none;
+    position: relative;
+    margin-top: 300px;
+    margin-left: -400px;
+    font-size: 27px;
+    font-weight: 400px;
+}
+
+.back2 {
+    width: 100%;
+    height: 2000px;
+    background-color: white;
+    position: relative;
+    float: left;
+}
+
+.publish {
+    margin-left: 8%;
+    margin-right: 6%;
+    height: 100%;
+    border: 1px solid;
+}
+
+.btngroup2 {
+    height: 5%;
+    width: 65%;
+    border-bottom: 2px solid rgba(186, 188, 204, 0.8);
+    float: left;
+    position: relative;
+    margin-left: 0;
+
+    .el-button {
+        color: #363738;
+        font-weight: bolder;
+        position: relative;
+        float: left;
+        font-size: 20px;
+        margin-top: 4%;
+        border: none;
+        margin-left: 10px;
+        margin-right: 5.5%;
+    }
+
+    .el-button:hover {
+        background: url('../img/btn2.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        color: white;
+    }
+
+    .el-button:active {
+        background: url('../img/btn2.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        color: white;
+    }
+
+    /* 按钮点击 */
+    .el-button:focus {
+        background: url('../img/btn2.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        color: white;
+    }
+}
+
+.speakerboard {
+    width: 100%;
+    height: 30%;
+    position: relative;
+    margin-top: 30px;
+    float: left;
+    background: url('../img/board.png');
+    background-size: 100% 100%;
     background-repeat: no-repeat;
+
+    .el-avatar {
+        width: auto;
+        height: 25%;
+        float: left;
+        margin-left: 2%;
+        margin-top: 2%;
+        position: relative;
+    }
+}
+
+.board {
+    width: 82%;
+    height: 70%;
+    border: 2px #FFFFFF dashed;
+    position: relative;
     float: left;
-    margin-left: 60px;
+    margin-left: 15px;
+    margin-top: 2%;
+}
+
+.top {
+    width: 90%;
+    height: 30%;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+    float: left;
+
+    .el-input {
+        --el-input-bg-color: transparent;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 0;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+        border-bottom: 2px solid white;
+        font-size: 20px;
+    }
+
+    .el-input__inner {
+        color: white;
+    }
+
+    .el-input__wrapper {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0px;
+    }
+
+    /deep/.el-input-number {
+        top: 50%;
+        transform: translate(-50%, -50%);
+        background: transparent;
+
+    }
+}
+
+.bottom {
+    width: 90%;
+    height: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: relative;
+    margin-top: 12%;
+
+    .el-input,
+    textarea {
+        --el-input-bg-color: transparent;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 0;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: left;
+        vertical-align: middle;
+        justify-content: left;
+    }
+
+    .el-input__wrapper,
+    textarea {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0px;
+    }
+
+
+}
+
+.owngroup {
+    width: 82%;
+    height: 10%;
+    /* border: 1px solid; */
+    float: left;
+    margin-left: 12%;
     margin-top: 20px;
-}
-.rhed{
-    width: 560px;
-    height: 50px;
-    float: left;
-    /* border-bottom: 3px solid white; */
-}
-.underline{
-    width: 100px;
-    height: 5px;
-    background: linear-gradient(90deg, #1f6eae, #25bbbf);
-    float: left;
-    border-radius: 5px;
-    position: absolute;
-    margin-top: 50px;
-    margin-left: 20px;    
-}
-.rhed2{
-    width: 560px;
-    height: 50px;
-    float: left;
-    margin-left: 10px;
-    /* border-bottom: 3px solid white; */
-    margin-top: 15px;
-}
-.btngroup1{
-    width: 240px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid white;
-    float: left;
-    margin-left: 20px;
-    margin-top: 10px;
-}
-.choseown{
-    border: none;
-    background-color: transparent;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    text-align: left;    
-}
-.refreshbtn{
-    background: linear-gradient(90deg, #1f6eae, #25bbbf);
-    border-radius: 0;
-    border: none;
-    color: white;
-    font-weight: bold;
-    float: right;
-    margin-top: 10px;
-}
-.rhedbtn{
-    width: 100px;
-    height: 30px;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    background-color: transparent;
-    border-radius: 0;
-    border: none;
-}
-.rhedbtn:focus{
-    border: 2px solid;
-    border-image: linear-gradient(to right, #1f6eae, #25bbbf)1;
-    background-color: transparent;
-}
-.rhedbtn:hover{
-    background-color: transparent;
-}
-/* A form of self-selected stocks */
-.stocktable{
-    width: 560px;
-    height: 200px;
-    max-height: 200px;
-    float: left;
-    position: relative;
-    /* border: 1px solid white; */
-    margin-left: 20px;   
-    overflow-y: auto; 
-}
-.owntable{
-    width: 100%;
-    height: 100%; 
-    overflow-x: auto; 
-    overflow-y: hidden;
-    position: relative;
-    border-collapse: collapse; 
-    scrollbar-width: thin; /* 设置滚动条宽度 */
-    scrollbar-color: #1f6eae #25bbbf /* 设置滚动条颜色 */   
-   
-}
-.owntable th td{
-    padding: 25px;
-    text-align: left;
-    border: 1px solid white;   
-    width: 180px;
 
-}
-.owntable th{
-    position: sticky;
-    text-align: left;
-}
-.owntable thead tr{
-    background-color: #0e8a9d;
-    height: 30px;  
-    font-weight: bold;
-    color: white;  
-    width: 100%;
-}
-.owntable tbody tr{
-    height: 30px;
-    color: white;
+    p {
+        color: white;
+        font-weight: bold;
+        float: right;
+    }
+
+    .el-input {
+        width: auto;
+        height: auto;
+        --el-input-bg-color: transparent;
+        color: white;
+        margin-left: 10px;
+    }
+
+    .el-input__inner {
+        color: white;
+    }
+
+    .el-button {
+        color: black;
+        font-weight: bolder;
+        letter-spacing: 5px;
+        border-radius: 20px;
+        width: 100px;
+        height: 30px;
+        margin-left: 20px;
+        font-size: 18px;
+    }
 }
 
+.lists {
+    width: 100%;
+    height: 60%;
+    border: 1px solid yellow;
+    position: relative;
+    float: left;
+}
+
+.item {
+    width: 100%;
+    height: 20%;
+    position: relative;
+
+
+    .underline {
+        height: 6px;
+        width: 100%;
+        border-radius: 3px;
+        background: linear-gradient(0.00deg, rgb(37, 187, 191) 49.515%, rgb(37, 187, 191) 49.524%, rgb(37, 187, 191) 50.485%);
+        opacity: 0.3;
+        position: absolute;
+        bottom: 0;
+    }
+    .el-avatar{
+        width: auto;
+        height: 20%;
+        position: relative;
+        float: left;
+    }
+
+}
+.back4{
+    width: 100%;
+    height: 880px;
+    background: url('../img/back4.png');
+    position: relative;
+    background-size: 100% 100%;  
+    float: left;
+    background-repeat: no-repeat;
+    z-index: 201;
+  
+    
+  .classbody{
+    width: 80%;
+    height: 600px;
+    position: relative;
+    float: left;
+    background-color: transparent;
+    margin-left: 10%;
+    margin-top: 80px;
+  
+    .img1{
+      float: left;
+      position: relative;
+      margin-top: 160px;
+    }
+    .bodybtn{
+      background-color: white;
+      border-radius: 10px;
+      width: 80px;
+      height: 40px;
+      position: relative;
+      float: right;
+      margin-top: 230px;
+      font-size: 20px;
+      border: none;
+      font-weight: bold;
+      color: #0f7297;
+      font-family: 'SourceHanSansCN';
+  
+    }
+  
+  }
+  .coursenew{
+    width:100%;
+    height: 500px;
+    position: relative;
+    float: left;
+    background-color: transparent;
+    margin-top: 40px;
+  }
+  .imagebac{
+    width: 100%;
+    height: 250px;
+    background: url('../img/R-C.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    float: left;
+  
+  }
+  .cimg{ 
+      width: 30%;
+      height: 100%;
+      position: relative;
+      float: left;  
+      margin-right: 5%;
+  }
+  .courselist{
+    width: 30%;
+    height: 100px;
+    float: left;
+    margin-right: 5%;
+  
+    .p1{
+      width: 100%;
+      text-align: left;
+      position: relative;
+      margin-top: 20px;
+      float: left;
+      padding-left: 10px;
+      font-size: 20px;
+      color: white;
+    }
+    .p2{
+      width: 100%;
+      float: left;
+      position: relative;
+      padding-left: 10px;
+      text-align: left;
+      font-size: 40px;
+      font-weight: 400;
+      color: white;
+    }
+    .p3{
+      color: white;
+      font-size: 15px;
+      text-align: left;
+      float: left;
+      padding-left: 10px;
+      margin-top: 10px;
+      word-break: normal;/**默认浏览器的换行方式*/
+  
+    }
+  }
+  
+  
+  
+  }

@@ -35,7 +35,7 @@ export const getChatMsg = params => {
   }
 
   export const chatgpt_1 = params => {
-    return axios.post("http://38.45.124.194:5151", { name: params["prompt"] }).then((response) =>response.data)
+    return axios.post("http://172.247.43.74:5151", { name: params["prompt"] }).then((response) =>response.data)
   }
 
 
