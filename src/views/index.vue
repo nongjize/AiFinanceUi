@@ -5,7 +5,7 @@
     <div class="header">
       <!-- 导航左边 -->
       <ol class="headerleft">
-        <li @click="GetRouterInfo('person')">个人中心</li>
+        <li @click="GetRouterInfo('login')">个人中心</li>
       </ol>
       <div class="headermiddle">
         <el-button
@@ -639,6 +639,7 @@ export default {
   },
   mounted() {
     // this.getFriendChatMsg();
+    
   },
   components: {
     HeadPortrait,
