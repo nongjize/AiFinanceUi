@@ -227,101 +227,9 @@
     <div class="body4">
       <div class="aibody" v-show="Aidialog">
         <div class="aileft">
-          <div class="botoom">
-            <div class="chat-content" ref="chatContent">
-              <div
-                class="chat-wrapper"
-                v-for="(item, index) in chatList"
-                :key="item.id"
-              >
-                <div class="chat-friend" v-if="item.uid !== '1001'">
-                  <div class="info-time">
-                    <img :src="item.headImg" alt="" />
-                    <span>{{ item.name }}</span>
-                    <span>{{ item.time }}</span>
-                  </div>
-                  <div class="chat-text" v-if="item.chatType == 0">
-                    <template v-if="isSend && index == chatList.length - 1">
-                      <span class="flash_cursor"></span>
-                    </template>
-                    <template v-else>
-                      <pre>{{ item.msg }}</pre>
-                    </template>
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 1">
-                    <img
-                      :src="item.msg"
-                      alt="表情"
-                      v-if="item.extend.imgType == 1"
-                      style="width: 100px; height: 100px"
-                    />
-                    <el-image
-                      :src="item.msg"
-                      :preview-src-list="srcImgList"
-                      v-else
-                    >
-                    </el-image>
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 2">
-                    <div class="word-file">
-                      <FileCard
-                        :fileType="item.extend.fileType"
-                        :file="item.msg"
-                      ></FileCard>
-                    </div>
-                  </div>
-                </div>
-                <div class="chat-me" v-else>
-                  <div class="info-time">
-                    <span>{{ item.name }}</span>
-                    <span>{{ item.time }}</span>
-                    <img :src="item.headImg" alt="" />
-                  </div>
-                  <div class="chat-text" v-if="item.chatType == 0">
-                    {{ item.msg }}
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 1">
-                    <img
-                      :src="item.msg"
-                      alt="表情"
-                      v-if="item.extend.imgType == 1"
-                      style="width: 100px; height: 100px"
-                    />
-                    <el-image
-                      style="max-width: 300px; border-radius: 10px"
-                      :src="item.msg"
-                      :preview-src-list="srcImgList"
-                      v-else
-                    >
-                    </el-image>
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 2">
-                    <div class="word-file">
-                      <FileCard
-                        :fileType="item.extend.fileType"
-                        :file="item.msg"
-                      ></FileCard>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="chatInputs">
-              <input
-                class="inputs"
-                v-model="inputMsg"
-                @keyup.enter="sendText"
-              />
-              <el-button
-                class="send boxinput"
-                :disabled="isSend"
-                @click="sendText"
-              >
-                发送
-              </el-button>
-            </div>
-          </div>
+          <ChatWindowSimple></ChatWindowSimple>
         </div>
+
         <div class="airight">
           <h1>大家都在问我</h1>
           <ul>
@@ -387,9 +295,10 @@
 import axios from "axios";
 import { animation } from "@/util/util";
 import { getChatMsg, chatgpt, chatgpt_1 } from "@/api/getData";
-import HeadPortrait from "@/components/HeadPortrait.vue";
-import FileCard from "@/components/FileCard.vue";
+//import HeadPortrait from "@/components/HeadPortrait.vue";
+//import FileCard from "@/components/FileCard.vue";
 import {CaretBottom} from "@element-plus/icons"
+import ChatWindowSimple from "./chatwindowSimple.vue";
 
 export default {
   name: "index",
@@ -641,8 +550,7 @@ export default {
     // this.getFriendChatMsg();
   },
   components: {
-    HeadPortrait,
-    FileCard,
+    ChatWindowSimple,
     CaretBottom
   },
   props: {
