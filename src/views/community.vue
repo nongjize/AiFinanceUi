@@ -1,382 +1,308 @@
 
 <template>
-  <div class="back1">
-    <!-- 导航信息 -->
-    <div class="header">
-      <!-- 导航左边 -->
-      <ol class="headerleft">
-        <li @click="GetRouterInfo('person')">个人中心</li>
-      </ol>
-      <div class="headermiddle">
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('index')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >首页</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('aistocks')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >AI股票</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('investclass')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >AI投资课堂</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('community')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >AI股民社区</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('news')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >新闻资讯</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('help')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >帮助中心</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('hidedra')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >卧虎藏龙</el-button
-        >
-      </div>
-      <div class="headerright">
-        <input
-          class="sinput"
-          type="text"
-          v-model="SearchText"
-          placeholder="Search"
-        />
-        <i class="icon" @click="search"></i>
-      </div>
-    </div>
-    <div class="bbody">
-      <img src="../assets/Aistocks/img/title1.png" class="title1" />
-      <button class="btn1">绑定账户 ></button>
-      <div class="bbodyright">
-        <div class="table">
-          <div class="btngroup">
-            <button class="tbtn">
-              <p>01</p>
-              热门个股
-              <img src="../assets/index/img/x2.png" />
-              <div class="line1">
-                <div class="dot1"></div>
-                <div class="dot1"></div>
-              </div>
-            </button>
-            <button class="tbtn">
-              <p>02</p>
-              热门主题
-              <img src="../assets/index/img/x2.png" />
-              <div class="line2">
-                <div class="dot2"></div>
-                <div class="dot2"></div>
-              </div>
-            </button>
-            <button class="tbtn">
-              <p>03</p>
-              热门概念
-              <img src="../assets/index/img/x2.png" />
-              <div class="line2">
-                <div class="dot2"></div>
-                <div class="dot2"></div>
-              </div>
-            </button>
-            <button class="mbtn">更多></button>
-          </div>
-          <div class="table-container">
-            <el-table
-              :data="tableData"
-              style="width: 90%"
-              height="100%"
-              :header-row-style="{ height: '60px', color: 'white' }"
-              :row-style="{ height: '60px' }"
-            >
-              <el-table-column
-                fixed
-                prop="namecode"
-                label="名称代码"
-                width="120"
-              />
-              <el-table-column prop="name" label="股吧" width="80" />
-              <el-table-column prop="price" label="最新价" width="80" />
-              <el-table-column prop="pricelimit" label="涨跌幅" width="80" />
-              <el-table-column prop="range" label="涨跌额" width="80" />
-              <el-table-column prop="masterhand" label="总手" width="80" />
-              <el-table-column prop="presentsale" label="现手" width="80" />
-              <el-table-column prop="buy" label="买入价" width="80" />
-              <el-table-column prop="sale" label="卖出价" width="80" />
-              <el-table-column prop="yesclosing" label="昨收" width="80" />
-              <el-table-column prop="volumetran" label="成交额" width="80" />
-              <el-table-column prop="turnoverrate" label="换手率" width="80" />
-              <el-table-column prop="swing" label="振幅" width="80" />
-              <el-table-column prop="ratio" label="量比" width="80" />
-              <el-table-column prop="acceleration" label="涨速" width="80" />
-              <el-table-column prop="peratio" label="市盈率" width="80" />
-              <el-table-column prop="earings" label="每股收益" width="120" />
-              <el-table-column prop="trade" label="所属行业版块" width="120" />
-              <el-table-column align="right" fixed="right">
-                <template #header> 加自选 </template>
-                <template #default="scope">
-                  <el-button
-                    size="small"
-                    class="cbtn"
-                    @click="handleEdit(scope.$index, scope.row)"
-                    >+自选</el-button
-                  >
-                </template>
-              </el-table-column>
-            </el-table>
-          </div>
+  <div class="communitymain">
+    <div class="back1">
+      <!-- 导航信息 -->
+      <div class="header">
+        <!-- 导航左边 -->
+        <ol class="headerleft">
+          <li @click="GetRouterInfo('person')">个人中心</li>
+        </ol>
+        <div class="headermiddle">
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('index')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >首页</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('aistocks')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >AI股票</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('investclass')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >AI投资课堂</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('community')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >AI股民社区</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('news')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >新闻资讯</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('help')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >帮助中心</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('hidedra')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >卧虎藏龙</el-button
+          >
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="back2">
-    <!-- 行情指数 -->
-    <img src="../assets/index/img/11.png" class="quoimg" />
-    <!-- 社区热榜 -->
-    <div class="hotlist">
-      <div class="hottitle">
-        <h1>社区热榜</h1>
-        <div class="line"></div>
-      </div>
-      <div class="list">
-        <div class="listitem" v-for="item in hotlists" v-bind:key="item">
-          <el-avatar
-            class="avatar"
-            src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+        <div class="headerright">
+          <input
+            class="sinput"
+            type="text"
+            v-model="SearchText"
+            placeholder="Search"
           />
-          <el-button class="attentionbtn">关注</el-button>
-          <div class="item">
-            <h2>{{ item.name }}</h2>
-            <h4>{{ item.excerpts }}</h4>
-            <text>讨论数：{{ item.diccuss }}</text>
-            <text>浏览量：{{ item.view }}</text>
-          </div>
+          <i class="icon" @click="search"></i>
         </div>
       </div>
-    </div>
-    <div class="hotstock">
-      <div class="group">
-        <button class="hbtn">
-          热门个股<el-icon><CaretBottom /></el-icon>
-        </button>
-        <button class="hbtn">
-          热门主题<el-icon><CaretBottom /></el-icon>
-        </button>
-        <button class="hbtn">
-          热门概念<el-icon><CaretBottom /></el-icon>
-        </button>
-        <button class="hbtn">
-          我的关注<el-icon><CaretBottom /></el-icon>
-        </button>
-        <button class="hmore">
-          更多<el-icon><DArrowRight /></el-icon>
-        </button>
-      </div>
-      <div class="stocklist">
-        <table>
-          <tbody>
-            <tr v-for="(row, rowIndex) in rows" :key="rowIndex">
-              <td
-                v-for="(cell, cellIndex) in row"
-                :key="cellIndex"
-                :style="{
-                  backgroundColor: getBackgroundColor(rowIndex, cellIndex),
-                  color: 'white',
-                }"
-              >
-                {{ cell }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="back3">
-    <div class="btngroup">
-      <button class="group1" @click="showAI">AI对话</button>
-      <button class="group1" @click="shownews">财经快讯</button>
-      <button class="group1">热榜</button>
-      <button class="group1">投顾</button>
-    </div>
-    <div class="body4">
-      <div class="aibody" v-show="Aidialog">
-        <div class="aileft">
-          <div class="botoom">
-            <div class="chat-content" ref="chatContent">
-              <div
-                class="chat-wrapper"
-                v-for="(item, index) in chatList"
-                :key="item.id"
-              >
-                <div class="chat-friend" v-if="item.uid !== '1001'">
-                  <div class="info-time">
-                    <img :src="item.headImg" alt="" />
-                    <span>{{ item.name }}</span>
-                    <span>{{ item.time }}</span>
-                  </div>
-                  <div class="chat-text" v-if="item.chatType == 0">
-                    <template v-if="isSend && index == chatList.length - 1">
-                      <span class="flash_cursor"></span>
-                    </template>
-                    <template v-else>
-                      <pre>{{ item.msg }}</pre>
-                    </template>
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 1">
-                    <img
-                      :src="item.msg"
-                      alt="表情"
-                      v-if="item.extend.imgType == 1"
-                      style="width: 100px; height: 100px"
-                    />
-                    <el-image
-                      :src="item.msg"
-                      :preview-src-list="srcImgList"
-                      v-else
-                    >
-                    </el-image>
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 2">
-                    <div class="word-file">
-                      <FileCard
-                        :fileType="item.extend.fileType"
-                        :file="item.msg"
-                      ></FileCard>
-                    </div>
-                  </div>
+      <div class="bbody">
+        <img src="../assets/Aistocks/img/title1.png" class="title1" />
+        <button class="btn1">绑定账户 ></button>
+        <div class="bbodyright">
+          <div class="table">
+            <div class="btngroup">
+              <button class="tbtn">
+                <p>01</p>
+                热门个股
+                <img src="../assets/index/img/x2.png" />
+                <div class="line1">
+                  <div class="dot1"></div>
+                  <div class="dot1"></div>
                 </div>
-                <div class="chat-me" v-else>
-                  <div class="info-time">
-                    <span>{{ item.name }}</span>
-                    <span>{{ item.time }}</span>
-                    <img :src="item.headImg" alt="" />
-                  </div>
-                  <div class="chat-text" v-if="item.chatType == 0">
-                    {{ item.msg }}
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 1">
-                    <img
-                      :src="item.msg"
-                      alt="表情"
-                      v-if="item.extend.imgType == 1"
-                      style="width: 100px; height: 100px"
-                    />
-                    <el-image
-                      style="max-width: 300px; border-radius: 10px"
-                      :src="item.msg"
-                      :preview-src-list="srcImgList"
-                      v-else
-                    >
-                    </el-image>
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 2">
-                    <div class="word-file">
-                      <FileCard
-                        :fileType="item.extend.fileType"
-                        :file="item.msg"
-                      ></FileCard>
-                    </div>
-                  </div>
+              </button>
+              <button class="tbtn">
+                <p>02</p>
+                热门主题
+                <img src="../assets/index/img/x2.png" />
+                <div class="line2">
+                  <div class="dot2"></div>
+                  <div class="dot2"></div>
                 </div>
-              </div>
+              </button>
+              <button class="tbtn">
+                <p>03</p>
+                热门概念
+                <img src="../assets/index/img/x2.png" />
+                <div class="line2">
+                  <div class="dot2"></div>
+                  <div class="dot2"></div>
+                </div>
+              </button>
+              <button class="mbtn">更多></button>
             </div>
-            <div class="chatInputs">
-              <input
-                class="inputs"
-                v-model="inputMsg"
-                @keyup.enter="sendText"
-              />
-              <el-button
-                class="send boxinput"
-                :disabled="isSend"
-                @click="sendText"
+            <div class="table-container">
+              <el-table
+                :data="tableData"
+                style="width: 90%"
+                height="100%"
+                :header-row-style="{ height: '60px', color: 'white' }"
+                :row-style="{ height: '60px' }"
               >
-                发送
-              </el-button>
+                <el-table-column
+                  fixed
+                  prop="namecode"
+                  label="名称代码"
+                  width="120"
+                />
+                <el-table-column prop="name" label="股吧" width="80" />
+                <el-table-column prop="price" label="最新价" width="80" />
+                <el-table-column prop="pricelimit" label="涨跌幅" width="80" />
+                <el-table-column prop="range" label="涨跌额" width="80" />
+                <el-table-column prop="masterhand" label="总手" width="80" />
+                <el-table-column prop="presentsale" label="现手" width="80" />
+                <el-table-column prop="buy" label="买入价" width="80" />
+                <el-table-column prop="sale" label="卖出价" width="80" />
+                <el-table-column prop="yesclosing" label="昨收" width="80" />
+                <el-table-column prop="volumetran" label="成交额" width="80" />
+                <el-table-column
+                  prop="turnoverrate"
+                  label="换手率"
+                  width="80"
+                />
+                <el-table-column prop="swing" label="振幅" width="80" />
+                <el-table-column prop="ratio" label="量比" width="80" />
+                <el-table-column prop="acceleration" label="涨速" width="80" />
+                <el-table-column prop="peratio" label="市盈率" width="80" />
+                <el-table-column prop="earings" label="每股收益" width="120" />
+                <el-table-column
+                  prop="trade"
+                  label="所属行业版块"
+                  width="120"
+                />
+                <el-table-column align="right" fixed="right">
+                  <template #header> 加自选 </template>
+                  <template #default="scope">
+                    <el-button
+                      size="small"
+                      class="cbtn"
+                      @click="handleEdit(scope.$index, scope.row)"
+                      >+自选</el-button
+                    >
+                  </template>
+                </el-table-column>
+              </el-table>
             </div>
           </div>
         </div>
-        <div class="airight">
-          <h1>大家都在问我</h1>
-          <ul>
-            <li v-for="item in questions" v-bind:key="item" @click="selectItem(item)">
-              {{ item }}
-            </li>
-          </ul>
+      </div>
+    </div>
+    <div class="back2">     
+      <!-- 社区热榜 -->
+      <div class="hotlist">
+        <div class="hottitle">
+          <h1>社区热榜</h1>
+          <div class="line"></div>
+        </div>
+        <div class="list">
+          <div class="listitem" v-for="item in hotlists" v-bind:key="item">
+            <el-avatar
+              class="avatar"
+              src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"
+            />
+            <el-button class="attentionbtn">关注</el-button>
+            <div class="item">
+              <h2>{{ item.name }}</h2>
+              <h4>{{ item.excerpts }}</h4>
+              <text>讨论数：{{ item.diccuss }}</text>
+              <text>浏览量：{{ item.view }}</text>
+            </div>
+          </div>
         </div>
       </div>
-      <!-- 财经快讯 -->
-      <div class="newbody" v-show="newsList">
-        <div class="newbtngroup">
-          <button class="nbtn" @click="showflashnew">动态<el-icon><CaretBottom /></el-icon></button>
-          <button class="nbtn">关注<el-icon><CaretBottom /></el-icon></button>
-          <button class="refesh">刷新<el-icon><Refresh /></el-icon></button>
+      <div class="hotstock">
+        <div class="group">
+          <button class="hbtn">
+            热门个股<el-icon><CaretBottom /></el-icon>
+          </button>
+          <button class="hbtn">
+            热门主题<el-icon><CaretBottom /></el-icon>
+          </button>
+          <button class="hbtn">
+            热门概念<el-icon><CaretBottom /></el-icon>
+          </button>
+          <button class="hbtn">
+            我的关注<el-icon><CaretBottom /></el-icon>
+          </button>
+          <button class="hmore">
+            更多<el-icon><DArrowRight /></el-icon>
+          </button>
         </div>
-        <div class="quicklist" v-show="newsflash">
-          <ul v-for="item in newsflashlists" v-bind:key="item">
-            <li>{{ item.headline }}</li>
-            <el-tag>{{ item.state }}</el-tag>
-            <text>{{ item.source }}</text>
-            <text>{{ item.read }}评</text>
-          </ul>          
+        <div class="stocklist">
+          <table>
+            <tbody>
+              <tr v-for="(row, rowIndex) in rows" :key="rowIndex">
+                <td
+                  v-for="(cell, cellIndex) in row"
+                  :key="cellIndex"
+                  :style="{
+                    backgroundColor: getBackgroundColor(rowIndex, cellIndex),
+                    color: 'white',
+                  }"
+                >
+                  {{ cell }}
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-  </div>
-  <div class="back4">
-    <div class="classbody">
-      <img src="../assets/index/img/classtitle.png" class="img1" />
-      <button class="bodybtn">更多></button>
-      <div class="coursenew">
-        <div class="imagebac">
-          <img class="cimg" src="../assets/index/img/R-C1.jpg" />
-          <img class="cimg" src="../assets/index/img/R-C1.jpg" />
-          <img
-            class="cimg"
-            src="../assets/index/img/R-C1.jpg"
-            style="margin-right: 0"
-          />
+    <!-- <div class="back3">
+      <div class="btngroup">
+        <button class="group1" @click="showAI">AI对话</button>
+        <button class="group1" @click="shownews">财经快讯</button>
+        <button class="group1">热榜</button>
+        <button class="group1">投顾</button>
+      </div>
+      <div class="body4">
+        <div class="aibody" v-show="Aidialog">
+          <div class="aileft">
+            <ChatWindowSimple></ChatWindowSimple>
+          </div>
+          <div class="airight">
+            <h1>大家都在问我</h1>
+            <ul>
+              <li
+                v-for="item in questions"
+                v-bind:key="item"
+                @click="selectItem(item)"
+              >
+                {{ item }}
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="courselist">
-          <p class="p1">金融界/2023-12-12</p>
-          <p class="p2">投资课堂</p>
-          <p class="p3">运用数字科技服务</p>
+        
+        <div class="newbody" v-show="newsList">
+          <div class="newbtngroup">
+            <button class="nbtn" @click="showflashnew">
+              动态<el-icon><CaretBottom /></el-icon>
+            </button>
+            <button class="nbtn">
+              关注<el-icon><CaretBottom /></el-icon>
+            </button>
+            <button class="refesh">
+              刷新<el-icon><Refresh /></el-icon>
+            </button>
+          </div>
+          <div class="quicklist" v-show="newsflash">
+            <ul v-for="item in newsflashlists" v-bind:key="item">
+              <li>{{ item.headline }}</li>
+              <el-tag>{{ item.state }}</el-tag>
+              <text>{{ item.source }}</text>
+              <text>{{ item.read }}评</text>
+            </ul>
+          </div>
         </div>
-        <div class="courselist">
-          <p class="p1"></p>
-          <p class="p2"></p>
-          <p class="p3"></p>
-        </div>
-        <div class="courselist" style="margin-right: 0">
-          <p class="p1"></p>
-          <p class="p2"></p>
-          <p class="p3"></p>
+      </div>
+    </div> -->
+    <div class="back4">
+      <div class="classbody">
+        <img src="../assets/index/img/classtitle.png" class="img1" />
+        <button class="bodybtn">更多></button>
+        <div class="coursenew">
+          <div class="imagebac">
+            <img class="cimg" src="../assets/index/img/R-C1.jpg" />
+            <img class="cimg" src="../assets/index/img/R-C1.jpg" />
+            <img
+              class="cimg"
+              src="../assets/index/img/R-C1.jpg"
+              style="margin-right: 0"
+            />
+          </div>
+          <div class="courselist">
+            <p class="p1">金融界/2023-12-12</p>
+            <p class="p2">投资课堂</p>
+            <p class="p3">运用数字科技服务</p>
+          </div>
+          <div class="courselist">
+            <p class="p1"></p>
+            <p class="p2"></p>
+            <p class="p3"></p>
+          </div>
+          <div class="courselist" style="margin-right: 0">
+            <p class="p1"></p>
+            <p class="p2"></p>
+            <p class="p3"></p>
+          </div>
         </div>
       </div>
     </div>
+    <Bottom></Bottom>
   </div>
 </template>
 
@@ -386,7 +312,9 @@ import { animation } from "@/util/util";
 import { getChatMsg, chatgpt, chatgpt_1 } from "@/api/getData";
 import HeadPortrait from "@/components/HeadPortrait.vue";
 import FileCard from "@/components/FileCard.vue";
-import { CaretBottom, DArrowRight,Refresh} from "@element-plus/icons";
+import { CaretBottom, DArrowRight, Refresh } from "@element-plus/icons";
+import ChatWindowSimple from "./chatwindowSimple.vue";
+import Bottom from "./Bottom.vue";
 export default {
   name: "community",
   data() {
@@ -405,7 +333,7 @@ export default {
       courseimages: [{ url: require("../assets/index/img/R-C1.jpg") }],
       Aidialog: false,
       newsList: true,
-      newsflash:true,
+      newsflash: true,
       //存储社区热榜
       hotlists: [
         {
@@ -520,13 +448,37 @@ export default {
           "23.38%",
         ],
       ],
-      newsflashlists:[
-        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
-        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
-        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
-        {headline:'中央金融工作会议：活跃资本市场',state:'新闻',source:'新华社',read:'408'},
-        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
-
+      newsflashlists: [
+        {
+          headline: "中央金融工作会议：活跃资本市场",
+          state: "焦点",
+          source: "新华社",
+          read: "408",
+        },
+        {
+          headline: "中央金融工作会议：活跃资本市场",
+          state: "焦点",
+          source: "新华社",
+          read: "408",
+        },
+        {
+          headline: "中央金融工作会议：活跃资本市场",
+          state: "焦点",
+          source: "新华社",
+          read: "408",
+        },
+        {
+          headline: "中央金融工作会议：活跃资本市场",
+          state: "新闻",
+          source: "新华社",
+          read: "408",
+        },
+        {
+          headline: "中央金融工作会议：活跃资本市场",
+          state: "焦点",
+          source: "新华社",
+          read: "408",
+        },
       ],
       chatList: [],
       inputMsg: "",
@@ -553,16 +505,16 @@ export default {
         return "rgba(19, 111, 160, 1.00)"; // 奇数行背景颜色
       }
     },
-    showAI(){
-      this.Aidialog=true;
-      this.newsList=false;
+    showAI() {
+      this.Aidialog = true;
+      this.newsList = false;
     },
     shownews() {
       this.newsList = true;
-      this.Aidialog=false;
+      this.Aidialog = false;
     },
-    showflashnew(){
-      this.newsflash=true;
+    showflashnew() {
+      this.newsflash = true;
     },
 
     search() {
@@ -693,11 +645,13 @@ export default {
     // this.getFriendChatMsg();
   },
   components: {
+    Bottom,
     HeadPortrait,
     FileCard,
     CaretBottom,
     DArrowRight,
-    Refresh
+    Refresh,
+    ChatWindowSimple,
   },
   props: {
     frinedInfo: Object,

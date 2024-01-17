@@ -1,6 +1,44 @@
+@font-face {
+  font-family: 思源黑体 Normal;
+  font-weight: 300;
+  src: url('../../font/SourceHanSansCN-Normal.ttf');
+}
+
+@font-face {
+  font-family: 思源黑体 bold;
+  font-weight: 600;
+  src: url('../../font/SourceHanSansCN-Bold.ttf');
+}
+@media (max-width: 1919px) and (min-width: 768px) {
+  html {
+    zoom: 80%;
+  }
+
+  @-ms-viewport {
+    width: 1920px;
+  }
+}
+
+@media screen and (max-width: 100%) {
+
+  .newsmain {
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+}
 * {
   background-color: rgba(0, 0, 0, 0);
   margin: 0;
+}
+.newsmain{
+  width: 1920px;
+  height: auto;
+  float: left;
+  /* border: 1px solid black; */
+  position: absolute;
+  background-color: white;  
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .back1 {
@@ -361,7 +399,7 @@
     color: white;
     border: none;
     position: relative;
-    margin-top: 300px;
+    margin-top: 400px;
     margin-left: -600px;
     font-size: 27px;
     font-weight: 400px;

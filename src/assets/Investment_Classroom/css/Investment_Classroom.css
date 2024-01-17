@@ -1,8 +1,46 @@
+@font-face {
+  font-family: 思源黑体 Normal;
+  font-weight: 300;
+  src: url('../../font/SourceHanSansCN-Normal.ttf');
+}
+
+@font-face {
+  font-family: 思源黑体 bold;
+  font-weight: 600;
+  src: url('../../font/SourceHanSansCN-Bold.ttf');
+}
+@media (max-width: 1919px) and (min-width: 768px) {
+  html {
+    zoom: 80%;
+  }
+
+  @-ms-viewport {
+    width: 1920px;
+  }
+}
+
+@media screen and (max-width: 100%) {
+
+  .classmain {
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+}
 * {
   background-color: rgba(0, 0, 0, 0);
   margin: 0;
+  font-family: 思源黑体 bold;
 }
-
+.classmain{
+  width: 1920px;
+  height: auto;
+  float: left;
+  /* border: 1px solid black; */
+  position: absolute;
+  background-color: white;  
+  left: 50%;
+  transform: translate(-50%);
+}
 .back1 {
   background: url('../img/back1.png');
   width: 100%;
@@ -46,7 +84,8 @@
   background-image: url('../img/pbac.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  display: inline-block; 
+  display: inline-block;
+  content: '';
   width: 45px;
   height: 45px;
   vertical-align: middle;

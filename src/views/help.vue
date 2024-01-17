@@ -1,319 +1,160 @@
 <template>
-  <div class="back1">
-    <!-- 导航信息 -->
-    <div class="header">
-      <!-- 导航左边 -->
-      <ol class="headerleft">
-        <li @click="GetRouterInfo('person')">个人中心</li>
-      </ol>
-      <div class="headermiddle">
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('index')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >首页</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('aistocks')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >AI股票</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('investclass')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >AI投资课堂</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('community')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >AI股民社区</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('news')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >新闻资讯</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('help')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >帮助中心</el-button
-        >
-        <el-button
-          class="btn"
-          @click="GetRouterInfo('hidedra')"
-          onmouseout="this.style.color='white'"
-          onmouseleave="this.style.color='black'"
-          >卧虎藏龙</el-button
-        >
-      </div>
-      <div class="headerright">
-        <input
-          class="sinput"
-          type="text"
-          v-model="SearchText"
-          placeholder="Search"
-        />
-        <i class="icon" @click="search"></i>
-      </div>
-    </div>
-    <div class="bbody">
-      <div class="helpmain">
-        <div class="introduce">
-          <h1 class="h1">AI智能股票投资是什么？</h1>
-          <p class="p1">
-            AI智能投资是指利用人工智能（AI）技术进行股票投资的一种方法。通过使用大数据、机器学习、深度学习等先进技术，<br />AI系统可以分析大量金融数据，识别潜在投资机会和风险，从而为投资者提供决策支持
-          </p>
-          <h1 class="h1">为什么选择AI智能投资</h1>
-          <p class="p1">AI智能股票投资的主要优势包括：</p>
+  <div class="mainhelp">
+    <div class="back1">
+      <!-- 导航信息 -->
+      <div class="header">
+        <!-- 导航左边 -->
+        <ol class="headerleft">
+          <li @click="GetRouterInfo('person')">个人中心</li>
+        </ol>
+        <div class="headermiddle">
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('index')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >首页</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('aistocks')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >AI股票</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('investclass')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >AI投资课堂</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('community')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >AI股民社区</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('news')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >新闻资讯</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('help')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >帮助中心</el-button
+          >
+          <el-button
+            class="btn"
+            @click="GetRouterInfo('hidedra')"
+            onmouseout="this.style.color='white'"
+            onmouseleave="this.style.color='black'"
+            >卧虎藏龙</el-button
+          >
         </div>
-        <div class="trait">
-          <div class="trait1">
-            <img src="../assets/Help/img/effient.png" class="pic" />
-            <h1 class="h1">高效性</h1>
-            <p class="p1">
-              AI系统可以快速处理大量数据，<br />实时更新市场信息，帮助投资者迅速做出决策。
-            </p>
-          </div>
-          <div class="trait2">
-            <img src="../assets/Help/img/risk.png" class="pic" />
-            <h1 class="h1">风险管理</h1>
-            <p class="p1">
-              AI系统可以实时监控投资组合的风险<br />及时调整投资策略，降低潜在损失
-            </p>
-          </div>
-          <div class="trait3">
-            <img src="../assets/Help/img/forecast.png" class="pic" />
-            <h1 class="h1">预测能力</h1>
-            <p class="p1">
-              AI系统可以通过对历史数据的分析，<br />发现潜在的规律和趋势，从而预测未来的<br />市场走势
-            </p>
-          </div>
-          <div class="trait4">
-            <img src="../assets/Help/img/object.png" class="pic" />
-            <h1 class="h1">客观性</h1>
-            <p class="p1">
-              AI系统基于数据和算法进行分析，<br />实时更新市场信息，不受个人情绪和主管判断的影响，有助于提高投资者决策的客观性
-            </p>
-          </div>
-        </div>
-        <!-- 常见问题 -->
-        <div class="problem">
-          <div class="headline">
-            <h1 class="tit">常见问题</h1>
-            <p class="vid">FREQUENTLY <br />ASKED QUEDTION</p>
-          </div>
-          <div class="problem-list">
-            <button class="list-btn">
-              <el-icon color="rgba(0,0,0,0.4)"><CirclePlusFilled /></el-icon>
-              忘记密码怎么办?
-            </button>
-            <button class="list-btn">
-              <el-icon color="rgba(0,0,0,0.4)"><CirclePlusFilled /></el-icon>
-              如何邀请好友加入？
-            </button>
-            <button class="list-btn">
-              <el-icon color="rgba(0,0,0,0.4)"><CirclePlusFilled /></el-icon>
-              我们需要收取服务费吗？
-            </button>
-            <button class="list-btn">
-              <el-icon color="rgba(0,0,0,0.4)"><CirclePlusFilled /></el-icon>
-              我们系统安全可靠吗？
-            </button>
-            <button class="list-btn" style="border-bottom: 2px solid #294a6a">
-              <el-icon color="rgba(0,0,0,0.4)"><CirclePlusFilled /></el-icon>
-              AI预测精准吗？
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="back2"></div>
-  <div class="back3">
-    <div class="btngroup">
-      <button class="group1" @click="showAI">AI对话</button>
-      <button class="group1" @click="shownews">财经快讯</button>
-      <button class="group1">热榜</button>
-      <button class="group1">投顾</button>
-    </div>
-    <div class="body4">
-      <div class="aibody" v-show="Aidialog">
-        <div class="aileft">
-          <div class="botoom">
-            <div class="chat-content" ref="chatContent">
-              <div
-                class="chat-wrapper"
-                v-for="(item, index) in chatList"
-                :key="item.id"
-              >
-                <div class="chat-friend" v-if="item.uid !== '1001'">
-                  <div class="info-time">
-                    <img :src="item.headImg" alt="" />
-                    <span>{{ item.name }}</span>
-                    <span>{{ item.time }}</span>
-                  </div>
-                  <div class="chat-text" v-if="item.chatType == 0">
-                    <template v-if="isSend && index == chatList.length - 1">
-                      <span class="flash_cursor"></span>
-                    </template>
-                    <template v-else>
-                      <pre>{{ item.msg }}</pre>
-                    </template>
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 1">
-                    <img
-                      :src="item.msg"
-                      alt="表情"
-                      v-if="item.extend.imgType == 1"
-                      style="width: 100px; height: 100px"
-                    />
-                    <el-image
-                      :src="item.msg"
-                      :preview-src-list="srcImgList"
-                      v-else
-                    >
-                    </el-image>
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 2">
-                    <div class="word-file">
-                      <FileCard
-                        :fileType="item.extend.fileType"
-                        :file="item.msg"
-                      ></FileCard>
-                    </div>
-                  </div>
-                </div>
-                <div class="chat-me" v-else>
-                  <div class="info-time">
-                    <span>{{ item.name }}</span>
-                    <span>{{ item.time }}</span>
-                    <img :src="item.headImg" alt="" />
-                  </div>
-                  <div class="chat-text" v-if="item.chatType == 0">
-                    {{ item.msg }}
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 1">
-                    <img
-                      :src="item.msg"
-                      alt="表情"
-                      v-if="item.extend.imgType == 1"
-                      style="width: 100px; height: 100px"
-                    />
-                    <el-image
-                      style="max-width: 300px; border-radius: 10px"
-                      :src="item.msg"
-                      :preview-src-list="srcImgList"
-                      v-else
-                    >
-                    </el-image>
-                  </div>
-                  <div class="chat-img" v-if="item.chatType == 2">
-                    <div class="word-file">
-                      <FileCard
-                        :fileType="item.extend.fileType"
-                        :file="item.msg"
-                      ></FileCard>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="chatInputs">
-              <input
-                class="inputs"
-                v-model="inputMsg"
-                @keyup.enter="sendText"
-              />
-              <el-button
-                class="send boxinput"
-                :disabled="isSend"
-                @click="sendText"
-              >
-                发送
-              </el-button>
-            </div>
-          </div>
-        </div>
-        <div class="airight">
-          <h1>大家都在问我</h1>
-          <ul>
-            <li v-for="item in questions" v-bind:key="item" @click="selectItem(item)">
-              {{ item }}
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- 财经快讯 -->
-      <div class="newbody" v-show="newsList">
-        <div class="newbtngroup">
-          <button class="nbtn" @click="showflashnew">动态<el-icon><CaretBottom /></el-icon></button>
-          <button class="nbtn">关注<el-icon><CaretBottom /></el-icon></button>
-          <button class="refesh">刷新<el-icon><Refresh /></el-icon></button>
-        </div>
-        <div class="quicklist" v-show="newsflash">
-          <ul v-for="item in newsflashlists" v-bind:key="item">
-            <li>{{ item.headline }}</li>
-            <el-tag>{{ item.state }}</el-tag>
-            <text>{{ item.source }}</text>
-            <text>{{ item.read }}评</text>
-          </ul>          
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="back4">
-    <div class="classbody">
-      <img src="../assets/index/img/classtitle.png" class="img1" />
-      <button class="bodybtn">更多></button>
-      <div class="coursenew">
-        <div class="imagebac">
-          <img class="cimg" src="../assets/index/img/R-C1.jpg" />
-          <img class="cimg" src="../assets/index/img/R-C1.jpg" />
-          <img
-            class="cimg"
-            src="../assets/index/img/R-C1.jpg"
-            style="margin-right: 0"
+        <div class="headerright">
+          <input
+            class="sinput"
+            type="text"
+            v-model="SearchText"
+            placeholder="Search"
           />
+          <i class="icon" @click="search"></i>
         </div>
-        <div class="courselist">
-          <p class="p1">金融界/2023-12-12</p>
-          <p class="p2">投资课堂</p>
-          <p class="p3">运用数字科技服务</p>
-        </div>
-        <div class="courselist">
-          <p class="p1"></p>
-          <p class="p2"></p>
-          <p class="p3"></p>
-        </div>
-        <div class="courselist" style="margin-right: 0">
-          <p class="p1"></p>
-          <p class="p2"></p>
-          <p class="p3"></p>
+      </div>
+      <div class="bbody">
+        <div class="helpmain">
+          <div class="introduce">
+            <h1 class="h1">AI智能股票投资是什么？</h1>
+            <p class="p1">
+              AI智能投资是指利用人工智能（AI）技术进行股票投资的一种方法。通过使用大数据、机器学习、深度学习等先进技术，<br />AI系统可以分析大量金融数据，识别潜在投资机会和风险，从而为投资者提供决策支持
+            </p>
+            <h1 class="h1">为什么选择AI智能投资</h1>
+            <p class="p1">AI智能股票投资的主要优势包括：</p>
+          </div>
+          <div class="trait">
+            <div class="trait1">
+              <img src="../assets/Help/img/effient.png" class="pic" />
+              <h1 class="h1">高效性</h1>
+              <p class="p1">
+                AI系统可以快速处理大量数据，<br />实时更新市场信息，帮助投资者迅速做出决策。
+              </p>
+            </div>
+            <div class="trait2">
+              <img src="../assets/Help/img/risk.png" class="pic" />
+              <h1 class="h1">风险管理</h1>
+              <p class="p1">
+                AI系统可以实时监控投资组合的风险<br />及时调整投资策略，降低潜在损失
+              </p>
+            </div>
+            <div class="trait3">
+              <img src="../assets/Help/img/forecast.png" class="pic" />
+              <h1 class="h1">预测能力</h1>
+              <p class="p1">
+                AI系统可以通过对历史数据的分析，<br />发现潜在的规律和趋势，从而预测未来的<br />市场走势
+              </p>
+            </div>
+            <div class="trait4">
+              <img src="../assets/Help/img/object.png" class="pic" />
+              <h1 class="h1">客观性</h1>
+              <p class="p1">
+                AI系统基于数据和算法进行分析，<br />实时更新市场信息，不受个人情绪和主管判断的影响，有助于提高投资者决策的客观性
+              </p>
+            </div>
+          </div>
+          <!-- 常见问题 -->
+          <div class="problem">
+            <div class="headline">
+              <h1 class="tit">常见问题</h1>
+              <p class="vid">FREQUENTLY <br />ASKED QUEDTION</p>
+            </div>
+            <div class="problem-list">
+              <button class="list-btn">
+                <el-icon color="rgba(0,0,0,0.4)"><CirclePlusFilled /></el-icon>
+                忘记密码怎么办?
+              </button>
+              <button class="list-btn">
+                <el-icon color="rgba(0,0,0,0.4)"><CirclePlusFilled /></el-icon>
+                如何邀请好友加入？
+              </button>
+              <button class="list-btn">
+                <el-icon color="rgba(0,0,0,0.4)"><CirclePlusFilled /></el-icon>
+                我们需要收取服务费吗？
+              </button>
+              <button class="list-btn">
+                <el-icon color="rgba(0,0,0,0.4)"><CirclePlusFilled /></el-icon>
+                我们系统安全可靠吗？
+              </button>
+              <button class="list-btn" style="border-bottom: 2px solid #294a6a">
+                <el-icon color="rgba(0,0,0,0.4)"><CirclePlusFilled /></el-icon>
+                AI预测精准吗？
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+    <div class="back2"></div>
+    <Bottom></Bottom>
   </div>
 </template>
   <script>
 import axios from "axios";
-import { CirclePlusFilled,CaretBottom } from "@element-plus/icons";
+import { CirclePlusFilled, CaretBottom } from "@element-plus/icons";
 import { animation } from "@/util/util";
 import { getChatMsg, chatgpt, chatgpt_1 } from "@/api/getData";
 import HeadPortrait from "@/components/HeadPortrait.vue";
 import FileCard from "@/components/FileCard.vue";
+import ChatWindowSimple from "./chatwindowSimple.vue";
+import Bottom from "./Bottom.vue";
 export default {
-  name: "aistocks",
+  name: "help",
   data() {
     return {
       SearchText: "",
@@ -328,9 +169,9 @@ export default {
       shine4: false,
       images: [{ url: require("../assets/index/img/teacher1.png") }],
       courseimages: [{ url: require("../assets/index/img/R-C1.jpg") }],
-      Aidialog:true,
+      Aidialog: true,
       newsList: false,
-      newsflash:true,
+      newsflash: true,
       questions: ["每年几月份是最佳的融资窗口?"],
       chatList: [],
       inputMsg: "",
@@ -338,14 +179,38 @@ export default {
       frinedInfo: {},
       srcImgList: [],
       isSend: false,
-      newsflashlists:[
-        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
-        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
-        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
-        {headline:'中央金融工作会议：活跃资本市场',state:'新闻',source:'新华社',read:'408'},
-        {headline:'中央金融工作会议：活跃资本市场',state:'焦点',source:'新华社',read:'408'},
-
-      ]
+      newsflashlists: [
+        {
+          headline: "中央金融工作会议：活跃资本市场",
+          state: "焦点",
+          source: "新华社",
+          read: "408",
+        },
+        {
+          headline: "中央金融工作会议：活跃资本市场",
+          state: "焦点",
+          source: "新华社",
+          read: "408",
+        },
+        {
+          headline: "中央金融工作会议：活跃资本市场",
+          state: "焦点",
+          source: "新华社",
+          read: "408",
+        },
+        {
+          headline: "中央金融工作会议：活跃资本市场",
+          state: "新闻",
+          source: "新华社",
+          read: "408",
+        },
+        {
+          headline: "中央金融工作会议：活跃资本市场",
+          state: "焦点",
+          source: "新华社",
+          read: "408",
+        },
+      ],
     };
   },
   props: {
@@ -362,23 +227,23 @@ export default {
   methods: {
     GetRouterInfo(url) {
       var that = this;
-      that.$router.push({path: "/" + url + "",});
+      that.$router.push({ path: "/" + url + "" });
       this.className = "lun-img-two";
       setTimeout(() => {
         this.className = "lun-img";
       }, 300);
-    }, 
-    showAI(){
-      this.Aidialog=true;
-      this.newsList=false;
+    },
+    showAI() {
+      this.Aidialog = true;
+      this.newsList = false;
     },
     shownews() {
       this.newsList = true;
-      this.Aidialog=false;
+      this.Aidialog = false;
     },
-    showflashnew(){
-      this.newsflash=true;
-    },  
+    showflashnew() {
+      this.newsflash = true;
+    },
     search() {
       const filteredItems = this.items.filter((item) =>
         item.includes(this.searchText)
@@ -425,90 +290,17 @@ export default {
       this.underline4 = true;
       this.shine4 = true;
     },
-    
-    //获取聊天记录
-    getFriendChatMsg() {
-      let params = {
-        frinedId: this.frinedInfo.id,
-      };
-      getChatMsg(params).then((res) => {
-        this.chatList = res;
-        this.chatList.forEach((item) => {
-          if (item.chatType == 2 && item.extend.imgType == 2) {
-            this.srcImgList.push(item.msg);
-          }
-        });
-        this.scrollBottom();
-      });
-    },
-    //发送信息
-    sendMsg(msgList) {
-      this.chatList.push(msgList);
-      this.scrollBottom();
-    },
-    //获取窗口高度并滚动至最底层
-    scrollBottom() {
-      this.$nextTick(() => {
-        const scrollDom = this.$refs.chatContent;
-        animation(scrollDom, scrollDom.scrollHeight - scrollDom.offsetHeight);
-      });
-    },
-    //发送文字信息
-    sendText() {
-      if (this.inputMsg) {
-        let chatMsg = {
-          headImg: require("@/assets/img/head_portrait.jpg"),
-          name: "username",
-          time: new Date().toLocaleTimeString(),
-          msg: this.inputMsg,
-          chatType: 0, //信息类型，0文字，1图片
-          uid: "1001", //uid
-        };
-        this.sendMsg(chatMsg); //显示发出的信息
-        this.$emit("personCardSort", this.frinedInfo.id);
-        this.inputMsg = ""; //清空聊天输入框的内容
-        let data = {
-          prompt: chatMsg.msg,
-          temperature: 1,
-          top_p: 1,
-          model: "text-davinci-003",
-          max_tokens: 2048,
-          frequency_penalty: 0,
-          presence_penalty: 0,
-          stop: ["Human:", "AI:"],
-        };
-        this.loading = true;
-        this.isSend = true;
-        let chatGPT = {
-          headImg: require("@/assets/img/ai1.png"),
-          name: "ai投资顾问",
-          time: new Date().toLocaleTimeString(),
-          msg: "",
-          chatType: 0, //信息类型，0文字，1图片
-          uid: "1002", //uid
-        };
-        this.sendMsg(chatGPT); //显示机器人条目
-        chatgpt_1(data).then((res) => {
-          //console.log(res)
-          this.isSend = false;
-          this.chatList[this.chatList.length - 1].msg = res.Result;
-        });
-      } else {
-        this.$message({
-          message: "消息不能为空哦~",
-          type: "warning",
-        });
-      }
-    },
-    selectItem(item) {
-      this.inputMsg = item;
-    },
+
+   
   },
   mounted() {
     // this.getFriendChatMsg();
   },
   components: {
-    CirclePlusFilled,CaretBottom
+    CirclePlusFilled,
+    CaretBottom,
+    ChatWindowSimple,
+    Bottom
   },
 };
 </script>

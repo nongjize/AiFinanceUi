@@ -28,8 +28,7 @@ export const getChatMsg = params => {
       data: params,
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.VUE_APP_CHATGPT_KEY}`,//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
-        //'Authorization':'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',//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
+        'Authorization': `Bearer ${process.env.VUE_APP_CHATGPT_KEY}`,
       }
     }).then(res => res.data)
   }

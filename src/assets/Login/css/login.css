@@ -11,14 +11,15 @@
 }
 
 * {
-    margin: 0;
-    background: white;
-    padding: 0;
+    margin: 0;    
+    padding: 0;    
+    background-color: white;
+   
 }
 
 .back1 {
-    width: 100%;
-    height: 800px;
+    width: 100vw;
+    height:100vh;
     background: url('../img/back1.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -38,10 +39,12 @@
 }
 
 .head {
-    width: 100%;
+    width:80%;
     height: 8%;
+    margin-left: 12%;
     /* border: 1px solid; */
     position: relative;
+    margin-top: 2vh;
     text-align: left;
     background-color: transparent;
 
@@ -59,9 +62,10 @@
     h1 {
         background-color: transparent;
         float: left;
-        margin-left: 20px;
+        margin-left: 30px;
         font-family: 思源黑体 bold;
         font-weight: 800;
+        font-size: 0.6rem;
     }
 }
 
@@ -81,6 +85,7 @@
         font-family: 思源黑体 bold;
         color: black;
         text-align: left;
+        font-size: 0.25rem;
         margin-top: 5%;
         margin-left: 20%;
     }
@@ -117,7 +122,7 @@
         border-radius: 5px;
         margin-top: 10%;
         font-family: 思源黑体 bold;
-        font-size: 20px;
+        font-size: 0.25rem;
 
     }
 }
@@ -139,7 +144,7 @@
         background-color: transparent;
         font-family: 思源黑体 bold;
         color: white;
-        font-size: 20px;
+        font-size:  0.25rem;
         margin-right: 10%;
 
         .line {
@@ -162,7 +167,7 @@
     height: 50%;
     float: left;
     position: absolute;
-    border: 1px solid;
+    /* border: 1px solid; */
     margin-left: 10%;
     background-color: transparent;
 
@@ -189,9 +194,174 @@
         }
         
     }
+    .check{
+        width: 100%;
+        height: 20px;
+        /* border: 1px solid; */
+        position: relative;
+        float: left;
+        margin-top: 10px;
+        background-color: transparent;
+        text-align: left;
+        font-family: 思源黑体 bold;
 
-    
-
-
+        .box{
+            width: 0.23rem;
+            height:0.23rem;           
+            float: left;
+            margin-right: 10px;
+        }
+        li{
+            background: transparent;
+            list-style: none;
+            width: auto;
+            float: left;
+            font-size: 0.2rem;
+        }
+        .dec{
+            color: #FF5501;
+        }
+        .dec1{
+            float: right;
+        }
+       
+    } 
+    .loginbtn{
+        background-color: #FF5501;
+        width: 60%;
+       height: 15%;
+       color: white;
+       font-family: 思源黑体 bold;
+       font-size: 0.3rem;
+       margin-top: 20px;
+       border: none;
+       border-radius: 32.49px;
+    }
+   
 
 }
+.other{
+    width: 80%;
+    height: 15%;
+    position: relative;
+    float: left;
+    margin-left: 10%;
+    background: transparent;
+    /* border: 1px solid; */
+    margin-top: 55%;
+    p{
+        color: white;
+        background-color: transparent;
+        font-family: 思源黑体 Normal;
+    }  
+    .imggroup{
+        width: 70%;
+        height: auto;       
+        left: 50%;
+        position: relative;
+        transform: translate(-50%,-50%);
+
+        .img{
+            background-color: transparent;
+            width: 50px;
+            height: 50px;
+            border: 2px solid white;
+            border-radius: 10px;
+            float: left;
+            margin-right: 10%;
+            margin-left: 5%;
+
+            img{
+                background-color: transparent;               
+                vertical-align: middle;
+                margin-top: 5px;
+
+            }
+            
+        }  
+    }
+}
+.notelogin{
+    width: 80%;
+    height: 50%;
+    float: left;
+    position: absolute;
+    /* border: 1px solid; */
+    margin-left: 10%;
+    background-color: transparent; 
+
+    .el-input {
+        background-color: transparent !important;
+        border: 3px solid white !important;
+        border-radius: 5px;
+        color: white !important;
+        font-family: 思源黑体 Normal;
+        width: 100%;
+        height: 20%;
+        margin-bottom: 5%;
+        --el-input-bg-color: transparent;
+        --el-input-text-color: white;
+
+        .el-input_inner {
+            border: none;
+            color: white !important;
+            background-color: transparent!important;
+        }
+
+        .el-input__icon {
+            background-color: transparent !important;
+        }
+        .el-select{
+            background-color: transparent!important;
+        }
+        
+    }
+    .check{
+        width: 100%;
+        height: 20px;
+        /* border: 1px solid; */
+        position: relative;
+        float: left;
+        margin-top: 10px;
+        background-color: transparent;
+        text-align: left;
+        font-family: 思源黑体 bold;
+
+        .box{
+            width: 18px;
+            height: 18px;           
+            float: left;
+            margin-right: 10px;
+        }
+        li{
+            background: transparent;
+            list-style: none;
+            width: auto;
+            float: left;
+        }
+        .dec{
+            color: #FF5501;
+        }
+        .dec1{
+            float: right;
+        }
+        p{
+            background-color: transparent;
+            text-align: center;
+            font-family: 思源黑体 bold;
+            color: white;
+        }
+       
+    } 
+    .loginbtn{
+        background-color: #FF5501;
+        width: 60%;
+       height: 15%;
+       color: white;
+       font-family: 思源黑体 bold;
+       font-size: 25px;
+       margin-top: 20px;
+       border: none;
+       border-radius: 32.49px;
+    }
+} 

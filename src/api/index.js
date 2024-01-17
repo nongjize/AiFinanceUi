@@ -2,8 +2,9 @@ import axios from 'axios'
 
 //全局参数，自定义参数可在发送请求时设置
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+//axios.defaults.headers.common['Access-Control-Allow-Credentials']=true;
 axios.defaults.timeout = 300000000 //超时时间ms
-axios.defaults.withCredentials = true
+//axios.defaults.withCredentials = true
 // 请求时的拦截
 //回调里面不能获取错误信息
 axios.interceptors.request.use(

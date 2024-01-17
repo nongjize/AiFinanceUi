@@ -1,10 +1,10 @@
-<template>
+<template> 
   <div class="back1">
+    <div class="head">
+      <div class="leftline"></div>
+      <h1>个人中心登录</h1>
+    </div>
     <div class="body">
-      <div class="head">
-        <div class="leftline"></div>
-        <h1>个人中心登录</h1>
-      </div>
       <div class="bodyleft">
         <h3>1个账号，实现电脑、手机、iPad自选股同步</h3>
         <div class="img"></div>
@@ -34,13 +34,62 @@
             v-model="password"
             type="password"
             placeholder="请输入密码"
-            :type="showPassword ? 'text' : 'password'"
+            show-password
           >
-            <i slot="suffix" @click="switchPassword">
-              <el-icon v-if="showPassword"><View /></el-icon>
-              <el-icon v-else><Hide /></el-icon>              
-            </i>
           </el-input>
+          <div class="check">
+            <input type="checkbox" class="box" />
+            <li>我已阅读并接受</li>
+            <li class="dec">《服务条款》</li>
+            <li>和</li>
+            <li class="dec">《隐私服务》</li>
+          </div>
+          <button class="loginbtn" @click="GetRouterInfo('person')">
+            登录
+          </button>
+          <div class="check">
+            <li>还没有账号？</li>
+            <li class="dec" @click="GetRouterInfo('register')">5秒注册</li>
+            <li class="dec dec1">忘记密码</li>
+          </div>
+        </div>
+        <div class="notelogin" v-show="note">
+          <el-input v-model="input" type="text" placeholder="请输入手机号">
+          </el-input>
+          <el-input
+            v-model="password"
+            type="password"
+            placeholder="请输入验证码"
+          >
+            <template #append><el-button>获取验证码</el-button></template>
+          </el-input>
+          <div class="check">
+            <input type="checkbox" class="box" />
+            <li>我已阅读并接受</li>
+            <li class="dec">《服务条款》</li>
+            <li>和</li>
+            <li class="dec">《隐私服务》</li>
+          </div>
+          <button class="loginbtn" @click="GetRouterInfo('person')">
+            登录
+          </button>
+          <div class="check">
+            <p>未注册的手机号验证通过后自动注册</p>
+          </div>
+        </div>
+        <div class="other">
+          <p>其他登录方式</p>
+          <div class="imggroup">
+            <div class="img">
+              <img src="../assets/Login/img/wechat.png" />
+            </div>
+            <div class="img">
+              <img src="../assets/Login/img/qq.png" />
+            </div>
+            <div class="img">
+              <img src="../assets/Login/img/microblog.png" />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -49,7 +98,6 @@
 
 <script>
 import { ElIcon } from "element-plus";
-import { View,Hide } from "@element-plus/icons";
 
 export default {
   name: "login",
@@ -61,9 +109,18 @@ export default {
       btnline2: false,
       account: true,
       showPassword: true,
+      note: false,
     };
   },
   methods: {
+    GetRouterInfo(url) {
+      var that = this;
+      that.$router.push({ path: "/" + url + "" });
+      this.className = "lun-img-two";
+      setTimeout(() => {
+        this.className = "lun-img";
+      }, 300);
+    },
     //账号登录
     accountlogin() {
       this.btnline1 = true;
@@ -75,12 +132,11 @@ export default {
       this.btnline1 = false;
       this.btnline2 = true;
       this.account = false;
+      this.note = true;
     },
   },
   mounted() {},
-  components: {
-    View,Hide
-  },
+  components: {},
   computed: {},
 };
 </script>

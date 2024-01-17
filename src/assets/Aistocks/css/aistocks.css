@@ -1,6 +1,45 @@
+@font-face {
+  font-family: 思源黑体 Normal;
+  font-weight: 300;
+  src: url('../../font/SourceHanSansCN-Normal.ttf');
+}
+
+@font-face {
+  font-family: 思源黑体 bold;
+  font-weight: 600;
+  src: url('../../font/SourceHanSansCN-Bold.ttf');
+}
+@media (max-width: 1919px) and (min-width: 768px) {
+  html {
+    zoom: 80%;
+  }
+
+  @-ms-viewport {
+    width: 1920px;
+  }
+}
+
+@media screen and (max-width: 100%) {
+
+  .aistockmain {
+    margin-left: 50%;
+    margin-right: 50%;
+  }
+}
 * {
   background-color: rgba(0, 0, 0, 0);
   margin: 0;
+  font-family: 思源黑体 bold;
+}
+.aistockmain{
+  width: 1920px;
+  height: auto;
+  float: left;
+  /* border: 1px solid black; */
+  position: absolute;
+  background-color: white;  
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .back1 {
@@ -167,6 +206,7 @@
   height: 60px;
   margin-top: 10px;
   margin-left: 5%;
+  float: left;
 
 
   .tbtn {
@@ -364,6 +404,7 @@
   margin-top: 0px;
   float: left;
   background-repeat: no-repeat;  
+  
 }
 .canleft{
   width: 60%;
@@ -373,24 +414,26 @@
   position: relative;
   float: left;
 
+
   .table-container{
     margin-top: -10px;
   }
+  
   
   .bbtn{
     background-color: transparent;
     border: none;
     color: white;
     float: left;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-right: 30px;
     .el-icon{
       color: transparent;
     }
   }
-  .bbtn:focus{
+  .bbtn:active{
     border: 2px solid rgb(45, 129, 196);;
 
     .el-icon{
