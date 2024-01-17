@@ -434,20 +434,10 @@ export default {
     ChatWindowSimple,
     Bottom
   },
-  props: {
-    frinedInfo: Object,
-    default() {
-      return {};
-    },
-  },
-  watch: {
-    frinedInfo() {
-      this.getFriendMsg();
-    },
-  },
+ 
 };
 </script>
 
-<style>
+<style style="scss" scoped>
 @import url("../assets/News/css/news.css");
 </style>

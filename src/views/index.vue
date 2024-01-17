@@ -475,6 +475,6 @@ export default {
 };
 </script>
 
-<style>
+<style style="scss" scoped>
 @import url("../assets/index/css/index.css");
 </style>

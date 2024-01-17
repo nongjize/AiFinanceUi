@@ -667,6 +667,6 @@ export default {
 };
 </script>
 
-<style>
+<style style="scss" scoped>
 @import url("../assets/Community/css/community.css");
 </style>

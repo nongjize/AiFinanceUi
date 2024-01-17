@@ -10,21 +10,51 @@
     src: url('../../font/SourceHanSansCN-Bold.ttf');
 }
 
+@media (max-width: 1919px) and (min-width: 768px) {
+    html {
+        zoom: 80%;
+    }
+
+    @-ms-viewport {
+        width: 1920px;
+    }
+}
+
+@media screen and (max-width: 100%) {
+
+    .loginmain {
+        margin-left: 50%;
+        margin-right: 50%;
+    }
+}
+
 * {
-    margin: 0;    
-    padding: 0;    
+    margin: 0;
+    padding: 0;
     background-color: white;
-   
+
+}
+
+.loginmain {
+    width: 1920px;
+    height: auto;
+    float: left;
+    /* border: 1px solid black; */
+    position: absolute;
+    background-color: white;
+    left: 50%;
+    transform: translate(-50%);
 }
 
 .back1 {
-    width: 100vw;
-    height:100vh;
+    width: 1920px;
+    height: 900px;
     background: url('../img/back1.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     padding: 0;
     position: absolute;
+
 
 }
 
@@ -39,7 +69,7 @@
 }
 
 .head {
-    width:80%;
+    width: 80%;
     height: 8%;
     margin-left: 12%;
     /* border: 1px solid; */
@@ -65,7 +95,7 @@
         margin-left: 30px;
         font-family: 思源黑体 bold;
         font-weight: 800;
-        font-size: 0.6rem;
+        font-size: 40px;
     }
 }
 
@@ -85,7 +115,7 @@
         font-family: 思源黑体 bold;
         color: black;
         text-align: left;
-        font-size: 0.25rem;
+        font-size: 30px;
         margin-top: 5%;
         margin-left: 20%;
     }
@@ -122,7 +152,7 @@
         border-radius: 5px;
         margin-top: 10%;
         font-family: 思源黑体 bold;
-        font-size: 0.25rem;
+        font-size: 1.25rem;
 
     }
 }
@@ -144,8 +174,9 @@
         background-color: transparent;
         font-family: 思源黑体 bold;
         color: white;
-        font-size:  0.25rem;
+        font-size: 1.25rem;
         margin-right: 10%;
+        position: relative;
 
         .line {
             width: 70%;
@@ -186,15 +217,16 @@
         .el-input_inner {
             border: none;
             color: white !important;
-            background-color: transparent!important;
+            background-color: transparent !important;
         }
 
         .el-input__icon {
             background-color: transparent !important;
         }
-        
+
     }
-    .check{
+
+    .check {
         width: 100%;
         height: 20px;
         /* border: 1px solid; */
@@ -205,42 +237,47 @@
         text-align: left;
         font-family: 思源黑体 bold;
 
-        .box{
-            width: 0.23rem;
-            height:0.23rem;           
+        .box {
+            width: 1.23rem;
+            height: 1.23rem;
             float: left;
             margin-right: 10px;
         }
-        li{
+
+        li {
             background: transparent;
             list-style: none;
             width: auto;
             float: left;
-            font-size: 0.2rem;
+            font-size: 1.1rem;
         }
-        .dec{
+
+        .dec {
             color: #FF5501;
         }
-        .dec1{
+
+        .dec1 {
             float: right;
         }
-       
-    } 
-    .loginbtn{
+
+    }
+
+    .loginbtn {
         background-color: #FF5501;
         width: 60%;
-       height: 15%;
-       color: white;
-       font-family: 思源黑体 bold;
-       font-size: 0.3rem;
-       margin-top: 20px;
-       border: none;
-       border-radius: 32.49px;
+        height: 15%;
+        color: white;
+        font-family: 思源黑体 bold;
+        font-size: 1.3rem;
+        margin-top: 20px;
+        border: none;
+        border-radius: 32.49px;
     }
-   
+
 
 }
-.other{
+
+.other {
     width: 80%;
     height: 15%;
     position: relative;
@@ -249,19 +286,22 @@
     background: transparent;
     /* border: 1px solid; */
     margin-top: 55%;
-    p{
+
+    p {
         color: white;
         background-color: transparent;
         font-family: 思源黑体 Normal;
-    }  
-    .imggroup{
+        margin-bottom: 10px;
+    }
+
+    .imggroup {
         width: 70%;
-        height: auto;       
+        height: auto;
         left: 50%;
         position: relative;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
 
-        .img{
+        .img {
             background-color: transparent;
             width: 50px;
             height: 50px;
@@ -271,24 +311,25 @@
             margin-right: 10%;
             margin-left: 5%;
 
-            img{
-                background-color: transparent;               
+            img {
+                background-color: transparent;
                 vertical-align: middle;
                 margin-top: 5px;
 
             }
-            
-        }  
+
+        }
     }
 }
-.notelogin{
+
+.notelogin {
     width: 80%;
     height: 50%;
     float: left;
     position: absolute;
     /* border: 1px solid; */
     margin-left: 10%;
-    background-color: transparent; 
+    background-color: transparent;
 
     .el-input {
         background-color: transparent !important;
@@ -305,18 +346,20 @@
         .el-input_inner {
             border: none;
             color: white !important;
-            background-color: transparent!important;
+            background-color: transparent !important;
         }
 
         .el-input__icon {
             background-color: transparent !important;
         }
-        .el-select{
-            background-color: transparent!important;
+
+        .el-select {
+            background-color: transparent !important;
         }
-        
+
     }
-    .check{
+
+    .check {
         width: 100%;
         height: 20px;
         /* border: 1px solid; */
@@ -327,41 +370,46 @@
         text-align: left;
         font-family: 思源黑体 bold;
 
-        .box{
+        .box {
             width: 18px;
-            height: 18px;           
+            height: 18px;
             float: left;
             margin-right: 10px;
         }
-        li{
+
+        li {
             background: transparent;
             list-style: none;
             width: auto;
             float: left;
         }
-        .dec{
+
+        .dec {
             color: #FF5501;
         }
-        .dec1{
+
+        .dec1 {
             float: right;
         }
-        p{
+
+        p {
             background-color: transparent;
             text-align: center;
             font-family: 思源黑体 bold;
             color: white;
         }
-       
-    } 
-    .loginbtn{
+
+    }
+
+    .loginbtn {
         background-color: #FF5501;
         width: 60%;
-       height: 15%;
-       color: white;
-       font-family: 思源黑体 bold;
-       font-size: 25px;
-       margin-top: 20px;
-       border: none;
-       border-radius: 32.49px;
+        height: 15%;
+        color: white;
+        font-family: 思源黑体 bold;
+        font-size: 25px;
+        margin-top: 20px;
+        border: none;
+        border-radius: 32.49px;
     }
-} 
+}
