@@ -65,6 +65,12 @@ export default {
   },
   mounted() {},
   methods: {
+    GetRouterInfo(url) {
+      //var that = this;
+      this.$router.push({ path: "/" + url + "" });
+      //this.className = "lun-img-two";
+      //setTimeout(() => {this.className = "lun-img";}, 300);
+    },
     //在聊天列表显示发送信息
     sendMsg(msgList) {
       this.chatList.push(msgList);
@@ -79,9 +85,13 @@ export default {
     },
     //发送文字信息
     sendText() {
+      // if(this.$store.state.userid==''){
+      //   this.$router.push({ path: "/" + "login" + "" });
+      //   return
+      // }
       if (this.inputMsg) {
         let chatMsg = {
-          name: "username",
+          name: this.$store.state.userid,
           time: new Date().toLocaleTimeString(),
           msg: this.inputMsg,
           chatType: 0, //信息类型，0文字，1图片
@@ -278,7 +288,7 @@ export default {
             }
 
             span:last-child {
-              color: rgb(101, 104, 115);
+              color: rgb(255, 255, 255);
               margin-left: 10px;
               vertical-align: middle;
             }
@@ -336,7 +346,7 @@ export default {
             }
 
             span:first-child {
-              color: rgb(101, 104, 115);
+              color: rgb(255, 255, 255);
               margin-right: 10px;
               vertical-align: middle;
             }

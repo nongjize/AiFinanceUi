@@ -352,6 +352,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../assets/personal/css/personal.css");
+<style src="@/assets/personal/css/personal.css" scoped>
+
 </style>

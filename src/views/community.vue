@@ -667,6 +667,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../assets/Community/css/community.css");
+<style src="@/assets/Community/css/community.css" scoped>
+
 </style>

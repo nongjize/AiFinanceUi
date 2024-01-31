@@ -305,6 +305,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../assets/Help/css/help.css");
+<style src="@/assets/Help/css/help.css" scoped>
+
 </style> 

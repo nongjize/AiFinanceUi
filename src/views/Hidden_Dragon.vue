@@ -431,6 +431,6 @@ export default {
 };
 </script>
   
-<style lang="scss" scoped>
-@import url("../assets/Hidden_Dragon/css/hidden_dragon.css");
+<style src="@/assets/Hidden_Dragon/css/hidden_dragon.css" scoped>
+
 </style>

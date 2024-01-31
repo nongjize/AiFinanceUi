@@ -14,9 +14,9 @@ import VideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
 
 
-createApp(App).use(store).use(router).use(elementPlus).use(ElIcon).use(VideoPlayer).mount('#app')
+createApp(App).use(store).use(router).use(elementPlus).use(ElIcon).use(VideoPlayer).use(store).mount('#app')//app.use(store)
 //createApp(App).prototype.$http=axios;
-new VueElement({
-  router,
-  render:h=>h(app),  
-}).$mount('#app')
+// new VueElement({
+//   router,
+//   render:h=>h(app),  
+// }).$mount('#app')

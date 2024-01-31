@@ -567,6 +567,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../assets/Aistocks/css/aistocks.css");
+<style src="@/assets/Aistocks/css/aistocks.css" scoped>
+
 </style>

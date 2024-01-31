@@ -308,6 +308,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../assets/Investment_Classroom/css/Investment_Classroom.css");
+<style src="@/assets/Investment_Classroom/css/Investment_Classroom.css" scoped>
+
 </style>

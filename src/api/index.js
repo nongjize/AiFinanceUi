@@ -1,14 +1,16 @@
 import axios from 'axios'
 
 //全局参数，自定义参数可在发送请求时设置
-axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
+//axios.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
 //axios.defaults.headers.common['Access-Control-Allow-Credentials']=true;
 axios.defaults.timeout = 300000000 //超时时间ms
 //axios.defaults.withCredentials = true
 // 请求时的拦截
 //回调里面不能获取错误信息
+//const authenticationCode = sessionStorage.getItem("authenticationCode")
 axios.interceptors.request.use(
   function (config) {
+    //config.headers['authenticationCode'] = authenticationCode;
     // console.log('请求异常：' + JSON.stringify(config));
     //if (config.method === 'post') {
     //  config.data = qs.stringify(config.data)
@@ -35,7 +37,8 @@ axios.interceptors.response.use(function (response) {
 
 const base = {
   axios: axios,
-  baseUrl: 'http://localhost:8080'
+  baseUrl: 'http://localhost:8080',
+  apiUrl:'http://172.247.43.74:5151'
 }
 
 export default base

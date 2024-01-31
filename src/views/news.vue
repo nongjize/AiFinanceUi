@@ -448,6 +448,6 @@ export default {
 };
 </script>
 
-<style>
-@import url("../assets/News/css/news.css");
+<style src="@/assets/News/css/news.css" scoped>
+
 </style>
