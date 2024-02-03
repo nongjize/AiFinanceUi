@@ -15,15 +15,15 @@
   }
 
   @-ms-viewport {
-    width: 1920px;
+    /* width: 1920px; */
   }
 }
 
 @media screen and (max-width: 100%) {
 
   .mainhelp {
-    margin-left: 50%;
-    margin-right: 50%;
+    /* margin-left: 50%;
+    margin-right: 50%; */
   }
 }
 * {
@@ -31,23 +31,24 @@
   margin: 0;
 }
 .mainhelp{
-  width: 1920px;
-  height: auto;
+  background: url('../img/back1.png');
+  background-attachment: fixed;
+  /* width: 1920px; */
+  /* height: auto;
   float: left;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   position: absolute;
   background-color: white;  
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%); */
 }
 .back1 {
-  background: url('../img/back1.png');
   width: 100%;
-  height: 900px;
-  background-size: 100% 100%;
+  /* height: 900px; */
+  /* background-size: 100% 100%;
   position: relative;
   float: left;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 /* 导航栏 */
@@ -61,8 +62,8 @@
   color: black;
   font-family: '思源黑体 CN';
   position: relative;
-  margin-top: 125px;
-  margin-left: 6%;
+  /* margin-top: 125px; */
+  margin-left: 10%;
   margin-right: 6%;
   font-size: 25px;
   font-weight: 700;
@@ -161,16 +162,16 @@
 }
 
 .bbody {
-  height: 515px;
+  /* height: 515px;
   margin-left: 8%;
   margin-right: 6%;
   position: relative;
-  /* border: 1px solid black; */
-  margin-top: 120px;
+  border: 1px solid black;
+  margin-top: 120px; */
 }
 
 .helpmain {
-  width: 1200px;
+  /* width: 1200px;
   height: auto;
   position: relative;
   margin-top: 700px;
@@ -180,19 +181,20 @@
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
 
   .introduce {
-    width: 1200px;
+    /* width: 1200px;
     height: auto;
-    float: left;
+    float: left; */
+    margin-top: 20vh;
 
     .h1 {
       color: black;
       margin-top: 30px;
       font-size: 35px;
       position: relative;
-      width: 1200px;
+      /* width: 1200px; */
       text-align: center;
       font-weight: bold;
 
@@ -203,7 +205,7 @@
       line-height: 2.0rem;
       font-size: 20px;
       position: relative;
-      width: 1200px;
+      /* width: 1200px; */
       text-align: center;
       margin-top: 20px;
     }
@@ -211,9 +213,10 @@
 }
 
 .trait {
-  width: 1200px;
-  height: 500px;
-  margin-top: 60px;
+  height: 555px;
+  /* width: 1200px;
+   */
+  /* margin-top: 60px; */
   /* border: 1px solid #365575; */
 
   .trait1 {
@@ -222,7 +225,7 @@
     border-radius: 20px;
     background: rgba(0, 0, 0,0.1);
     float: left;
-    margin-left: 35px;
+    margin-left: 15%;
     margin-top: 40px;
    
 
@@ -247,7 +250,7 @@
     background: rgba(0, 0, 0,0.1);
     float: left;
     margin-top: 90px;
-    margin-left: 35px;
+    margin-left: 15%;
     
   }
 
@@ -286,17 +289,18 @@
 }
 
 .problem {
-  width: 1130px;
   height: 600px;
-  margin-top: 80px;
-  margin-left: 40px;
-  margin-bottom: 40px;
+  /* width: 1130px;
+  
+  margin-top: 80px; */
+  margin-left: 15vw;
+  /* margin-bottom: 40px; */
   /* border: 1px solid white; */
 
   .headline {
     float: left;
-    width: 1130px;
-    height: 100px;
+    /* width: 1130px; */
+    /* height: 100px; */
     margin-top: 60px;
     /* border: 1px solid white; */
 
@@ -320,12 +324,12 @@
 
   /* 问题列表 */
   .problem-list {
-    width: 1120px;
-    height: 450px;
+    /* width: 1120px;
+    height: 450px; */
     /* border: 1px solid white; */
-    margin-left: 10px;
-    margin-top: 20px;
-    float: left;
+    /* margin-left: 10px;
+    margin-top: 20px;*/
+    float: left; 
     margin-bottom: 40px;
 
     .list-btn {
@@ -414,13 +418,13 @@
 
 .back2 {
   width: 100%;
-  height: 680px;
+  /* height: 680px; */
   background: url('../img/back2.png');
-  position: relative;
+  /* position: relative; */
   background-size: 100% 100%;
-  margin-top: 300px;
+  /* margin-top: 300px;
   float: left;
-  z-index: 201;
+  z-index: 201; */
   background-repeat: no-repeat;
 }
 

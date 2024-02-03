@@ -27,6 +27,7 @@
           @click="GetRouterInfo('investclass')"
           onmouseout="this.style.color='white'"
           onmouseleave="this.style.color='black'"
+          style="display: none;"
           >AI投资课堂</el-button
         >
         <el-button
@@ -34,6 +35,7 @@
           @click="GetRouterInfo('community')"
           onmouseout="this.style.color='white'"
           onmouseleave="this.style.color='black'"
+          style="display: none;"
           >AI股民社区</el-button
         >
         <el-button
@@ -143,8 +145,8 @@
     <div class="btngroup">
       <button class="group1" @click="showAI">AI对话</button>
       <button class="group1" @click="shownews">财经快讯</button>
-      <button class="group1">热榜</button>
-      <button class="group1">投顾</button>
+      <button class="group1" style="display: none;">热榜</button>
+      <button class="group1" style="display: none;">投顾</button>
     </div>
     <div class="body4">
       <div class="aibody" v-show="Aidialog">
@@ -187,8 +189,8 @@
   <div class="back4">
     <div class="classbody">
       <img src="../assets/index/img/classtitle.png" class="img1" />
-      <button class="bodybtn">更多></button>
-      <div class="coursenew">
+      <button class="bodybtn" onclick="window.open('https://work.weixin.qq.com/kfid/kfcfd990537d8749f8d?enc_scene=ENC5JURwTPhxtzAA8XmkFjRdYUiFsy3jVXB1xtzZyz59b2pthsCKzHa2GQSLGpqSwqHNz')">联系客服</button>
+      <div class="coursenew" style="display: none;">
         <div class="imagebac">
           <img class="cimg" src="../assets/index/img/R-C1.jpg" />
           <img class="cimg" src="../assets/index/img/R-C1.jpg" />

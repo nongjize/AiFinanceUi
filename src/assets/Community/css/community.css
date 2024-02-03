@@ -16,7 +16,7 @@
   }
 
   @-ms-viewport {
-    width: 1920px;
+    /* width: 1920px; */
   }
 }
 
@@ -33,7 +33,7 @@
   font-family: 思源黑体 bold;
 }
 .communitymain{
-  width: 1920px;
+  /* width: 1920px; */
   height: auto;
   float: left;
   /* border: 1px solid black; */

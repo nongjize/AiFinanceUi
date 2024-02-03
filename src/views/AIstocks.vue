@@ -27,6 +27,7 @@
             @click="GetRouterInfo('investclass')"
             onmouseout="this.style.color='white'"
             onmouseleave="this.style.color='black'"
+            style="display: none;"
             >AI投资课堂</el-button
           >
           <el-button
@@ -34,6 +35,7 @@
             @click="GetRouterInfo('community')"
             onmouseout="this.style.color='white'"
             onmouseleave="this.style.color='black'"
+            style="display: none;"
             >AI股民社区</el-button
           >
           <el-button
@@ -83,7 +85,7 @@
                   <div class="dot1"></div>
                 </div>
               </button>
-              <button class="tbtn">
+              <button class="tbtn" style="display: none;">
                 <p>02</p>
                 智能组合
                 <img src="../assets/index/img/x2.png" />
@@ -92,7 +94,7 @@
                   <div class="dot2"></div>
                 </div>
               </button>
-              <button class="tbtn">
+              <button class="tbtn" style="display: none;">
                 <p>03</p>
                 行业应用
                 <img src="../assets/index/img/x2.png" />
@@ -101,7 +103,9 @@
                   <div class="dot2"></div>
                 </div>
               </button>
-              <button class="mbtn">更多></button>
+              <button class="mbtn" style="width: 80px;"
+               onclick="window.open('https://work.weixin.qq.com/kfid/kfcfd990537d8749f8d?enc_scene=ENC5JURwTPhxtzAA8XmkFjRdYUiFsy3jVXB1xtzZyz59b2pthsCKzHa2GQSLGpqSwqHNz')"
+              >联系客服></button>
             </div>
             <div class="table-container">
               <el-table
@@ -165,7 +169,7 @@
           <div class="btngroup">
             <button class="tbtn">
               <p>01</p>
-              自选股
+              智能组合1
               <img src="../assets/index/img/x2.png" />
               <div class="line1">
                 <div class="dot1"></div>
@@ -174,7 +178,7 @@
             </button>
             <button class="tbtn">
               <p>02</p>
-              自选股1
+              智能组合2
               <img src="../assets/index/img/x2.png" />
               <div class="line2">
                 <div class="dot2"></div>
@@ -183,17 +187,17 @@
             </button>
             <button class="tbtn">
               <p>03</p>
-              自选股2
+              智能组合3
               <img src="../assets/index/img/x2.png" />
               <div class="line2">
                 <div class="dot2"></div>
                 <div class="dot2"></div>
               </div>
             </button>
-            <button class="mbtn">新建组合></button>
+            <button class="mbtn" style="display: none;">新建组合></button>
           </div>
           <div class="btngroup">
-            <button class="bbtn" @click="showchose">
+            <button class="bbtn" @click="showchose" style="display: none;">
               我的自选<el-icon><CaretBottom /></el-icon>
             </button>
             <button class="bbtn" @click="showforecast">
@@ -363,7 +367,7 @@
         </div>
       </div>
     </div> -->
-    <div class="back4">
+    <div class="back4" style="display: none;">
       <div class="classbody">
         <img src="../assets/index/img/classtitle.png" class="img1" />
         <button class="bodybtn">更多></button>

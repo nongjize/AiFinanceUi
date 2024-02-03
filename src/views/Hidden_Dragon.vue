@@ -27,6 +27,7 @@
           @click="GetRouterInfo('investclass')"
           onmouseout="this.style.color='white'"
           onmouseleave="this.style.color='black'"
+          style="display: none;"
           >AI投资课堂</el-button
         >
         <el-button
@@ -34,6 +35,7 @@
           @click="GetRouterInfo('community')"
           onmouseout="this.style.color='white'"
           onmouseleave="this.style.color='black'"
+          style="display: none;"
           >AI股民社区</el-button
         >
         <el-button

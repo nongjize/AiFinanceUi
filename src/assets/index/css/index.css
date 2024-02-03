@@ -20,54 +20,62 @@
   }
 
   @-ms-viewport {
-    width: 1920px;
+    /* width: 1920px; */
   }
 }
 
 @media screen and (max-width: 100%) {
 
   .indexmain {
-    margin-left: 50%;
-    margin-right: 50%;
+    /* margin-left: 50%;
+    margin-right: 50%; */
   }
 }
 
 
 .topimg{
+  background-image: url('../../../assets/index/img/0.png');
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-attachment: fixed;
+  background-position: top;
   width: 100%;
-  height: 65vh;
+  height: 40vh;
   /* border: 1px solid; */
-  float: left;
-  position: absolute;
-  img{
+  /* float: left;
+  position: absolute; */
+  /* img{
     width: 60vw;
-  }
+  } */
 }
 .indexmain{
-  width: 1920px;
-  height: auto;
-  float: left;
+  background: url('../img/back1.png');
+  background-position: top;
+  background-attachment: fixed;
+  /* width: 98%; */
+  /* height: auto; */
+  /* float: left; */
   /* border: 1px solid black; */
   position: absolute;
-  background-color: white;
-  top:70vh;
-  left: 50%;
-  transform: translate(-50%);
+  /* background-color: white; */
+  /* top:70vh; */
+  /* left: 50%; */
+  /* transform: translate(-50%); */
 }
 
 
 .back1 {
-  background: url('../img/back1.png');
-  width: 1920px;
-  height: 1025px;
-  background-size: 100% 100%;
-  left: 50%;
-  margin-top: 0px;
-  position: relative;
+  /* background: url('../img/back1.png'); */
+  /* width: 1920px; */
+  /* height: 1025px; */
+  /* background-size: 100% 100%;
+  left: 50%; */
+  margin-top: -25vh;
+  /* position: relative;
   transform: translate(-50%);
   float: left;
   background-repeat: no-repeat;
-  z-index: 1000;
+  z-index: 1000; */
 }
 
 /* 导航栏 */
@@ -184,11 +192,11 @@
 }
 
 .bbody {
-  width: 80%;
-  height: 60%;
+  /* width: 80%;
+  height: 60%; */
   margin-left: 10%;
   /* border: 1px solid; */
-  margin-top: 160px;
+  margin-top: 5%;
 }
 
 .bbodyleft { 
@@ -218,8 +226,8 @@
 }
 
 .bbodyright {
-  width:59%;
-  height: 85%;
+  width:49%;
+  height: 430px;
   float: left;
   background-color: transparent;
   border-radius: 10px;
@@ -229,23 +237,24 @@
 
 
 .back2 {
-  width: 1920px;
-  height: 780px;
+  /* width: 1920px; */
+  /* height: 780px; */
   background: url('../img/back2.png');
-  position: relative;
+  /* position: relative;
   background-size: 100% 100%;
-  /* margin-top: 1025px; */
+  margin-top: 1025px;
   left: 50%;
   margin-top:0;  
   transform: translate(-50%);
   float: left;
   background-repeat: no-repeat;
-  z-index: 1000;
+  z-index: 1000; */
 }
 
 .quoimg {
   float: left;
-  margin-left: 180.33px;
+  margin-left: 10%;
+  margin-top: 80px;
 }
 
 /* 行情指数 */
@@ -281,8 +290,8 @@
 .carousel {
   float: left;
   background-color: transparent;
-  width: 80%;
-  margin-left: 120px;
+  width: 98%;
+  margin-left: 10%;
   height: 100%;
   position: relative;
 
@@ -291,7 +300,7 @@
     height: 60%;
     top: 50%;
     left: 80px;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -75%);
     background: url('../img/inbac.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -301,13 +310,13 @@
     font-family: 思源黑体 bold;
 
     img {
-      float: right;
+      /* float: right; */
       position: absolute;
       width: 70%;
-      height: auto;
+      /* height: auto; */
       right: 5px;
       bottom: 5px;
-      z-index: 501;
+      /* z-index: 501; */
 
     }
   }
@@ -317,9 +326,9 @@
     height: 62%;
 
     .p1 {
-      color: black;
+      color: rgb(255, 255, 255);
       padding-bottom: 5px;
-      border-bottom: 5px solid black;
+      border-bottom: 5px solid rgb(211, 211, 211);
       border-radius: 3px;
     }
 
@@ -338,18 +347,18 @@
 }
 
 .indexs {
-  height: 60%;
+  /* height: 60%;
   width: 70%;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   position: absolute;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%); */
 }
 
 .p1 {
   width: 100px;
   height: 25px;
-  color: white;
+  color: rgb(225, 225, 225);
   font-size: 20px;
   font-weight: 400;
   position: relative;
@@ -359,25 +368,25 @@
 }
 
 .p2 {
-  color: white;
+  /* color: white;
   font-size: 30px;
   font-weight: 500;
   text-align: left;
   position: relative;
   margin-top: 10px;
-  padding-left: 10px;
+  padding-left: 10px; */
+  font-size: calc(5px + 1.5vw); 
 }
 
 .text1 {
-  color: white;
+  /* color: white;
   font-size: 24px;  
   width: 100%;
   font-family: 思源黑体 bold;
   text-align: center;
   position: relative;
-  margin-top: 10px;
- 
-  
+  margin-top: 10px; */
+  font-size: calc(5px + 1vw); 
 }
 
 .wb {
@@ -399,35 +408,36 @@
 }
 
 .back3 {
-  width: 1920px;
-  height: 750px;
+  /* width: 1920px; */
+  /* height: 750px; */
   background: url('../img/back3.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  position: relative;
+  margin-top: 65vh;
+  /* position: relative;
   left: 50%;
   transform: translate(-50%);
   float: left;
-  z-index: 1000;
+  z-index: 1000; */
 
   .table {
     width: 55%;
-    height: 80%;
+    /* height: 80%; */
     margin-left: 40%;
     position: relative;
   }
 
   /*table*/
   .table-container {
-    position: relative;
+    /* position: relative;
     width: 100%;
-    height: 80%;
+    height: 80%; */
   }
 
   .el-table {
-    margin-top: 20px;
-    --el-table-border-color: rgba(186, 188, 204, 1.00);
-    --el-table-bg-color: transparent;
+    /* margin-top: 20px;
+    --el-table-border-color: rgb(255, 255, 255);
+    --el-table-bg-color: transparent; */
     --el-table-text-color: white;
     --el-table-header-bg-color: transparent;
     --el-table-tr-bg-color: transparent;
@@ -435,7 +445,7 @@
   }
 
   .el-table__body tr:hover>td {
-    background-color: #fc3b2513 !important;
+    background-color: white !important;
   }
 
   .cbtn {
@@ -447,17 +457,17 @@
 
 
   .btngroup {
-    width: 100%;
+    /* width: 100%;
     position: relative;
     height: 80px;
-    margin-top: 20px;
+    margin-top: 20px; */
 
     .tbtn {
-      background-color: transparent;
+      /* background-color: transparent; */
       font-size: 25px;
       color: white;
       float: left;
-      margin-top: 10px;
+      margin-top: -15vh;
       border: none;
       margin-right: 4.5%;
 
@@ -546,13 +556,14 @@
   background: url('../img/back1.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width: 1920px;
-  height: 500px;
+  margin-top: 10vh;
+  /* width: 1920px; */
+  /* height: 500px;
   left: 50%;
   float: left;
   transform: translate(-50%);
   position: relative;
-  z-index: 1000;
+  z-index: 1000; */
 
   .btngroup {
     margin-left: 10%;
@@ -583,7 +594,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   margin-left: 10%;
-  margin-top: 40px;
+  margin-top: 5px;
   z-index: 2001;
   border-radius: 30px;
   background-color: white;
@@ -707,27 +718,28 @@
   background: url('../img/back5.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  width: 1920px;
-  height: 500px;
-  position: relative;
+  /* width: 1920px; */
+  height: 80vh;
+  margin-top: 85vh;
+  /* position: relative;
   float: left;
   left: 50%;
-  transform: translate(-50%);
-  z-index: 501;
+  transform: translate(-50%); */
+  /* z-index: 501; */
 }
 
 .classbody {
-  width: 80%;
+  /* width: 80%;
   height: 600px;
   position: relative;
   float: left;
-  background-color: transparent;
+  background-color: transparent; */
   margin-left: 10%;
   margin-top: 80px;
 
   .img1 {
     float: left;
-    margin-top: 200px;
+    margin-top: 8vh;
   }
 
   .bodybtn {
@@ -737,12 +749,12 @@
     font-family: 思源黑体 bold;
     width: 120px;
     height: 40px;
-    position: relative;
-    float: right;
-    margin-top: 260px;
+    /* position: relative;
+    float: right; */
+    margin-top: 58vh;
     font-size: 20px;
     border: none;
-    
+    margin-left: -30vw;
 
   }
 

@@ -16,7 +16,7 @@
     }
 
     @-ms-viewport {
-        width: 1920px;
+        /* width: 1920px; */
     }
 }
 
@@ -36,7 +36,7 @@
 }
 
 .loginmain {
-    width: 1920px;
+    /* width: 1920px; */
     height: auto;
     float: left;
     /* border: 1px solid black; */
@@ -47,7 +47,7 @@
 }
 
 .back1 {
-    width: 1920px;
+    /* width: 1920px; */
     height: 900px;
     background: url('../img/back1.png');
     background-size: 100% 100%;

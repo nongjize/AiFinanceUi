@@ -1,6 +1,6 @@
 <template>
   <div class="topimg">
-    <img src="../assets/index/img/0.png" />
+    <!-- <img src="../assets/index/img/0.png" /> -->
   </div>
 
   <div class="indexmain">
@@ -46,6 +46,7 @@
             @click="GetRouterInfo('investclass')"
             onmouseout="this.style.color='white'"
             onmouseleave="this.style.color='black'"
+            style="display: none;"
             >AI投资课堂</el-button
           >
           <el-button
@@ -53,6 +54,7 @@
             @click="GetRouterInfo('community')"
             onmouseout="this.style.color='white'"
             onmouseleave="this.style.color='black'"
+            style="display: none;"
             >AI股民社区</el-button
           >
           <el-button
@@ -168,11 +170,10 @@
           </button>
           <button class="mbtn">更多></button> -->
         </div>
-        <div class="table-container">
+        <!-- <div class="table-container"> -->
+          <!-- 1232321 -->
           <el-table
             :data="tableData"
-            style="width: 100%"
-            height="100%"
             :header-row-style="{ height: '60px', color: 'white' }"
             :row-style="{ height: '60px' }"
           >
@@ -211,7 +212,7 @@
               </template> -->
             </el-table-column>
           </el-table>
-        </div>
+        <!-- </div> -->
       </div>
     </div>
     <div class="back4">

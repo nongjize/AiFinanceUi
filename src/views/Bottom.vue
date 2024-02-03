@@ -3,16 +3,15 @@
     <div class="top">
       <div class="left">
         <div class="logo">
-          <img src="../assets/img/logo.png" />
+          <!-- <img src="../assets/img/logo.png" /> -->
         </div>
         <div class="name">
-          <p>AI股市</p>
+          <p>AI辅助</p>
           <p class="en">ARTIFICIAL INTELLIGENCE STOCK</p>
         </div>
-        <!-- 通讯信息 -->
         <div class="communication">
-          <p>咨询热线：{{  }}</p>
-          <p>地址：{{  }}</p>
+          <!-- <p>咨询热线：{{ 1212 }}</p> -->
+          <!-- <p>地址：{{ 12323 }}</p> -->
         </div>
       </div>
       <div class="right">
