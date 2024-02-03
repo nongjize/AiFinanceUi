@@ -62,9 +62,10 @@ export const getChatMsg = params => {
  
   //指数 数据获取接口 api文档：https://tushare.pro/document/1?doc_id=130
   export const getindex_daily=(params)=>{
-    const today=new Date();
+    const today = new Date();
+    const lastFriday = new Date(today.getFullYear(), today.getMonth(), today.getDate() - today.getDay() + 4);    
     const dayOfWeek=today.getDay();
-    const date = dayOfWeek >= 1 && dayOfWeek <= 5 ? today.toISOString().slice(0, 10) : this.getLastFriday();
+    const date = dayOfWeek >= 1 && dayOfWeek <= 5 ? today.toISOString().slice(0, 10) : lastFriday.toISOString().slice(0, 10);
     return axios.post("https://api.tushare.pro",
     {"api_name":"index_daily",
     "token":"1e313ef75bae8750fac99cd5ad2f9b8da5ad644a4701a2d01fefa6d4",
@@ -73,11 +74,11 @@ export const getChatMsg = params => {
     console.log(error);
   });
   }
-  export function getLastFriday() {
-    const today = new Date();
-    const lastFriday = new Date(today.getFullYear(), today.getMonth(), today.getDate() - today.getDay() + 4);
-    return lastFriday.toISOString().slice(0, 10);
-  }
+  // export function getLastFriday() {
+  //   const today = new Date();
+  //   const lastFriday = new Date(today.getFullYear(), today.getMonth(), today.getDate() - today.getDay() + 4);
+  //   return lastFriday.toISOString().slice(0, 10);
+  // }
   
 
   //获取新闻数据 api文档：https://tushare.pro/document/1?doc_id=130
@@ -94,7 +95,7 @@ export const getChatMsg = params => {
         "start_date": `${startDate.getFullYear()}-${String(startDate.getMonth() + 1).padStart(2, '0')}-${String(startDate.getDate()).padStart(2, '0')} ${String(startDate.getHours()).padStart(2, '0')}:${String(startDate.getMinutes()).padStart(2, '0')}:${String(startDate.getSeconds()).padStart(2, '0')}`,
         "end_date": `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}-${String(endDate.getDate()).padStart(2, '0')} ${String(endDate.getHours()).padStart(2, '0')}:${String(endDate.getMinutes()).padStart(2, '0')}:${String(endDate.getSeconds()).padStart(2, '0')}`,
       },
-    }).then((response) => response.data); // 只显示最新的5条新闻
+    }).then((response) => response.data); 
   };
 
   //realtime_list智能推荐
