@@ -282,7 +282,7 @@
   float: left;
   background-color: transparent;
   width: 80%;
-  margin-left: 10px;
+  margin-left: 120px;
   height: 100%;
   position: relative;
 
@@ -370,12 +370,14 @@
 
 .text1 {
   color: white;
-  font-size: 20px;
-  padding-left: 10px;
+  font-size: 24px;  
   width: 100%;
-  text-align: left;
+  font-family: 思源黑体 bold;
+  text-align: center;
   position: relative;
-  margin-top: 10pzx;
+  margin-top: 10px;
+ 
+  
 }
 
 .wb {
@@ -545,7 +547,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 1920px;
-  height: 700px;
+  height: 500px;
   left: 50%;
   float: left;
   transform: translate(-50%);
@@ -706,7 +708,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 1920px;
-  height: 1000px;
+  height: 500px;
   position: relative;
   float: left;
   left: 50%;
@@ -725,18 +727,22 @@
 
   .img1 {
     float: left;
+    margin-top: 200px;
   }
 
   .bodybtn {
-    background-color: white;
+    background-color: red;
+    color: #FFFFFF;
     border-radius: 10px;
-    width: 80px;
+    font-family: 思源黑体 bold;
+    width: 120px;
     height: 40px;
     position: relative;
     float: right;
-    margin-top: 60px;
+    margin-top: 260px;
     font-size: 20px;
     border: none;
+    
 
   }
 

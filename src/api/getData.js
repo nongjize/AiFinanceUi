@@ -62,29 +62,64 @@ export const getChatMsg = params => {
  
   //指数 数据获取接口 api文档：https://tushare.pro/document/1?doc_id=130
   export const getindex_daily=(params)=>{
+    const today=new Date();
+    const dayOfWeek=today.getDay();
+    const date = dayOfWeek >= 1 && dayOfWeek <= 5 ? today.toISOString().slice(0, 10) : this.getLastFriday();
     return axios.post("https://api.tushare.pro",
     {"api_name":"index_daily",
     "token":"1e313ef75bae8750fac99cd5ad2f9b8da5ad644a4701a2d01fefa6d4",
-    "params":{"ts_code":params,"start_date":'20240126'}
-  }).then((response)=>response.data)
+    "params":{"ts_code":params,"start_date":date}
+  }).then((response)=>response.data) .catch(error => {
+    console.log(error);
+  });
   }
+  export function getLastFriday() {
+    const today = new Date();
+    const lastFriday = new Date(today.getFullYear(), today.getMonth(), today.getDate() - today.getDay() + 4);
+    return lastFriday.toISOString().slice(0, 10);
+  }
+  
 
   //获取新闻数据 api文档：https://tushare.pro/document/1?doc_id=130
-  export const getNews=()=>{
-    return axios.post("https://api.tushare.pro",
-    {"api_name":"news",
-    "token":"1e313ef75bae8750fac99cd5ad2f9b8da5ad644a4701a2d01fefa6d4",
-    "params":{"src":'sina', "start_date":'2024-01-26 16:50:00', "end_date":'2024-01-26 16:58:00'}
-  }).then((response)=>response.data)
-  }
+  export const getNews = () => {
+    const currentDate = new Date();
+    const startDate = new Date(currentDate.getTime() - 30 * 60 * 1000); // 当前时间的前30分钟
+    const endDate = currentDate; // 当前时间
+  
+    return axios.post("https://api.tushare.pro", {
+      "api_name": "news",
+      "token": "1e313ef75bae8750fac99cd5ad2f9b8da5ad644a4701a2d01fefa6d4",
+      "params": {
+        "src": "sina",
+        "start_date": `${startDate.getFullYear()}-${String(startDate.getMonth() + 1).padStart(2, '0')}-${String(startDate.getDate()).padStart(2, '0')} ${String(startDate.getHours()).padStart(2, '0')}:${String(startDate.getMinutes()).padStart(2, '0')}:${String(startDate.getSeconds()).padStart(2, '0')}`,
+        "end_date": `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}-${String(endDate.getDate()).padStart(2, '0')} ${String(endDate.getHours()).padStart(2, '0')}:${String(endDate.getMinutes()).padStart(2, '0')}:${String(endDate.getSeconds()).padStart(2, '0')}`,
+      },
+    }).then((response) => response.data); // 只显示最新的5条新闻
+  };
 
   //realtime_list智能推荐
   export const getstockList=()=>{
+    const today = new Date();
+    const dayOfWeek = today.getDay();
+    let date;
+
+  if (dayOfWeek === 0) {
+    // 周日，获取本周五的日期
+    date = new Date(today.setDate(today.getDate() - 3));
+  } else if (dayOfWeek === 1) {
+    // 周一，获取上周五的日期
+    date = new Date(today.setDate(today.getDate() - 4));
+  } else {
+    // 其他工作日，获取前一天的日期
+    date = new Date(today.setDate(today.getDate() - 1));
+  }
     return axios.post("https://api.tushare.pro",
     {"api_name":"top_list",
     "token":"1e313ef75bae8750fac99cd5ad2f9b8da5ad644a4701a2d01fefa6d4",
-    "params":{"trade_date":'20240126'}//src='sina'
-  }).then((response)=>response.data)
+    "params":{"trade_date":`${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}`}//src='sina'
+  }).then((response)=>response.data).catch(error => {
+    console.log(error);
+  });
   }
 
   //1e313ef75bae8750fac99cd5ad2f9b8da5ad644a4701a2d01fefa6d4
