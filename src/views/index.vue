@@ -200,17 +200,17 @@
             <el-table-column prop="peratio" label="市盈率" width="80" />
             <el-table-column prop="earings" label="每股收益" width="120" />
             <el-table-column prop="trade" label="所属行业版块" width="120" />-->
-            <el-table-column align="right" fixed="right">
-              <!-- <template #header> 加自选 </template>  -->
-              <!-- <template #default="scope">
+             <!-- <el-table-column align="right" fixed="right">
+             <template #header> 加自选 </template> 
+              <template #default="scope">
                 <el-button
                   size="small"
                   class="cbtn"
                   @click="handleEdit(scope.$index, scope.row)"
                   >+自选</el-button
                 >
-              </template> -->
-            </el-table-column>
+              </template>
+            </el-table-column>  -->
           </el-table>
         <!-- </div> -->
       </div>

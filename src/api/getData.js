@@ -98,6 +98,59 @@ export const getChatMsg = params => {
     }).then((response) => response.data); 
   };
 
+  //获取华尔街快讯
+  export const gethNews = () => {
+    const currentDate = new Date();
+    const endDate = new Date(currentDate.getTime()); // 当前时间
+    const startDate = new Date(endDate.getTime() - 7 * 24 * 60 * 60 * 1000); // 一周前的日期
+  
+  
+    return axios.post("https://api.tushare.pro", {
+      "api_name": "news",
+      "token": "1e313ef75bae8750fac99cd5ad2f9b8da5ad644a4701a2d01fefa6d4",
+      "params": { 
+        "src":"sina",             
+        "start_date": `${startDate.getFullYear()}-${String(startDate.getMonth() + 1).padStart(2, '0')}-${String(startDate.getDate()).padStart(2, '0')} ${String(startDate.getHours()).padStart(2, '0')}:${String(startDate.getMinutes()).padStart(2, '0')}:${String(startDate.getSeconds()).padStart(2, '0')}`,
+        "end_date": `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}-${String(endDate.getDate()).padStart(2, '0')} ${String(endDate.getHours()).padStart(2, '0')}:${String(endDate.getMinutes()).padStart(2, '0')}:${String(endDate.getSeconds()).padStart(2, '0')}`,
+      },
+    }).then((response) => response.data); 
+  };
+  //获取同花顺新闻
+  export const gettNews = () => {
+    const currentDate = new Date();
+    const endDate = new Date(currentDate.getTime()); // 当前时间
+    const startDate = new Date(endDate.getTime() -30 * 60 * 1000); // 当前时间的前30分钟
+  
+  
+    return axios.post("https://api.tushare.pro", {
+      "api_name": "news",
+      "token": "1e313ef75bae8750fac99cd5ad2f9b8da5ad644a4701a2d01fefa6d4",
+      "params": { 
+        "src":"sina",             
+        "start_date": `${startDate.getFullYear()}-${String(startDate.getMonth() + 1).padStart(2, '0')}-${String(startDate.getDate()).padStart(2, '0')} ${String(startDate.getHours()).padStart(2, '0')}:${String(startDate.getMinutes()).padStart(2, '0')}:${String(startDate.getSeconds()).padStart(2, '0')}`,
+        "end_date": `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}-${String(endDate.getDate()).padStart(2, '0')} ${String(endDate.getHours()).padStart(2, '0')}:${String(endDate.getMinutes()).padStart(2, '0')}:${String(endDate.getSeconds()).padStart(2, '0')}`,
+      },
+    }).then((response) => response.data); 
+  };
+  //获取云南财经新闻
+  export const getyNews = () => {
+    const currentDate = new Date();
+    const endDate = new Date(currentDate.getTime()); // 当前时间
+    const startDate = new Date(endDate.getTime() -30 * 60 * 1000); // 当前时间的前30分钟
+  
+  
+    return axios.post("https://api.tushare.pro", {
+      "api_name": "news",
+      "token": "1e313ef75bae8750fac99cd5ad2f9b8da5ad644a4701a2d01fefa6d4",
+      "params": { 
+        "src":"yuncaijing",             
+        "start_date": `${startDate.getFullYear()}-${String(startDate.getMonth() + 1).padStart(2, '0')}-${String(startDate.getDate()).padStart(2, '0')} ${String(startDate.getHours()).padStart(2, '0')}:${String(startDate.getMinutes()).padStart(2, '0')}:${String(startDate.getSeconds()).padStart(2, '0')}`,
+        "end_date": `${endDate.getFullYear()}-${String(endDate.getMonth() + 1).padStart(2, '0')}-${String(endDate.getDate()).padStart(2, '0')} ${String(endDate.getHours()).padStart(2, '0')}:${String(endDate.getMinutes()).padStart(2, '0')}:${String(endDate.getSeconds()).padStart(2, '0')}`,
+      },
+    }).then((response) => response.data); 
+  };
+
+
   //realtime_list智能推荐
   export const getstockList=()=>{
     const today = new Date();
@@ -122,6 +175,44 @@ export const getChatMsg = params => {
     console.log(error);
   });
   }
+  //获取智能组合预测数据
+  export const getforeCastData=()=>{
+    const today = new Date();
+    const dayOfWeek = today.getDay();
+    let date;
+  
+    if (dayOfWeek === 0) {
+      // 周日，获取本周五的日期
+      date = new Date(today.setDate(today.getDate() - 3));
+    } else if (dayOfWeek === 6) {
+      // 周六，获取本周五的日期
+      date = new Date(today.setDate(today.getDate() - 3));
+    } else if (dayOfWeek === 1) {
+      // 周一，获取上周五的日期
+      date = new Date(today.setDate(today.getDate() - 4));
+    } else {
+      // 其他工作日，根据时间判断是获取前一天的数据还是当天的数据
+      const hour = today.getHours();
+      if (hour < 22) {
+        date = new Date(today.setDate(today.getDate() - 1));
+      } else {
+        date = today;
+      }
+    }
+  return axios.post("https://api.tushare.pro",
+    {"api_name":"report_rc",
+    "token":"1e313ef75bae8750fac99cd5ad2f9b8da5ad644a4701a2d01fefa6d4",    
+    "params": {
+      "report_date": `${date.getFullYear()}${String(date.getMonth() + 1).padStart(2, '0')}${String(date.getDate()).padStart(2, '0')}`,       
+    },
+  }).then((response)=>response.data)  
+  .catch(error => {
+    console.log(error);
+  });
+  }
+ 
+
+
 
   //1e313ef75bae8750fac99cd5ad2f9b8da5ad644a4701a2d01fefa6d4
 

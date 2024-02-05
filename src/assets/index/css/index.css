@@ -53,7 +53,7 @@
   background-position: top;
   background-attachment: fixed;
   /* width: 98%; */
-  /* height: auto; */
+  height: auto;
   /* float: left; */
   /* border: 1px solid black; */
   position: absolute;
@@ -65,7 +65,7 @@
 
 
 .back1 {
-  /* background: url('../img/back1.png'); */
+  background: url('../img/back1.png');
   /* width: 1920px; */
   /* height: 1025px; */
   /* background-size: 100% 100%;
@@ -548,8 +548,14 @@
       transform: translate(-50%, -50%);
       right: -5%;
     }
+    
 
   }
+  ::v-deep .el-table__body tr:hover > td {
+    background-color: white !important;
+    color: #000000;
+}
+
 }
 
 .back4 {

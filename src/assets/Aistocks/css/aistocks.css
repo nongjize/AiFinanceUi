@@ -183,6 +183,8 @@
 }
 
 .el-table {
+  width: 90%;
+  height:33vh;
   margin-left: 5%;
   margin-top: 20px;
   --el-table-border-color: rgba(186, 188, 204, 1.00);
@@ -191,11 +193,14 @@
   --el-table-header-bg-color: transparent;
   --el-table-tr-bg-color: transparent;
   border: 1px solid rgba(186, 188, 204, 1.00);
+
 }
 
-.el-table__body tr:hover>td {
-  background-color: #fc3b2513 !important;
+::v-deep .el-table__body tr:hover > td {
+  background-color: white !important;
+  color: #000000;
 }
+
 
 .cbtn {
   background-color: white;
@@ -210,8 +215,8 @@
   position: relative;
   height: 60px;
   margin-top: 10px;
-  margin-left: 5%;
-  float: left;
+  margin-left: 4.5%;
+  /* float: left; */
   margin-bottom: 5vh;
 
 
@@ -299,8 +304,8 @@
     position: relative;
     float: right;
     top: 50%;
-    transform: translate(-50%, -50%);
-    right: -5%;
+    transform: translate(-50%);
+    right: -45px;
   }
 
 }
