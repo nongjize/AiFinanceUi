@@ -499,8 +499,8 @@ export default {
     },
 
     search() {
-      const filteredItems = this.items.filter((item) =>
-        item.includes(this.searchText)
+      const filteredItems = this.items.filter((item) =>{
+        item.includes(this.searchText)}
       );
       console.log(filteredItems);
     },

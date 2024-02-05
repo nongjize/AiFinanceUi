@@ -125,26 +125,10 @@
                 />
                 <el-table-column prop="name" label="股票名称" width="120" />
                 <el-table-column prop="price" label="最新价" width="120" />
-                <el-table-column
-                  prop="pricelimit"
-                  label="涨跌幅(%)"
-                  width="120"
-                />
-                <el-table-column
-                  prop="turnoverrate"
-                  label="换手率(%)"
-                  width="120"
-                />
-                <el-table-column
-                  prop="volumetran"
-                  label="成交额(元)"
-                  width="180"
-                />
-                <el-table-column
-                  prop="circulationmarketvalue"
-                  label="当日流通市值(元)"
-                  width="180"
-                />
+                <el-table-column  prop="pricelimit"  label="涨跌幅(%)"  width="120" />
+                <el-table-column  prop="turnoverrate"  label="换手率(%)"  width="120" />
+                <el-table-column  prop="volumetran"  label="成交额(元)"  width="180" />
+                <el-table-column  prop="circulationmarketvalue"  label="当日流通市值(元)"  width="180" />
                 <!-- <el-table-column
                   fixed
                   prop="namecode"
@@ -199,14 +183,14 @@
           <div class="btngroup">
             <button class="tbtn" @click="fetchforeCastData">
               <p>01</p>
-              智能组合1
+              智能组合
               <img src="../assets/index/img/x2.png" />
               <div class="line1">
                 <div class="dot1"></div>
                 <div class="dot1"></div>
               </div>
             </button>
-            <button class="tbtn">
+            <!-- <button class="tbtn">
               <p>02</p>
               智能组合2
               <img src="../assets/index/img/x2.png" />
@@ -214,8 +198,8 @@
                 <div class="dot2"></div>
                 <div class="dot2"></div>
               </div>
-            </button>
-            <button class="tbtn">
+            </button> -->
+            <!-- <button class="tbtn">
               <p>03</p>
               智能组合3
               <img src="../assets/index/img/x2.png" />
@@ -223,127 +207,35 @@
                 <div class="dot2"></div>
                 <div class="dot2"></div>
               </div>
-            </button>
+            </button> -->
             <button class="mbtn" style="display: none">新建组合></button>
           </div>
           <div class="btngroup">
             <button class="bbtn" @click="showchose" style="display: none">
               我的自选<el-icon><CaretBottom /></el-icon>
             </button>
-            <button class="bbtn">
+            <!-- <button class="bbtn">
               智能预测<el-icon><CaretBottom /></el-icon>
-            </button>
+            </button> -->
           </div>
           <div class="table-container" v-show="ownshow">
             <!-- 我的自选 -->
-            <el-table
-              :data="ownData"
-              style="width: 90%"
-              height="100%"
-              :header-row-style="{ height: '60px', color: 'white' }"
-              :row-style="{ height: '60px' }"
-            >
-              <el-table-column
-                fixed
-                prop="namecode"
-                label="名称代码"
-                width="120"
-              />
-              <el-table-column prop="name" label="股吧" width="80" />
-              <el-table-column prop="price" label="最新价" width="80" />
-              <el-table-column prop="pricelimit" label="涨跌幅" width="80" />
-              <el-table-column prop="range" label="涨跌额" width="80" />
-              <el-table-column prop="masterhand" label="总手" width="80" />
-              <el-table-column prop="presentsale" label="现手" width="80" />
-              <el-table-column prop="buy" label="买入价" width="80" />
-              <el-table-column prop="sale" label="卖出价" width="80" />
-              <el-table-column prop="yesclosing" label="昨收" width="80" />
-              <el-table-column prop="volumetran" label="成交额" width="80" />
-              <el-table-column prop="turnoverrate" label="换手率" width="80" />
-              <el-table-column prop="swing" label="振幅" width="80" />
-              <el-table-column prop="ratio" label="量比" width="80" />
-              <el-table-column prop="acceleration" label="涨速" width="80" />
-              <el-table-column prop="peratio" label="市盈率" width="80" />
-              <el-table-column prop="earings" label="每股收益" width="120" />
-              <el-table-column prop="trade" label="所属行业版块" width="120" />
-              <el-table-column align="right" fixed="right">
-                <template #header> 加自选 </template>
-                <template #default="scope">
-                  <el-button
-                    size="small"
-                    class="cbtn"
-                    @click="handleEdit(scope.$index, scope.row)"
-                    >+自选</el-button
-                  >
-                </template>
-              </el-table-column>
-            </el-table>
+
           </div>
           <div class="table-container" v-show="forecast">
             <!-- 我的自选 -->
             <el-table
-              :data="forecastData"
-              style="width: 90%"
-              height="100%"
-              :header-row-style="{ height: '60px', color: 'white' }"
-              :row-style="{ height: '60px' }"
-            >
-              <el-table-column
-                fixed
-                prop="ts_code"
-                label="股票代码"
-                width="180"
-              />
-              <el-table-column prop="his_low" label="历史最低价" width="120" />
-              <el-table-column prop="his_high" label="历史最高价" width="120" />
-              <el-table-column
-                prop="weight_avg"
-                label="加权平均成本"
-                width="120"
-              />
-              <el-table-column prop="winner_rate" label="胜率" width="120" />
-              <!-- <el-table-column
-                prop="classify"
-                label="报告分类"
-                width="80"
-              />
-              <el-table-column
-                prop="org_name"
-                label="机构名称"
-                width="80"
-              />
-              <el-table-column
-                prop="quarter"
-                label="预测报告期"
-                width="80"
-              />
-              <el-table-column
-                prop="op_rt"
-                label="预测营业收入（万元）"
-                width="80"
-              />
-              <el-table-column
-                prop="op_pr"
-                label="预测营业利润"
-                width="80"
-              />
-              <el-table-column
-                prop="tp"
-                label="预测利润总额"
-                width="80"
-              />
-              <el-table-column
-                prop="np"
-                label="预测净利润"
-                width="80"
-              />
-              <el-table-column prop="eps" label="预测每股收益" width="80" />
-              <el-table-column prop="pe" label="预测市盈率" width="80" />
-              <el-table-column prop="rd" label="预测股息率" width="80" />
-              <el-table-column prop="roe" label="预测净资产收益率" width="80" />
-              <el-table-column prop="max_price" label="预测最高目标价" width="120" />
-              <el-table-column prop="min_price" label="预测最低目标价" width="120" /> -->
-            </el-table>
+            :data="tableData2"
+            :header-row-style="{ height: '60px', color: 'white' }"
+            :row-style="{ height: '60px' }">
+            <el-table-column  fixed  prop="stockcode" label="股票代码"  width="130"  />
+            <el-table-column prop="name" label="股票名称" width="120" />
+            <el-table-column prop="price" label="最新价" width="120" />
+            <el-table-column  prop="pricelimit"  label="涨跌幅(%)"  width="120" />
+            <el-table-column  prop="turnoverrate"  label="换手率(%)"  width="120" />
+            <el-table-column  prop="volumetran"  label="成交额(元)"  width="180" />
+            <el-table-column  prop="circulationmarketvalue"  label="当日流通市值(元)"  width="180" />
+          </el-table>
           </div>
         </div>
       </div>
@@ -534,6 +426,53 @@ export default {
           circulationmarketvalue: "",
         },
       ],
+      tableData2: [
+        {
+          stockcode: "",
+          name: "",
+          price: "",
+          pricelimit: "",
+          turnoverrate: "",
+          volumetran: "",
+          circulationmarketvalue: "",
+        },
+        {
+          stockcode: "",
+          name: "",
+          price: "",
+          pricelimit: "",
+          turnoverrate: "",
+          volumetran: "",
+          circulationmarketvalue: "",
+        },
+        {
+          stockcode: "",
+          name: "",
+          price: "",
+          pricelimit: "",
+          turnoverrate: "",
+          volumetran: "",
+          circulationmarketvalue: "",
+        },
+        {
+          stockcode: "",
+          name: "",
+          price: "",
+          pricelimit: "",
+          turnoverrate: "",
+          volumetran: "",
+          circulationmarketvalue: "",
+        },
+        {
+          stockcode: "",
+          name: "",
+          price: "",
+          pricelimit: "",
+          turnoverrate: "",
+          volumetran: "",
+          circulationmarketvalue: "",
+        },
+      ],
       forecastData: [],
     };
   },
@@ -608,14 +547,14 @@ export default {
       this.forecast = true;
     },
     async fetchforeCastData() {
-      try {
-        this.forecastData=await getforeCastData();
-        // getforeCastData.then((res) => {
-        //   this.forecastData = res.data.items;
-        // });
-      } catch (error) {
-        console.error("获取盈利预测数据失败：", error);
-      }
+      // try {
+      //   //this.forecastData=await getforeCastData();
+      //   // getforeCastData.then((res) => {
+      //   //   this.forecastData = res.data.items;
+      //   // });
+      // } catch (error) {
+      //   console.error("获取盈利预测数据失败：", error);
+      // }
     },
     // fetchforeCastData(){
     //   getforeCastData().then((res)=>{
@@ -663,6 +602,17 @@ export default {
         element.volumetran = res.data.items[i][6]; //总成交额
         element.circulationmarketvalue = res.data.items[i][13]; //当日流通市值
         i = i + 2;
+      });
+      i=2;
+      this.tableData2.forEach((element) => {
+        element.stockcode = res.data.items[i][1];
+        element.name = res.data.items[i][2];
+        element.price = res.data.items[i][3];
+        element.pricelimit = res.data.items[i][4]; //涨跌幅
+        element.turnoverrate = res.data.items[i][5]; //换手率
+        element.volumetran = res.data.items[i][6]; //总成交额
+        element.circulationmarketvalue = res.data.items[i][13]; //当日流通市值
+        i = i + 3;
       });
     });
     //智能组合1

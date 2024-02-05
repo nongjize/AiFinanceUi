@@ -91,7 +91,7 @@
                 <div class="dot2"></div>
               </div>
             </button>
-            <button class="mbtn">更多></button>
+            <!-- <button class="mbtn">更多></button> -->
           </div>
           <!-- 股市焦点 -->
           <div class="stockbody">
@@ -128,7 +128,7 @@
             NEWS<br />
             FOCUS
           </h5>
-          <el-button>更多>></el-button>
+          <!-- <el-button>更多>></el-button> -->
         </div>
         <div class="mainlist">
           <div class="new" v-for="item in paginatedData" :key="item.id">
@@ -139,7 +139,7 @@
             <div class="newline"></div>
           </div>
         </div>
-        <div class="page">
+        <!-- <div class="page">
           <el-pagination
             background
             @size-change="handleSizeChange"
@@ -150,12 +150,12 @@
             layout="total, sizes, prev, pager, next, jumper"
             :total="total"
           />
-        </div>
+        </div> -->
       </div>
     </div>
     <div class="back3">
       <div class="btngroup">
-        <button class="group1" @click="showAI">AI对话</button>
+        <!-- <button class="group1" @click="showAI">AI对话</button> -->
         <button class="group1" @click="shownews">财经快讯</button>
         <button class="group1" style="display: none">热榜</button>
         <button class="group1" style="display: none">投顾</button>
