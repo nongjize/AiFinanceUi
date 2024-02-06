@@ -38,7 +38,7 @@ export const getChatMsg = params => {
   }
 
   export const chatgpt_1 = params => {
-    return axios.post("https://172.247.43.74:5151", { name: params["prompt"] }).then((response) =>response.data)
+    return axios.post("https://chat.ynpygl.cn:5151", { name: params["prompt"] }).then((response) =>response.data)
   }
 //header:{'Content-Type':'application/x-www-form-urlencoded'}
   export const sendSms = params => {
