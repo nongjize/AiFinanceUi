@@ -6,11 +6,11 @@
     </div>
     <div class="body">
       <div class="bodyleft">
-        <h3>1个账号，实现电脑、手机、iPad自选股同步</h3>
+        <!-- <h3>1个账号，实现电脑、手机、iPad自选股同步</h3> -->
         <div class="img"></div>
         <div class="btngroup">
-          <button class="btn">点击下载app</button>
-          <button class="btn">点击下载PC客户端</button>
+          <!-- <button class="btn">点击下载app</button>
+          <button class="btn">点击下载PC客户端</button> -->
         </div>
       </div>
       <div class="bodyright">

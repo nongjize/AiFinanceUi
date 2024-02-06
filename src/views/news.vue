@@ -153,7 +153,39 @@
         </div> -->
       </div>
     </div>
-    <div class="back3">
+
+    <div class="back4" style="display: none;">
+        <div class="btngroup">
+          <h1>财经快讯</h1>
+        </div>
+        <!-- 财经快讯 -->
+        <div class="newbody">
+          <div class="newbtngroup">
+            <!-- <button class="nbtn" @click="showflashnew">
+              动态<el-icon><CaretBottom /></el-icon>
+            </button>
+            <button class="nbtn">
+              关注<el-icon><CaretBottom /></el-icon>
+            </button> -->
+            <button class="refesh" @click="GetNews">
+              刷新<el-icon><Refresh /></el-icon>
+            </button>
+          </div>
+          <div class="quicklist" v-show="newsflash">
+            <ul>
+              <li
+                v-for="item in questions"
+                v-bind:key="item"
+                @click="selectItem(item)"
+              >
+                {{ item }}
+              </li>
+            </ul>
+          </div>
+        </div>
+    </div>
+
+    <div class="back3" >
       <div class="btngroup">
         <!-- <button class="group1" @click="showAI">AI对话</button> -->
         <button class="group1" @click="shownews">财经快讯</button>
@@ -200,43 +232,10 @@
         </div>
       </div>
     </div>
-    <div class="back4">
-      <div class="classbody">
+    <div class="back5">
         <img src="../assets/index/img/classtitle.png" class="img1" />
-        <button
-          class="bodybtn"
-          onclick="window.open('https://work.weixin.qq.com/kfid/kfcfd990537d8749f8d?enc_scene=ENC5JURwTPhxtzAA8XmkFjRdYUiFsy3jVXB1xtzZyz59b2pthsCKzHa2GQSLGpqSwqHNz')"
-        >
-          联系客服
-        </button>
-        <div class="coursenew" style="display: none">
-          <div class="imagebac">
-            <img class="cimg" src="../assets/index/img/R-C1.jpg" />
-            <img class="cimg" src="../assets/index/img/R-C1.jpg" />
-            <img
-              class="cimg"
-              src="../assets/index/img/R-C1.jpg"
-              style="margin-right: 0"
-            />
-          </div>
-          <div class="courselist">
-            <p class="p1">金融界/2023-12-12</p>
-            <p class="p2">投资课堂</p>
-            <p class="p3">运用数字科技服务</p>
-          </div>
-          <div class="courselist">
-            <p class="p1"></p>
-            <p class="p2"></p>
-            <p class="p3"></p>
-          </div>
-          <div class="courselist" style="margin-right: 0">
-            <p class="p1"></p>
-            <p class="p2"></p>
-            <p class="p3"></p>
-          </div>
-        </div>
+        <button class="bodybtn" onclick="window.open('https://work.weixin.qq.com/kfid/kfcfd990537d8749f8d?enc_scene=ENC5JURwTPhxtzAA8XmkFjRdYUiFsy3jVXB1xtzZyz59b2pthsCKzHa2GQSLGpqSwqHNz')">联系客服</button>
       </div>
-    </div>
     <Bottom></Bottom>
   </div>
 </template>

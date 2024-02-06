@@ -31,23 +31,25 @@
   margin: 0;
 }
 .newsmain{
-  /* width: 1920px; */
-  /* height: auto;
-  float: left; */
+  background: url('../img/back1.png');
+  /* background-position: center; */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  /* float: left; */
   /* border: 1px solid black; */
-  /* position: absolute;
-  background-color: white;  
-  left: 50%;
-  transform: translate(-50%); */
+  position: absolute;
 }
 
 .back1 {
-  background: url('../img/back1.png');
+  /* background: url('../img/back1.png'); */
   width: 100%;
-  height: 900px;
+  /* height: 900px; */
   background-size: 100% 100%;
   position: relative;
-  float: left;
+  /* float: left; */
   background-repeat: no-repeat;
 }
 
@@ -478,7 +480,7 @@
   position: relative;
   background-size: 100% 100%;
   margin-top: 0px;
-  float: left;
+  /* float: left; */
   background-repeat: no-repeat;
 }
 
@@ -617,21 +619,21 @@
 
 .back3 {
   width: 100%;
-  height: 620px;
-  background: url('../img/back3.png');
+  /* height: 620px;
+  background: url('../img/back3.png'); */
   position: relative;
-  background-size: 100% 100%;
+  /* background-size: 100% 100%;
   margin-top: 0px;
   float: left;
   background-repeat: no-repeat;
-  z-index: 1001;
+  z-index: 1001; */
 
   .btngroup {
     margin-left: 10%;
     width: 60%;
     height: 60px;
     border-bottom: 5px solid rgb(186, 188, 204);
-    float: left;
+    /* float: left; */
     position: relative;
     margin-top: 80px;
   }
@@ -666,12 +668,12 @@
   height: 580px;
   background: white;
   margin-left: 10%;
-  float: left;
+  /* float: left; */
   position: absolute;
   background-size: 100% 100%;
-  margin-top: 220px;
-  margin-bottom: -80px;
-  z-index: 2001;
+  /* margin-top: 220px; */
+  /* margin-bottom: -80px; */
+  /* z-index: 2001; */
   border-radius: 30px;
   background-color: white;
 }
@@ -1068,134 +1070,74 @@
 
 }
 
-.back4 {
-  width: 100%;
-  /* height: 880px; */
+.back5 {
   background: url('../img/back4.png');
-  position: relative;
   background-size: 100% 100%;
-  float: left;
   background-repeat: no-repeat;
-  z-index: 201;
+  width: 100%;
+  /* height: 80vh; */
+  margin-top: 580px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* float: left;
+  left: 50%;
+  transform: translate(-50%); */
+  /* z-index: 501; */
+  /* display: none; */
+  .img1 {
+    /* float: left;
+    margin-top: 8vh; */
+  }
 
+  .bodybtn {
+    background-color: red;
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-family: 思源黑体 bold;
+    width: 120px;
+    height: 40px;
+    /* position: relative;
+    float: right; */
+    /* margin-top: 58vh; */
+    font-size: 20px;
+    border: none;
+    margin-top: 60px;
+    /* margin-left: -30vw; */
 
-  .classbody {
-    width: 80%;
-    /* height: 600px; */
-    position: relative;
-    float: left;
-    background-color: transparent;
-    margin-left: 10%;
-    margin-top: 80px;
+  }
+}
 
-    .img1 {
-      float: left;
-      position: relative;
-      margin-top: 160px;
-    }
-
-    .bodybtn {
-      background-color: red;
-      color: #FFFFFF;
-      border-radius: 10px;
-      font-family: 思源黑体 bold;
-      width: 120px;
-      height: 40px;
-      /* position: relative;
-      float: right; */
-      margin-top: 40vh;
-      font-size: 20px;
-      border: none;
-      /* margin-left: -30vw; */
+.back4 {
+  background: url('../img/back1.png');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  margin-top: 30px;
+  /* width: 1920px; */
+  /* height: 500px;
+  left: 50%;
+  float: left;
+  transform: translate(-50%);
   
-    }
-    .bodybtn_old {
-      background-color: white;
-      border-radius: 10px;
-      width: 80px;
-      height: 40px;
-      position: relative;
-      float: right;
-      margin-top: 230px;
-      font-size: 20px;
-      border: none;
-      font-weight: bold;
-      color: #0f7297;
-      font-family: 'SourceHanSansCN';
+  z-index: 1000; */
+  position: relative;
+  /* display: none; */
 
-    }
-
-  }
-
-  .coursenew {
-    width: 100%;
-    height: 500px;
+  .btngroup {
+    margin-left: 10%;
+    width:13vw;
+    height: 60px;
+    border-bottom: 5px solid rgb(186, 188, 204);
+    float: left;
     position: relative;
-    float: left;
-    background-color: transparent;
-    margin-top: 40px;
+    margin-top: 2vh;
   }
 
-  .imagebac {
-    width: 100%;
-    height: 250px;
-    background: url('../img/R-C.jpg');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    position: relative;
-    float: left;
-
+  h1{
+    color: black;
+    text-align: left;
+    font-family: 思源黑体 bold;
+    font-size: 40px;
+    padding-left: 1.25rem;
   }
-
-  .cimg {
-    width: 30%;
-    height: 100%;
-    position: relative;
-    float: left;
-    margin-right: 5%;
-  }
-
-  .courselist {
-    width: 30%;
-    height: 100px;
-    float: left;
-    margin-right: 5%;
-
-    .p1 {
-      width: 100%;
-      text-align: left;
-      position: relative;
-      margin-top: 20px;
-      float: left;
-      padding-left: 10px;
-      font-size: 20px;
-      color: white;
-    }
-
-    .p2 {
-      width: 100%;
-      float: left;
-      position: relative;
-      padding-left: 10px;
-      text-align: left;
-      font-size: 40px;
-      font-weight: 400;
-      color: white;
-    }
-
-    .p3 {
-      color: white;
-      font-size: 15px;
-      text-align: left;
-      float: left;
-      padding-left: 10px;
-      margin-top: 10px;
-      word-break: normal;
-      /**默认浏览器的换行方式*/
-
-    }
-  }
-
-
-
 }

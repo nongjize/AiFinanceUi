@@ -47,7 +47,7 @@
 }
 
 .back1 {
-    /* width: 1920px; */
+    width: 100%;
     height: 900px;
     background: url('../img/back1.png');
     background-size: 100% 100%;
@@ -285,6 +285,7 @@
     margin-left: 10%;
     background: transparent;
     /* border: 1px solid; */
+    display: none;
     margin-top: 55%;
 
     p {

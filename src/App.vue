@@ -23,6 +23,10 @@ export default {
   margin-top: 0;
   margin-left: 0;
   padding: 0px;
+  position: relative;
+  /* background: url('/img/back1.png');
+  background-position: top;
+  background-attachment: fixed; */
 }
 
 @import url('element-plus/theme-chalk/index.css');
