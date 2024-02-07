@@ -47,6 +47,12 @@ export const getChatMsg = params => {
       { phone: params["phone"],type: "login_sms_code",config}).then((response) =>response.data)
   }
 
+  export const getUlist = params => {
+    return axios.post(
+      "https://admin.ynpygl.cn/api/aistock/infos/info/", 
+      { }).then((response) =>response.data)
+  }
+
   export const loginBySms = params => {
     return axios.post("https://admin.ynpygl.cn/api/user/login/loginBySms", { phone: params["phone"],code:params["code"] }).then((response) =>response.data)
   }

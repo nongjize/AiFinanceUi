@@ -199,10 +199,10 @@
       .team1 {
         background: url('../img/team.png');
         width: 20%;
-        height: 35%;
+        /* height: 35%; */
         float: left;
         position: relative;
-        margin-left: 8%;
+        margin-left: 11%;
         margin-top: 8%;
         background-size: 100% 100%;
         background-repeat: no-repeat;
@@ -210,44 +210,67 @@
         .circle {
           width: 80%;
           position: relative;
-          left: 50%;
+          /* left: 50%; */
           transform: translate(-50%, -50%);
-        }
 
-        .tit {
-          color: white;
+          .tit {
+            color: white;
+            position: relative;
+            margin-top: 0%;
+            text-align: center;
+            margin-left: 120px;
+            width: 100%;
+            top: -40px;
+          }
+        }
+        
+
+        .txtinfo{
+
           position: relative;
-          margin-top: -20%;
-          text-align: left;
-          padding-left: 10%;
+          height: 280px;
+          overflow: auto;
+          margin-bottom: 85px;
+          margin-top: -125px;
+
+          
+  
+          .intro {
+            color: white;
+            position: relative;
+            text-align: left;
+            padding-left: 10%;
+            margin-top: 5%;
+            word-break: break-all;
+            word-wrap: break-word;
+          }
+  
+          
         }
 
-        .intro {
-          color: white;
-          position: relative;
-          text-align: left;
-          padding-left: 10%;
-          margin-top: 5%;
-        }
-
-        .name {
-          color: white;
-          text-align: left;
-          padding-left: 10%;
-          margin-top: 20%;
-        }
-
-        .btn {
-          border: 1px solid white;
-          position: relative;
-          float: right;
-          font-size: 15px;
-          color: white;
-          right: 5%;
-          top: -10%;
-        }
+      }
+      .name {
+        color: white;
+        text-align: left;
+        padding-left: 10%;
+        /* margin-top: 20%; */
+        bottom: 0;
+        position: absolute;
+        margin-bottom: 26px;
       }
 
+      .btn {
+        border: 1px solid white;
+        position: absolute;
+        float: right;
+        font-size: 15px;
+        color: white;
+        right: 5%;
+        /* top: -10%; */
+        bottom: 0;
+        /* position: absolute; */
+        margin-bottom: 26px;
+      }
 
       .btnleft {
         width: 40px;

@@ -74,12 +74,12 @@
       <img src="../assets/Hidden_Dragon/img/Investor-team.png" class="pic" />
       <div class="investor-team">
         <div class="team">
-          <el-button class="btnleft">
+          <!-- <el-button class="btnleft">
             <el-icon><ArrowLeftBold /></el-icon
           ></el-button>
           <el-button class="btnright"
             ><el-icon><ArrowRightBold /></el-icon
-          ></el-button>
+          ></el-button> -->
           <el-card class="details" v-show="detailsshow">
             <div class="headline">
               <p class="p1">INVSTOR DETAILS</p>
@@ -118,149 +118,35 @@
             </div>
           </el-card>
           <!-- first -->
-          <div class="team1">
+
+          <div class="team1" v-for="item in personals" v-bind:key="item">
             <div class="circle">
               <el-avatar
                 :size="150"
-                src="https://empty"
+                :src="item.clink"
                 @error="errorHandler"
                 style="margin-top: 10px; border: none"
               >
-                <img src="../assets/Hidden_Dragon/img/people.png" />
+                <img :src="item.image" />
               </el-avatar>
+              <p class="tit">{{item.sub_title}}</p>
             </div>
-            <p class="tit">投资者简介</p>
-            <p class="intro">
-              AI系统可以快速处理大量数据，实时更新市场信息，帮助投资者迅速做出决策。
-            </p>
-            <h1 class="name">王明</h1>
-            <el-button class="btn" @click="showdetails"
-              >详情<el-icon
-                ><img
-                  src="../assets/Hidden_Dragon/img/detail.png"
-                  style="margin-left: 5px" /></el-icon
-            ></el-button>
-          </div>
-          <!-- 2 -->
-          <div class="team1">
-            <div class="circle">
-              <el-avatar
-                :size="150"
-                src="https://empty"
-                @error="errorHandler"
-                style="margin-top: 10px; border: none"
-              >
-                <img src="../assets/Hidden_Dragon/img/people.png" />
-              </el-avatar>
+            
+            <div class="txtinfo">
+              <p class="intro">
+                {{item.remak}}
+              </p>
+              
             </div>
-            <p class="tit">投资者简介</p>
-            <p class="intro">
-              AI系统可以快速处理大量数据，实时更新市场信息，帮助投资者迅速做出决策。
-            </p>
-            <h1 class="name">王明</h1>
-            <el-button class="btn" @click="showdetails"
-              >详情<el-icon
-                ><img
-                  src="../assets/Hidden_Dragon/img/detail.png"
-                  style="margin-left: 5px" /></el-icon
-            ></el-button>
+            <h1 class="name">{{item.name}}</h1>
+              <el-button class="btn" @click="showdetails(item)"
+                >咨询<el-icon
+                  ><img
+                    src="../assets/Hidden_Dragon/img/detail.png"
+                    style="margin-left: 5px" /></el-icon
+              ></el-button>
           </div>
-          <!-- 3 -->
-          <div class="team1">
-            <div class="circle">
-              <el-avatar
-                :size="150"
-                src="https://empty"
-                @error="errorHandler"
-                style="margin-top: 10px; border: none"
-              >
-                <img src="../assets/Hidden_Dragon/img/people.png" />
-              </el-avatar>
-            </div>
-            <p class="tit">投资者简介</p>
-            <p class="intro">
-              AI系统可以快速处理大量数据，实时更新市场信息，帮助投资者迅速做出决策。
-            </p>
-            <h1 class="name">王明</h1>
-            <el-button class="btn" @click="showdetails"
-              >详情<el-icon
-                ><img
-                  src="../assets/Hidden_Dragon/img/detail.png"
-                  style="margin-left: 5px" /></el-icon
-            ></el-button>
-          </div>
-          <!-- 4 -->
-          <div class="team1" style="left: 30px">
-            <div class="circle">
-              <el-avatar
-                :size="150"
-                src="https://empty"
-                @error="errorHandler"
-                style="margin-top: 10px; border: none"
-              >
-                <img src="../assets/Hidden_Dragon/img/people.png" />
-              </el-avatar>
-            </div>
-            <p class="tit">投资者简介</p>
-            <p class="intro">
-              AI系统可以快速处理大量数据，实时更新市场信息，帮助投资者迅速做出决策。
-            </p>
-            <h1 class="name">王明</h1>
-            <el-button class="btn" @click="showdetails"
-              >详情<el-icon
-                ><img
-                  src="../assets/Hidden_Dragon/img/detail.png"
-                  style="margin-left: 5px" /></el-icon
-            ></el-button>
-          </div>
-          <!-- 5 -->
-          <div class="team1" style="left: 30px">
-            <div class="circle">
-              <el-avatar
-                :size="150"
-                src="https://empty"
-                @error="errorHandler"
-                style="margin-top: 10px; border: none"
-              >
-                <img src="../assets/Hidden_Dragon/img/people.png" />
-              </el-avatar>
-            </div>
-            <p class="tit">投资者简介</p>
-            <p class="intro">
-              AI系统可以快速处理大量数据，实时更新市场信息，帮助投资者迅速做出决策。
-            </p>
-            <h1 class="name">王明</h1>
-            <el-button class="btn" @click="showdetails"
-              >详情<el-icon
-                ><img
-                  src="../assets/Hidden_Dragon/img/detail.png"
-                  style="margin-left: 5px" /></el-icon
-            ></el-button>
-          </div>
-          <!-- 6 -->
-          <div class="team1" style="left: 30px">
-            <div class="circle">
-              <el-avatar
-                :size="150"
-                src="https://empty"
-                @error="errorHandler"
-                style="margin-top: 10px; border: none"
-              >
-                <img src="../assets/Hidden_Dragon/img/people.png" />
-              </el-avatar>
-            </div>
-            <p class="tit">投资者简介</p>
-            <p class="intro">
-              AI系统可以快速处理大量数据，实时更新市场信息，帮助投资者迅速做出决策。
-            </p>
-            <h1 class="name">王明</h1>
-            <el-button class="btn" @click="showdetails"
-              >详情<el-icon
-                ><img
-                  src="../assets/Hidden_Dragon/img/detail.png"
-                  style="margin-left: 5px" /></el-icon
-            ></el-button>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -281,10 +167,10 @@ import {
   ArrowRightBold,
   CaretBottom,
 } from "@element-plus/icons-vue";
-import { getFriend } from "@/api/getData";
+import { getUlist } from "@/api/getData";
 import PersonCard from "@/components/PersonCard.vue";
-import { animation } from "@/util/util";
-import { chatgpt, chatgpt_1 } from "@/api/getData";
+// import { animation } from "@/util/util";
+// import { chatgpt, chatgpt_1 } from "@/api/getData";
 import HeadPortrait from "@/components/HeadPortrait.vue";
 import FileCard from "@/components/FileCard.vue";
 import chatwindowSimple from "./chatwindowSimple.vue";
@@ -293,6 +179,7 @@ export default {
   name: "hidedra",
   data() {
     return {
+      personals: [],
       input: "",
       detailsshow: false, //默认不显示
       Aidialog: true,
@@ -344,9 +231,84 @@ export default {
       // url:'/assets/Hidden_Dragon/img/people.png',
     };
   },
-  
+  mounted() {
+    this.getlist();
+  },
+  components: {
+    Search,
+    CircleClose,
+    ArrowLeftBold,
+    ArrowRightBold,
+    CaretBottom,
+    PersonCard,
+    HeadPortrait,
+    FileCard,
+    chatwindowSimple,
+    Bottom
+  },
   computed: {},
   methods: {
+    getlist() {
+      // this.personals = [
+      //   {
+      //     name:'aaa',
+      //     image: 'https://ai.ynpygl.cn/img/people.47619cca.png',
+      //     title: 'abaca',
+      //     remak: 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq',
+      //     clink: 'https://baidu.com'
+      //   },
+      //   {
+      //     name:'aaa',
+      //     image: 'https://ai.ynpygl.cn/img/people.47619cca.png',
+      //     title: 'abaca',
+      //     remak: 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq',
+      //     clink: 'https://baidu.com'
+      //   },
+      //   {
+      //     name:'aaa',
+      //     image: 'https://ai.ynpygl.cn/img/people.47619cca.png',
+      //     title: 'abaca',
+      //     remak: 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq',
+      //     clink: 'https://baidu.com'
+      //   },
+      //   {
+      //     name:'aaa',
+      //     image: 'https://ai.ynpygl.cn/img/people.47619cca.png',
+      //     title: 'abaca',
+      //     remak: 'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq',
+      //     clink: 'https://baidu.com'
+      //   }
+      // ]
+      // getulist
+      let parameter = {}
+      getUlist(parameter).then((res) => {
+        //console.log(res);
+        if(res.code==0){
+          console.log(res);
+          this.personals = res.data;
+          // this.$store.dispatch('setUserid', res.data.userInfo.nickname);
+          //console.log(this.$store.state.userid);
+          // this.$router.push({name:'index',params:{user:this.$store.state.userid}});
+          // this.$message({ message: res.msg,type: "warning",});
+        }else{
+          this.$message({ message: res.msg,type: "warning",});
+        }
+
+        // else {
+        // this.$message({
+        //   message: "消息不能为空哦~",
+        //   type: "warning",
+        // });
+
+
+        });
+    },
+
+    showdetails(item) {
+      // console.log("-----lifam----");
+      // console.log(item.clink);
+      window.open(item.clink, '_blank');
+    },
     GetRouterInfo(url) {
       var that = this;
       that.$router.push({ path: "/" + url + "" });
@@ -415,21 +377,7 @@ export default {
     },
     
   },
-  mounted() {
-    
-  },
-  components: {
-    Search,
-    CircleClose,
-    ArrowLeftBold,
-    ArrowRightBold,
-    CaretBottom,
-    PersonCard,
-    HeadPortrait,
-    FileCard,
-    chatwindowSimple,
-    Bottom
-  },
+  
 };
 </script>
   
