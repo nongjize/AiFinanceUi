@@ -85,10 +85,10 @@ export default {
     },
     //发送文字信息
     sendText() {
-      // if(this.$store.state.userid==''){
-      //   this.$router.push({ path: "/" + "login" + "" });
-      //   return
-      // }
+      if(this.$store.state.userid==''){
+        this.$router.push({ path: "/" + "login" + "" });
+        return
+      }
       if (this.inputMsg) {
         let chatMsg = {
           name: this.$store.state.userid,
