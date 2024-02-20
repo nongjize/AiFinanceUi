@@ -64,7 +64,7 @@ export default {
     },
     gotolink(val) {
       var that = this;
-      url = '';
+      // url = '';
       if(val==1) {
         that.$router.push({ path: "/aistocks" });
       }
@@ -72,15 +72,9 @@ export default {
         
         window.open('https://work.weixin.qq.com/kfid/kfcfd990537d8749f8d?enc_scene=ENC5JURwTPhxtzAA8XmkFjRdYUiFsy3jVXB1xtzZyz59b2pthsCKzHa2GQSLGpqSwqHNz', '_blank');
       }
-      if(vla==3) {
+      if(val==3) {
         that.$router.push({ path: "/news" });
       }
-      // var that = this;
-      // that.$router.push({ path: "/" + url + "" });
-      // this.className = "lun-img-two";
-      // setTimeout(() => {
-      //   this.className = "lun-img";
-      // }, 300);
     },
   },
 };
