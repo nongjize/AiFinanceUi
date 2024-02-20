@@ -16,23 +16,23 @@
       </div>
       <div class="right">
         <div class="box">
-          <h2>热门推荐</h2>
+          <h2 @click="gotolink('1')">热门推荐</h2>
           <p></p>
           <p></p>
         </div>
         <div class="box">
-          <h2>解决方案</h2>
+          <h2 @click="gotolink('2')">解决方案</h2>
           <p></p>
           <p></p>
         </div>
         <div class="box">
-          <h2>快速连接</h2>
+          <h2 @click="gotolink('2')">快速连接</h2>
           <p></p>
           <p></p>
         </div>
         <div class="box">
-          <h2>更多信息</h2>
-          <p>知识产报</p>          
+          <h2 @click="gotolink('3')">更多信息</h2>
+          <!-- <p>知识产报</p>           -->
         </div>
       </div>
     </div>
@@ -61,6 +61,26 @@ export default {
       setTimeout(() => {
         this.className = "lun-img";
       }, 300);
+    },
+    gotolink(val) {
+      var that = this;
+      url = '';
+      if(val==1) {
+        that.$router.push({ path: "/aistocks" });
+      }
+      if(val==2) {
+        
+        window.open('https://work.weixin.qq.com/kfid/kfcfd990537d8749f8d?enc_scene=ENC5JURwTPhxtzAA8XmkFjRdYUiFsy3jVXB1xtzZyz59b2pthsCKzHa2GQSLGpqSwqHNz', '_blank');
+      }
+      if(vla==3) {
+        that.$router.push({ path: "/news" });
+      }
+      // var that = this;
+      // that.$router.push({ path: "/" + url + "" });
+      // this.className = "lun-img-two";
+      // setTimeout(() => {
+      //   this.className = "lun-img";
+      // }, 300);
     },
   },
 };

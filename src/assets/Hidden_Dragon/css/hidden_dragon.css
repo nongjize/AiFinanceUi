@@ -255,21 +255,21 @@
         padding-left: 10%;
         /* margin-top: 20%; */
         bottom: 0;
-        position: absolute;
-        margin-bottom: 26px;
+        /* position: absolute;
+        margin-bottom: 26px; */
       }
 
       .btn {
         border: 1px solid white;
-        position: absolute;
+        position: relative;
         float: right;
         font-size: 15px;
         color: white;
         right: 5%;
         /* top: -10%; */
-        bottom: 0;
+        bottom: 40px;
         /* position: absolute; */
-        margin-bottom: 26px;
+        /* margin-bottom: 26px; */
       }
 
       .btnleft {
